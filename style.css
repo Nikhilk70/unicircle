@@ -369,7 +369,6 @@ font-family:'Plus Jakarta Sans',sans-serif;
 }
 .cbtn:hover{transform:scale(1.04);box-shadow:0 4px 14px rgba(233,30,140,0.4);}
 
-/* ── TESTIMONIALS ── */
 .test-outer{overflow:hidden;mask:linear-gradient(to right,transparent,black 5%,black 95%,transparent);}
 .test-track{
 display:flex;gap:1rem;
