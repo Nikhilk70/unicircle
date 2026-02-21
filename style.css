@@ -18,6 +18,161 @@ color:var(--dark);
 overflow-x:hidden;
 }
 
+.login-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100dvh;
+}
+
+.signup-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 10px;
+}
+
+.form-box {
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 8px;
+    padding: 30px;
+    width: 100%;
+    max-width: 420px;
+}
+
+.form-box-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.form-box-header h2 {
+    flex: 1;
+    margin: 0;
+    font-size: 20px;
+    color: #222222;
+    text-align: center;
+}
+.btn-home {
+    padding: 8px 14px;
+    background: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    color: #333;
+}
+.btn-home:hover {
+    background: #e0e0e0;
+}
+.continue-email-label {
+    font-size: 13px;
+    color: #666;
+    margin: 4px 0 8px 0;
+}
+
+.form-box h2 {
+    margin: 0 0 20px 0;
+    font-size: 20px;
+    color: #222222;
+    text-align: center;
+}
+
+.form-box label {
+    display: block;
+    font-size: 13px;
+    color: #444444;
+    margin-bottom: 4px;
+    margin-top: 14px;
+}
+
+.form-box input,
+.form-box select {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    font-size: 14px;
+    box-sizing: border-box;
+    color: #222;
+    background: #fff;
+    outline: none;
+}
+
+.form-box input:focus,
+.form-box select:focus {
+    border-color: #555555;
+}
+
+.btn-google {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #bbbbbb;
+    border-radius: 5px;
+    background: #ffffff;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 16px;
+    color: #333;
+}
+
+.btn-google img {
+    width: 18px;
+    height: 18px;
+}
+
+.divider {
+    text-align: center;
+    font-size: 12px;
+    color: #999;
+    margin: 14px 0;
+    position: relative;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    display: inline-block;
+    width: 38%;
+    height: 1px;
+    background: #cccccc;
+    vertical-align: middle;
+    margin: 0 6px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 10px;
+    margin-top: 18px;
+    background: #2255cc;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.btn-submit:hover {
+    background: #1a3fa8;
+}
+
+.switch-text {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 14px;
+    color: #555;
+}
+
+.switch-text a {
+    color: #2255cc;
+    text-decoration: none;
+}
+
 /* ── NAV ── */
 .nav-wrap{
 position:fixed;top:0;left:0;right:0;z-index:100;
@@ -63,6 +218,47 @@ display:flex;align-items:center;justify-content:center;font-size:.85rem;
 cursor:pointer;background:#fff;transition:border-color .2s;
 }
 .app-btn:hover{border-color:var(--pink);}
+
+/* Nav auth buttons: Log In, Sign Up, Logout */
+.btn-nav {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  white-space: nowrap;
+}
+.btn-login {
+  background: #fff;
+  color: var(--pink, #E91E8C);
+  border: 1.5px solid var(--pink, #E91E8C);
+}
+.btn-login:hover {
+  background: rgba(233, 30, 140, 0.06);
+  border-color: #d0187a;
+}
+.btn-signup {
+  background: linear-gradient(135deg, var(--pink, #E91E8C), #FF6B9D);
+  color: #fff;
+  box-shadow: 0 2px 12px rgba(233, 30, 140, 0.25);
+}
+.btn-signup:hover {
+  box-shadow: 0 4px 16px rgba(233, 30, 140, 0.35);
+  transform: translateY(-1px);
+}
+.btn-logout {
+  background: #F3F4F6;
+  color: #4B5563;
+}
+.btn-logout:hover {
+  background: #E5E7EB;
+  color: #1F2937;
+}
+.mob-menu .btn-nav { width: 100%; padding: 0.65rem 1rem; }
+
 /* Mobile Menu */
 .mob-menu{
     display: none;
@@ -575,3 +771,85 @@ font-family:'Plus Jakarta Sans',sans-serif;transition:all .25s;
 .hero-cards{grid-template-columns:2fr 1fr;}
 .det-info-strip{grid-template-columns:repeat(4,1fr);}
 }
+
+/* ── Admin Panel ── */
+.admin-panel {
+  min-height: 100vh;
+  background: #f8fafc;
+  padding: 2rem 1rem;
+}
+.admin-panel-inner {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+.admin-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.admin-panel-header h2 {
+  font-size: 1.5rem;
+  color: #1e293b;
+  margin: 0;
+}
+.admin-message {
+  font-size: 0.9rem;
+  color: #64748b;
+  margin-bottom: 1rem;
+}
+.admin-message-ok { color: #059669; }
+.admin-message-err { color: #dc2626; }
+.admin-table-wrap {
+  overflow-x: auto;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+}
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+.admin-table th,
+.admin-table td {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+.admin-table th {
+  background: #f1f5f9;
+  font-weight: 600;
+  color: #475569;
+}
+.admin-table tbody tr:hover {
+  background: #f8fafc;
+}
+.nav-user-name {
+  font-size: 0.8rem !important;
+  color: #6b7280 !important;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.nav-admin-link {
+  font-size: 0.8rem;
+  color: #6366f1;
+  text-decoration: none;
+}
+.nav-admin-link:hover { text-decoration: underline; }
+
+.admin-tabs { display: flex; gap: 0.5rem; margin-bottom: 1rem; }
+.admin-tab { padding: 0.5rem 1rem; border: 1px solid #e2e8f0; background: #fff; border-radius: 8px; cursor: pointer; font-size: 0.9rem; }
+.admin-tab:hover { background: #f1f5f9; }
+.admin-tab.active { background: #6366f1; color: #fff; border-color: #6366f1; }
+.admin-section { margin-top: 0.5rem; }
+.admin-edit-form { margin-top: 1.5rem; padding: 1.5rem; background: #fff; border-radius: 12px; border: 1px solid #e2e8f0; max-width: 600px; }
+.admin-edit-form label { display: block; margin-top: 0.75rem; font-size: 0.875rem; color: #475569; }
+.admin-edit-form input, .admin-edit-form textarea { width: 100%; padding: 0.5rem; margin-top: 0.25rem; border: 1px solid #cbd5e1; border-radius: 6px; box-sizing: border-box; }
+.admin-edit-form h3 { margin: 0 0 1rem 0; font-size: 1.1rem; }
+.admin-form-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
+.colleges-empty { text-align: center; color: #64748b; padding: 2rem; }

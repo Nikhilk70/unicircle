@@ -9,441 +9,561 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div id="home-page">
-        <div class="nav-wrap" id="nav">
-        <div class="nav-inner">
-            <a class="logo" href="#">
-            <div class="logo-box">U</div>
-            <span class="logo-text">Uni<span>Circle</span></span>
-            </a>
-            <nav class="nav-desktop">
-            <a href="#" class="active">Home</a>
-            <a href="#">Colleges</a>
-            <a href="#">Courses</a>
-            <a href="#">About</a>
-            <a href="#">Blogs</a>
-            <a href="#">Contact</a>
-            </nav>
-            <div class="nav-cta-row">
-            <div class="app-btn">🍎</div>
-            <div class="app-btn">▶</div>
-            </div>
-            <button class="hamburger" id="ham" onclick="toggleMenu()">
-            <span></span><span></span><span></span>
-            </button>
-        </div>
-        <div class="mob-menu" id="mobMenu">
-            <a href="#" class="active">Home</a>
-            <a href="#">Courses</a>
-            <a href="#">Colleges</a>
-            <a href="#">Find by City</a>
-            <a href="#">About</a>
-            <a href="#">Blogs</a>
-            <a href="#">Contact us</a>
-            <button class="mob-cta" onclick="goto('colleges')">Explore Colleges →</button>
-        </div>
-        </div>
-
-        <!-- HERO -->
-        <div class="hero" style="padding-top:5.5rem">
-            <!-- <video autoplay muted loop playsinline class="hero-video">
-                <source src="https://res.cloudinary.com/dxjdraawa/video/upload/v1753268236/videoplayback_kdxk91.mp4" type="video/mp4">
-            </video>
-
-            <div class="hero-overlay"></div> -->
-            <div class="homeBG">
-                <div class="hero-badge"><div class="dot"></div>Trusted by 1.2 Lakh+ Students</div>
-                <span class="hero-tag">Choice is Power</span>
-                <h1 class="hero-h1">UniCircle Makes<br>It Possible</h1>
-                <p class="hero-sub">Helping India <span class="pk">Discover</span> and <span class="og">Apply</span> to the Right College with Verified, Transparent and Bias-free data.</p>
-                <div class="hero-btns">
-                    <button class="btn-main" onclick="goto('colleges')">Explore Colleges →</button>
+        <div class="login-div" id="login-div" style="display: none;">
+            <div class="form-box">
+                <div class="form-box-header">
+                    <button type="button" class="btn-home" onclick="openHome()">← Home</button>
+                    <h2>Login</h2>
                 </div>
+                <button class="btn-google" id="googleLogin">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+                Continue with Google
+                </button>
+                <div class="divider">or</div>
+                <p class="continue-email-label">Continue with email</p>
+                <label>Email</label>
+                <input type="email" placeholder="Enter your email" />
+                <label>Password</label>
+                <input type="password" placeholder="Enter your password" />
+                <button class="btn-submit">Login</button>
+                <div class="switch-text">Don't have an account? <a onclick="openSignUp()">Sign Up</a></div>
             </div>
-
-        <!-- Hero Cards -->
-        <div class="hero-cards">
-            <!-- Student visual card -->
-            <div class="hcard" style="background:linear-gradient(135deg,#FFF5FB,#FFF0F8);border:1.5px solid rgba(233,30,140,0.12);border-radius:20px;padding:0;overflow:hidden;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end;">
-            <div style="flex:1;display:flex;align-items:center;justify-content:center;font-size:5rem;padding:1.5rem;">🎓</div>
-            <div style="padding:1.2rem 1.4rem;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border-top:1px solid rgba(233,30,140,0.1);">
-                <div style="font-size:.78rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;">India's Smartest</div>
-                <div style="font-size:1.15rem;font-weight:800;color:var(--dark);">College Discovery</div>
-                <div style="font-size:.82rem;color:var(--gray);margin-top:.3rem;">Verified · Transparent · Bias-free</div>
-            </div>
-            </div>
-            <!-- Stats card -->
-            <div style="background:linear-gradient(135deg,#FFF0F8,#fff);border-radius:20px;padding:1.5rem;border:1.5px solid rgba(233,30,140,0.12);display:flex;flex-direction:column;justify-content:center;gap:.5rem;">
-            <div style="font-size:.85rem;font-weight:600;color:var(--gray);">Loved by</div>
-            <div style="font-size:3rem;font-weight:800;color:var(--orange);line-height:1;">120k+</div>
-            <div class="loved-pill">
-                <span>👨‍🎓</span><span>👩‍🎓</span><span>Students</span>
-            </div>
-            <div style="margin-top:.5rem;display:flex;flex-direction:column;gap:.35rem;">
-                <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                <span style="color:var(--pink);font-weight:700;">✓</span> 500+ Colleges
+        </div>
+        <div class="signup-div" id="signup-div" style="display: none;">
+            <div class="form-box" style="max-width: 480px;">
+                <div class="form-box-header">
+                    <button type="button" class="btn-home" onclick="openHome()">← Home</button>
+                    <h2>Sign Up</h2>
                 </div>
-                <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                <span style="color:var(--pink);font-weight:700;">✓</span> Zero Bias Data
-                </div>
-                <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                <span style="color:var(--pink);font-weight:700;">✓</span> Free to Apply
-                </div>
-            </div>
+                <button class="btn-google" id="googleLoginSignup">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+                Continue with Google
+                </button>
+                <div class="divider">or</div>
+                <p class="continue-email-label">Continue with email</p>
+                <label>Name</label>
+                <input id="signupName" required type="text" placeholder="Enter your name" />
+
+                <label>Email</label>
+                <input id="signupEmail" required type="email" placeholder="Enter your email" />
+
+                <label>Phone Number</label>
+                <input id="signupPhone" required type="tel" placeholder="Enter your phone number" />
+
+                <label>Password</label>
+                <input id="signupPassword" required type="password" placeholder="Create a password" />
+
+                <label>Parent Name(Optional)</label>
+                <input id="signupParentName" type="text" placeholder="Enter parent name" />
+
+                <label>Parent Phone Number(Optional)</label>
+                <input id="signupParentPhone" type="tel" placeholder="Enter parent phone number" />
+
+                <label>District</label>
+                <input id="signupDistrict" required type="text" placeholder="Enter your district" />
+
+                <label>Place</label>
+                <input id="signupPlace" required type="text" placeholder="Enter your place" />
+
+                <label>User Type</label>
+                <select id="signupUserType" required>
+                <option value="">-- Select User Type --</option>
+                <option value="student">Student</option>
+                <option value="parent">Parent</option>
+                <option value="other">Other</option>
+                </select>
+
+                <button type="button" class="btn-submit" id="signupSubmit">Sign Up</button>
+    
+                <div class="switch-text">Already have an account? <a onclick="openLogin()">Login</a></div>
             </div>
         </div>
-
-        <!-- Stats Row -->
-        <div class="stats-row">
-            <div class="stat-card"><span class="stat-num" data-target="500" data-suf="+">0</span><div class="stat-label">Partner Colleges</div></div>
-            <div class="stat-card"><span class="stat-num" data-target="120" data-suf="k+">0</span><div class="stat-label">Happy Students</div></div>
-            <div class="stat-card"><span class="stat-num" data-target="98" data-suf="%">0</span><div class="stat-label">Satisfaction Rate</div></div>
-            <div class="stat-card"><span class="stat-num" data-target="25" data-suf="+">0</span><div class="stat-label">States Covered</div></div>
-        </div>
-        </div>
-
-        <!-- TICKER -->
-        <div class="ticker-wrap">
-        <p class="ticker-label">Trusted by students of India's top institutions</p>
-        <div class="mq-wrap" style="margin-bottom:.7rem">
-            <div class="mq-track">
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
-            </div>
-        </div>
-        <div class="mq-wrap">
-            <div class="mq-track mq-track2">
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-            <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-            </div>
-        </div>
-        </div>
-
-        <!-- FEATURES -->
-        <section class="section">
-        <div class="sec-eyebrow rev">✦ Why UniCircle</div>
-        <h2 class="sec-h rev">Everything to Choose<br>the <span class="pink-word">Right College</span></h2>
-        <p class="sec-p rev rd1">We don't just list colleges — we arm you with the data, tools, and guidance to make the most important decision of your life.</p>
-        <div class="feat-grid">
-            <div class="feat-card rev"><div class="feat-ico" style="background:#FFF0F8">🔍</div><div class="feat-body"><h3>Verified College Data</h3><p>Every stat — placements, fees, faculty — verified by our on-ground research team. No paid rankings, no fake reviews.</p></div></div>
-            <div class="feat-card rev rd1"><div class="feat-ico" style="background:#EFF6FF">🤖</div><div class="feat-body"><h3>AI-Powered Matching</h3><p>Our smart algorithm analyzes your profile, interests, budget, and scores to find colleges where you'll truly thrive.</p></div></div>
-            <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFF7ED">📋</div><div class="feat-body"><h3>One-Click Applications</h3><p>Apply to multiple colleges with a single profile. Track your applications in real-time from one beautiful dashboard.</p></div></div>
-            <div class="feat-card rev"><div class="feat-ico" style="background:#ECFDF5">📊</div><div class="feat-body"><h3>Transparent Rankings</h3><p>Our methodology is 100% open and bias-free. See exactly how colleges score on 40+ real parameters.</p></div></div>
-            <div class="feat-card rev rd1"><div class="feat-ico" style="background:#FDF4FF">💬</div><div class="feat-body"><h3>Peer Reviews</h3><p>Real opinions from verified students only. Our system prevents fake ratings through student authentication.</p></div></div>
-            <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFFBEB">🎯</div><div class="feat-body"><h3>Scholarship Discovery</h3><p>Unlock hidden scholarships you qualify for. Auto-matched against 10,000+ scholarship databases instantly.</p></div></div>
-        </div>
-        </section>
-
-        <!-- HOW IT WORKS -->
-        <section class="section" style="background:var(--pink-light);border-radius:28px;">
-        <div class="sec-eyebrow rev">✦ Simple Process</div>
-        <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
-        <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — UniCircle has you every step of the way.</p>
-        <div class="steps">
-            <div class="step-row rev">
-            <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
-            <div class="step-body"><h3>Create Your Free Profile</h3><p>Tell us your academics, interests, location preference, budget, and career goals. Takes 3 minutes, completely free.</p></div>
-            </div>
-            <div class="step-row rev rd1">
-            <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
-            <div class="step-body"><h3>Discover Your Best Matches</h3><p>Our AI crunches 40+ data points to surface colleges genuinely right for you — not just the most popular ones.</p></div>
-            </div>
-            <div class="step-row rev rd2">
-            <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
-            <div class="step-body"><h3>Apply with One Click</h3><p>Submit to multiple colleges using your saved profile. Auto-filled forms, eligibility checks, and deadline alerts — handled.</p></div>
-            </div>
-            <div class="step-row rev rd3">
-            <div class="step-left"><div class="step-num">4</div></div>
-            <div class="step-body"><h3>Get Admitted & Succeed</h3><p>Receive offers, compare financial aid, and choose your dream college. Our post-admission support sets you up from day one.</p></div>
-            </div>
-        </div>
-        </section>
-
-        <!-- COLLEGES -->
-        <section class="section" id="colleges">
-        <div class="sec-eyebrow rev">✦ Top Colleges</div>
-        <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
-        <p class="sec-p rev rd1">Verified data, real student reviews, transparent admission info — all in one place.</p>
-        <div class="col-grid">
-
-            <div class="col-card rev" onclick="openCollege(0)">
-            <div class="col-img" style="background:linear-gradient(135deg,#EEF2FF,#C7D2FE)"><img src="https://mcon.edu.in/wp-content/uploads/2025/03/college-scaled.jpg" alt=""><span class="col-badge">Tier 1 · IIT</span></div>
-            <div class="col-body">
-                <div class="col-name">Moogambigai College of nursing , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Nursing</span><span class="ctag">Research</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.9 (2.4k)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev rd1" onclick="openCollege(1)">
-            <div class="col-img" style="background:linear-gradient(135deg,#FDF4FF,#E9D5FF)"><img src="https://cdn-610147b2c1ac184e88c3a02e.closte.com/wp-content/uploads/hindustan-business-school-bangalore.jpg?seraph_accel_ai=m.1m80veuvw3q8k84so8c4o404c-1366&n=WaHqgNvtYmX5VRnZln32A" alt=""><span class="col-badge">Tier 1 · IIM</span></div>
-            <div class="col-body">
-                <div class="col-name">Hindustan Business School , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Management</span><span class="ctag">MBA</span><span class="ctag">Finance</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.9 (1.8k)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev rd2" onclick="openCollege(2)">
-            <div class="col-img" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)"><img src="https://bscnursingadmission.co/wp-content/uploads/2021/01/Gopala_Gowda_Shanthaveri_Memorial_College_of_Nursing_Mysore_Photos.jpeg" alt=""><span class="col-badge">Tier 1 · BITS</span></div>
-            <div class="col-body">
-                <div class="col-name">Gopala Gowda Shanthaveri Memorial College of nursing , Mysuru</div>
-                <div class="col-loc">📍 Mysuru</div>
-                <div class="col-tags"><span class="ctag">Medicine</span><span class="ctag">Science</span><span class="ctag">Innovation</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.8 (3.1k)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev" onclick="openCollege(3)">
-            <div class="col-img" style="background:linear-gradient(135deg,#ECFDF5,#A7F3D0)"><img src="https://www.mbacollegesbangalore.in/wp-content/uploads/2017/08/Acharya-Institute-of-Technology-2.jpg" alt=""><span class="col-badge">Premier · Medical</span></div>
-            <div class="col-body">
-                <div class="col-name">Acharya institute , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Medicine</span><span class="ctag">Research</span><span class="ctag">Healthcare</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.8 (2.9k)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev rd1" onclick="openCollege(4)">
-            <div class="col-img" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)"><img src="https://formsadda.com/wp-content/uploads/2024/04/abbs-7.jpg" alt=""><span class="col-badge">Tier 1 · Liberal Arts</span></div>
-            <div class="col-body">
-                <div class="col-name">Acharya Bengaluru B- School , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Management</span><span class="ctag">Humanities</span><span class="ctag">Sciences</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★☆</span><span>4.7 (1.2k)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev rd2" onclick="openCollege(5)">
-            <div class="col-img" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)"><img src="https://www.mycampusreview.com/images/postgallery/1690889273abbs.png" alt=""><span class="col-badge">Premier · Design</span></div>
-            <div class="col-body">
-                <div class="col-name">T John of Group of institution , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Management</span><span class="ctag">Creative</span><span class="ctag">Innovation</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.9 (890)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-            <div class="col-card rev rd2" onclick="openCollege(5)">
-            <div class="col-img" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRNiwTOwqBI22ZwkaMA6zrDZYUh7rwvTqL9Og&s" alt=""><span class="col-badge">Premier · Design</span></div>
-            <div class="col-body">
-                <div class="col-name">Rosy royal Group of institutionn , Bengaluru</div>
-                <div class="col-loc">📍 Bengaluru</div>
-                <div class="col-tags"><span class="ctag">Management</span><span class="ctag">Creative</span><span class="ctag">Innovation</span></div>
-                <div class="col-foot"><div class="crat"><span class="stars">★★★★★</span><span>4.9 (890)</span></div><button class="cbtn">View →</button></div>
-            </div>
-            </div>
-
-        </div>
-        <div style="text-align:center;margin-top:1.8rem">
-            <button class="btn-secondary" style="width:100%;max-width:320px">View All 500+ Colleges →</button>
-        </div>
-        </section>
-
-        <!-- TESTIMONIALS -->
-        <section class="section" style="padding-left:0;padding-right:0;max-width:100%">
-        <div style="padding:0 1.25rem">
-            <div class="sec-eyebrow rev">✦ Student Stories</div>
-            <h2 class="sec-h rev">What Students Are <span class="pink-word">Saying</span></h2>
-            <p class="sec-p rev rd1" style="margin-bottom:1.8rem">Real stories from students who found their college with UniCircle.</p>
-        </div>
-        <div class="test-outer">
-            <div class="test-track">
-            <div class="tc"><div class="tq">"</div><div class="tt">UniCircle's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to UniCircle!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">As a first-gen student from a small town, transparent data and honest reviews made me confident applying to AIIMS.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#ECFDF5,#A7F3D0)">👧</div><div><div class="tname">Ananya Patel</div><div class="tcoll">MBBS · AIIMS New Delhi</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">The side-by-side comparison of 12 engineering colleges — placement stats, infrastructure, faculty — is miles ahead of anything else.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FDF4FF,#E9D5FF)">👦</div><div><div class="tname">Karan Verma</div><div class="tcoll">B.Tech EE · IIT Bombay</div></div></div></div>
-            <!-- duplicates for infinite loop -->
-            <div class="tc"><div class="tq">"</div><div class="tt">UniCircle's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to UniCircle!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
-            <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
-            </div>
-        </div>
-        </section>
-
-        <!-- CTA -->
-        <div class="cta-section">
-        <div class="cta-inner hidden">
-            <div class="sec-eyebrow rev" style="margin:0 auto .9rem">✦ Start Your Journey</div>
-            <h2 class="cta-h rev">Ready to Find Your<br><span class="pink-word">Dream College?</span></h2>
-            <p class="cta-p rev rd1">Join 1.2 lakh+ students who discovered and applied through UniCircle — completely free, always.</p>
-            <div class="cta-form rev rd2">
-            <input class="cta-inp" type="email" placeholder="Enter your email address">
-            <button class="cta-btn">Get Started Free →</button>
-            </div>
-            <p style="font-size:.75rem;color:#9CA3AF;margin-top:.9rem">No credit card · No hidden fees · Cancel anytime</p>
-        </div>
-        </div>
-
-        <!-- FOOTER -->
-        <footer>
-        <div style="max-width:1200px;margin:0 auto">
-            <div class="foot-brand">
-            <div class="logo" style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:.1rem">
+        <main id="mainPage">
+            <div id="mainContent">
+            <div id="home-page">
+            <div class="nav-wrap" id="nav">
+            <div class="nav-inner">
+                <a class="logo" href="#">
                 <div class="logo-box">U</div>
                 <span class="logo-text">Uni<span>Circle</span></span>
+                </a>
+                <nav class="nav-desktop">
+                <a href="#" class="active">Home</a>
+                <a href="#">Colleges</a>
+                <a href="#">Courses</a>
+                <a href="#">About</a>
+                <a href="#">Blogs</a>
+                <a href="#">Contact</a>
+                </nav>
+                <div class="nav-cta-row">
+                <div class="nav-auth-buttons" style="display: flex; align-items: center; gap: 0.5rem;">
+                    <button type="button" class="btn-nav btn-login" onclick="openLogin()">Log In</button>
+                    <button type="button" class="btn-nav btn-signup" onclick="openSignUp()">Sign Up</button>
+                </div>
+                <div class="nav-logout-wrap" style="display: none; align-items: center; gap: 0.5rem;">
+                    <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
+                    <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); return false;">Admin</a>
+                    <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
+                </div>
+                </div>
+                <button class="hamburger" id="ham" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+                </button>
             </div>
-            <p>Empowering every Indian student to make informed, confident college decisions with transparent data and zero bias. Your future, your choice.</p>
-            <div class="soc-row">
-                <div class="soc">🐦</div><div class="soc">📸</div><div class="soc">💼</div><div class="soc">▶️</div>
-            </div>
-            </div>
-            <div class="foot-cols">
-            <div class="foot-col">
-                <h4>Students</h4>
-                <ul class="foot-links">
-                <li><a href="#">Search Colleges</a></li>
-                <li><a href="#">Compare Colleges</a></li>
-                <li><a href="#">Find Scholarships</a></li>
-                <li><a href="#">Entrance Exams</a></li>
-                <li><a href="#">Career Guidance</a></li>
-                </ul>
-            </div>
-            <div class="foot-col">
-                <h4>Company</h4>
-                <ul class="foot-links">
-                <li><a href="#">About UniCircle</a></li>
-                <li><a href="#">Our Mission</a></li>
-                <li><a href="#">Team</a></li>
-                <li><a href="#">Blog</a></li>
-                <li><a href="#">Careers</a></li>
-                </ul>
-            </div>
-            <div class="foot-col">
-                <h4>Courses</h4>
-                <ul class="foot-links">
-                <li><a href="#">Engineering</a></li>
-                <li><a href="#">Management</a></li>
-                <li><a href="#">Medical</a></li>
-                <li><a href="#">Design</a></li>
-                <li><a href="#">Liberal Arts</a></li>
-                </ul>
-            </div>
-            <div class="foot-col">
-                <h4>Support</h4>
-                <ul class="foot-links">
-                <li><a href="#">Help Center</a></li>
-                <li><a href="#">Contact Us</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-                <li><a href="#">Terms of Service</a></li>
-                <li><a href="#">Report Issue</a></li>
-                </ul>
-            </div>
-            </div>
-            <div class="foot-bot">© 2025 UniCircle Education Pvt. Ltd. · Made with 💗 for India's Students</div>
-        </div>
-        </footer>
-
-        </div><!-- /home-page -->
-
-        <!-- ===== DETAIL PAGE ===== -->
-        <div class="page" id="det-page">
-        <div class="det-pg">
-            <!-- sticky back nav -->
-            <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
-            <div class="back-btn" onclick="closeDetail()">← Back</div>
-            <span id="d-nav-name" style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
-            <button style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;" onclick="document.querySelector('.apply-sticky').scrollIntoView({behavior:'smooth'})">Apply →</button>
-            </div>
-
-            <div class="det-hero">
-            <div class="det-bg-emoji" id="d-bg"></div>
-            <div class="det-overlay"></div>
-            <div class="det-hc">
-                <h1 class="det-name" id="d-name"></h1>
-                <div class="det-loc" id="d-loc"></div>
+            <div class="mob-menu" id="mobMenu">
+                <a href="#" class="active">Home</a>
+                <a href="#">Courses</a>
+                <a href="#">Colleges</a>
+                <a href="#">Find by City</a>
+                <a href="#">About</a>
+                <a href="#">Blogs</a>
+                <a href="#">Contact us</a>
+                <div class="nav-auth-buttons mob-auth" style="display: flex; flex-direction: row; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 0;">
+                    <button type="button" class="btn-nav btn-login" onclick="openLogin(); toggleMenu();">Log In</button>
+                    <button type="button" class="btn-nav btn-signup" onclick="openSignUp(); toggleMenu();">Sign Up</button>
+                </div>
+                <div class="nav-logout-wrap mob-auth" style="display: none; flex-direction: column; align-items: stretch; gap: 0.5rem;">
+                    <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
+                    <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); toggleMenu(); return false;">Admin Panel</a>
+                    <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
+                </div>
+                <button class="mob-cta" onclick="goto('colleges')">Explore Colleges →</button>
             </div>
             </div>
 
-            <div class="det-cont">
-            <!-- Info Strip -->
-            <div class="det-info-strip" id="d-info"></div>
+            <!-- HERO -->
+            <div class="hero" style="padding-top:5.5rem">
+                <!-- <video autoplay muted loop playsinline class="hero-video">
+                    <source src="https://res.cloudinary.com/dxjdraawa/video/upload/v1753268236/videoplayback_kdxk91.mp4" type="video/mp4">
+                </video>
 
-            <!-- About -->
-            <h3 class="det-sec-h">About the Institution</h3>
-            <p class="det-txt" id="d-about"></p>
+                <div class="hero-overlay"></div> -->
+                <div class="homeBG">
+                    <div class="hero-badge"><div class="dot"></div>Trusted by 1.2 Lakh+ Students</div>
+                    <span class="hero-tag">Choice is Power</span>
+                    <h1 class="hero-h1">UniCircle Makes<br>It Possible</h1>
+                    <p class="hero-sub">Helping India <span class="pk">Discover</span> and <span class="og">Apply</span> to the Right College with Verified, Transparent and Bias-free data.</p>
+                    <div class="hero-btns">
+                        <button class="btn-main" onclick="goto('colleges')">Explore Colleges →</button>
+                    </div>
+                </div>
 
-            <!-- Programs -->
-            <h3 class="det-sec-h">Available Programs</h3>
-            <div class="crs-list" id="d-courses"></div>
-
-            <!-- Campus -->
-            <h3 class="det-sec-h">Campus Life & Facilities</h3>
-            <p class="det-txt" id="d-campus"></p>
-
-            <!-- Placements -->
-            <h3 class="det-sec-h">Placements & Career Outcomes</h3>
-            <p class="det-txt" id="d-place"></p>
-
-            <div style="height:80px"></div>
+            <!-- Hero Cards -->
+            <div class="hero-cards">
+                <!-- Student visual card -->
+                <div class="hcard" style="background:linear-gradient(135deg,#FFF5FB,#FFF0F8);border:1.5px solid rgba(233,30,140,0.12);border-radius:20px;padding:0;overflow:hidden;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end;">
+                <div style="flex:1;display:flex;align-items:center;justify-content:center;font-size:5rem;padding:1.5rem;">🎓</div>
+                <div style="padding:1.2rem 1.4rem;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border-top:1px solid rgba(233,30,140,0.1);">
+                    <div style="font-size:.78rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;">India's Smartest</div>
+                    <div style="font-size:1.15rem;font-weight:800;color:var(--dark);">College Discovery</div>
+                    <div style="font-size:.82rem;color:var(--gray);margin-top:.3rem;">Verified · Transparent · Bias-free</div>
+                </div>
+                </div>
+                <!-- Stats card -->
+                <div style="background:linear-gradient(135deg,#FFF0F8,#fff);border-radius:20px;padding:1.5rem;border:1.5px solid rgba(233,30,140,0.12);display:flex;flex-direction:column;justify-content:center;gap:.5rem;">
+                <div style="font-size:.85rem;font-weight:600;color:var(--gray);">Loved by</div>
+                <div style="font-size:3rem;font-weight:800;color:var(--orange);line-height:1;">120k+</div>
+                <div class="loved-pill">
+                    <span>👨‍🎓</span><span>👩‍🎓</span><span>Students</span>
+                </div>
+                <div style="margin-top:.5rem;display:flex;flex-direction:column;gap:.35rem;">
+                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
+                    <span style="color:var(--pink);font-weight:700;">✓</span> 500+ Colleges
+                    </div>
+                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
+                    <span style="color:var(--pink);font-weight:700;">✓</span> Zero Bias Data
+                    </div>
+                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
+                    <span style="color:var(--pink);font-weight:700;">✓</span> Free to Apply
+                    </div>
+                </div>
+                </div>
             </div>
 
-            <!-- Sticky Apply Bar -->
-            <div class="apply-sticky">
-            <button class="apply-btn-main">Apply Now →</button>
-            <button class="wish-btn">♡ Save</button>
+            <!-- Stats Row -->
+            <div class="stats-row">
+                <div class="stat-card"><span class="stat-num" data-target="500" data-suf="+">0</span><div class="stat-label">Partner Colleges</div></div>
+                <div class="stat-card"><span class="stat-num" data-target="120" data-suf="k+">0</span><div class="stat-label">Happy Students</div></div>
+                <div class="stat-card"><span class="stat-num" data-target="98" data-suf="%">0</span><div class="stat-label">Satisfaction Rate</div></div>
+                <div class="stat-card"><span class="stat-num" data-target="25" data-suf="+">0</span><div class="stat-label">States Covered</div></div>
             </div>
-        </div>
-        </div>
-        <script src="script.js"></script>
+            </div>
+
+            <!-- TICKER -->
+            <div class="ticker-wrap">
+            <p class="ticker-label">Trusted by students of India's top institutions</p>
+            <div class="mq-wrap" style="margin-bottom:.7rem">
+                <div class="mq-track">
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
+                </div>
+            </div>
+            <div class="mq-wrap">
+                <div class="mq-track mq-track2">
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
+                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
+                </div>
+            </div>
+            </div>
+
+            <!-- FEATURES -->
+            <section class="section">
+            <div class="sec-eyebrow rev">✦ Why UniCircle</div>
+            <h2 class="sec-h rev">Everything to Choose<br>the <span class="pink-word">Right College</span></h2>
+            <p class="sec-p rev rd1">We don't just list colleges — we arm you with the data, tools, and guidance to make the most important decision of your life.</p>
+            <div class="feat-grid">
+                <div class="feat-card rev"><div class="feat-ico" style="background:#FFF0F8">🔍</div><div class="feat-body"><h3>Verified College Data</h3><p>Every stat — placements, fees, faculty — verified by our on-ground research team. No paid rankings, no fake reviews.</p></div></div>
+                <div class="feat-card rev rd1"><div class="feat-ico" style="background:#EFF6FF">🤖</div><div class="feat-body"><h3>AI-Powered Matching</h3><p>Our smart algorithm analyzes your profile, interests, budget, and scores to find colleges where you'll truly thrive.</p></div></div>
+                <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFF7ED">📋</div><div class="feat-body"><h3>One-Click Applications</h3><p>Apply to multiple colleges with a single profile. Track your applications in real-time from one beautiful dashboard.</p></div></div>
+                <div class="feat-card rev"><div class="feat-ico" style="background:#ECFDF5">📊</div><div class="feat-body"><h3>Transparent Rankings</h3><p>Our methodology is 100% open and bias-free. See exactly how colleges score on 40+ real parameters.</p></div></div>
+                <div class="feat-card rev rd1"><div class="feat-ico" style="background:#FDF4FF">💬</div><div class="feat-body"><h3>Peer Reviews</h3><p>Real opinions from verified students only. Our system prevents fake ratings through student authentication.</p></div></div>
+                <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFFBEB">🎯</div><div class="feat-body"><h3>Scholarship Discovery</h3><p>Unlock hidden scholarships you qualify for. Auto-matched against 10,000+ scholarship databases instantly.</p></div></div>
+            </div>
+            </section>
+
+            <!-- HOW IT WORKS -->
+            <section class="section" style="background:var(--pink-light);border-radius:28px;">
+            <div class="sec-eyebrow rev">✦ Simple Process</div>
+            <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
+            <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — UniCircle has you every step of the way.</p>
+            <div class="steps">
+                <div class="step-row rev">
+                <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
+                <div class="step-body"><h3>Create Your Free Profile</h3><p>Tell us your academics, interests, location preference, budget, and career goals. Takes 3 minutes, completely free.</p></div>
+                </div>
+                <div class="step-row rev rd1">
+                <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
+                <div class="step-body"><h3>Discover Your Best Matches</h3><p>Our AI crunches 40+ data points to surface colleges genuinely right for you — not just the most popular ones.</p></div>
+                </div>
+                <div class="step-row rev rd2">
+                <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
+                <div class="step-body"><h3>Apply with One Click</h3><p>Submit to multiple colleges using your saved profile. Auto-filled forms, eligibility checks, and deadline alerts — handled.</p></div>
+                </div>
+                <div class="step-row rev rd3">
+                <div class="step-left"><div class="step-num">4</div></div>
+                <div class="step-body"><h3>Get Admitted & Succeed</h3><p>Receive offers, compare financial aid, and choose your dream college. Our post-admission support sets you up from day one.</p></div>
+                </div>
+            </div>
+            </section>
+
+            <!-- COLLEGES (loaded from Firebase) -->
+            <section class="section" id="colleges">
+            <div class="sec-eyebrow rev">✦ Top Colleges</div>
+            <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
+            <p class="sec-p rev rd1">Verified data, real student reviews, transparent admission info — all in one place.</p>
+            <div class="col-grid" id="collegesGrid">
+                <p class="colleges-empty">Loading colleges…</p>
+            </div>
+            <div style="text-align:center;margin-top:1.8rem">
+                <button class="btn-secondary" style="width:100%;max-width:320px">View All 500+ Colleges →</button>
+            </div>
+            </section>
+
+            <!-- TESTIMONIALS -->
+            <section class="section" style="padding-left:0;padding-right:0;max-width:100%">
+            <div style="padding:0 1.25rem">
+                <div class="sec-eyebrow rev">✦ Student Stories</div>
+                <h2 class="sec-h rev">What Students Are <span class="pink-word">Saying</span></h2>
+                <p class="sec-p rev rd1" style="margin-bottom:1.8rem">Real stories from students who found their college with UniCircle.</p>
+            </div>
+            <div class="test-outer">
+                <div class="test-track">
+                <div class="tc"><div class="tq">"</div><div class="tt">UniCircle's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to UniCircle!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">As a first-gen student from a small town, transparent data and honest reviews made me confident applying to AIIMS.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#ECFDF5,#A7F3D0)">👧</div><div><div class="tname">Ananya Patel</div><div class="tcoll">MBBS · AIIMS New Delhi</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">The side-by-side comparison of 12 engineering colleges — placement stats, infrastructure, faculty — is miles ahead of anything else.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FDF4FF,#E9D5FF)">👦</div><div><div class="tname">Karan Verma</div><div class="tcoll">B.Tech EE · IIT Bombay</div></div></div></div>
+                <!-- duplicates for infinite loop -->
+                <div class="tc"><div class="tq">"</div><div class="tt">UniCircle's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to UniCircle!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
+                <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
+                </div>
+            </div>
+            </section>
+
+            <!-- CTA -->
+            <div class="cta-section">
+            <div class="cta-inner hidden">
+                <div class="sec-eyebrow rev" style="margin:0 auto .9rem">✦ Start Your Journey</div>
+                <h2 class="cta-h rev">Ready to Find Your<br><span class="pink-word">Dream College?</span></h2>
+                <p class="cta-p rev rd1">Join 1.2 lakh+ students who discovered and applied through UniCircle — completely free, always.</p>
+                <div class="cta-form rev rd2">
+                <input class="cta-inp" type="email" placeholder="Enter your email address">
+                <button class="cta-btn">Get Started Free →</button>
+                </div>
+                <p style="font-size:.75rem;color:#9CA3AF;margin-top:.9rem">No credit card · No hidden fees · Cancel anytime</p>
+            </div>
+            </div>
+
+            <!-- FOOTER -->
+            <footer>
+            <div style="max-width:1200px;margin:0 auto">
+                <div class="foot-brand">
+                <div class="logo" style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:.1rem">
+                    <div class="logo-box">U</div>
+                    <span class="logo-text">Uni<span>Circle</span></span>
+                </div>
+                <p>Empowering every Indian student to make informed, confident college decisions with transparent data and zero bias. Your future, your choice.</p>
+                <div class="soc-row">
+                    <div class="soc">🐦</div><div class="soc">📸</div><div class="soc">💼</div><div class="soc">▶️</div>
+                </div>
+                </div>
+                <div class="foot-cols">
+                <div class="foot-col">
+                    <h4>Students</h4>
+                    <ul class="foot-links">
+                    <li><a href="#">Search Colleges</a></li>
+                    <li><a href="#">Compare Colleges</a></li>
+                    <li><a href="#">Find Scholarships</a></li>
+                    <li><a href="#">Entrance Exams</a></li>
+                    <li><a href="#">Career Guidance</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Company</h4>
+                    <ul class="foot-links">
+                    <li><a href="#">About UniCircle</a></li>
+                    <li><a href="#">Our Mission</a></li>
+                    <li><a href="#">Team</a></li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Careers</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Courses</h4>
+                    <ul class="foot-links">
+                    <li><a href="#">Engineering</a></li>
+                    <li><a href="#">Management</a></li>
+                    <li><a href="#">Medical</a></li>
+                    <li><a href="#">Design</a></li>
+                    <li><a href="#">Liberal Arts</a></li>
+                    </ul>
+                </div>
+                <div class="foot-col">
+                    <h4>Support</h4>
+                    <ul class="foot-links">
+                    <li><a href="#">Help Center</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Report Issue</a></li>
+                    </ul>
+                </div>
+                </div>
+                <div class="foot-bot">© 2025 UniCircle Education Pvt. Ltd. · Made with 💗 for India's Students</div>
+            </div>
+            </footer>
+
+            </div><!-- /home-page -->
+
+            <!-- ===== DETAIL PAGE ===== -->
+            <div class="page" id="det-page">
+            <div class="det-pg">
+                <!-- sticky back nav -->
+                <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
+                <div class="back-btn" onclick="closeDetail()">← Back</div>
+                <span id="d-nav-name" style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
+                <button style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;" onclick="document.querySelector('.apply-sticky').scrollIntoView({behavior:'smooth'})">Apply →</button>
+                </div>
+
+                <div class="det-hero">
+                <div class="det-bg-emoji" id="d-bg"></div>
+                <div class="det-overlay"></div>
+                <div class="det-hc">
+                    <h1 class="det-name" id="d-name"></h1>
+                    <div class="det-loc" id="d-loc"></div>
+                </div>
+                </div>
+
+                <div class="det-cont">
+                <!-- Info Strip -->
+                <div class="det-info-strip" id="d-info"></div>
+
+                <!-- About -->
+                <h3 class="det-sec-h">About the Institution</h3>
+                <p class="det-txt" id="d-about"></p>
+
+                <!-- Programs -->
+                <h3 class="det-sec-h">Available Programs</h3>
+                <div class="crs-list" id="d-courses"></div>
+
+                <!-- Campus -->
+                <h3 class="det-sec-h">Campus Life & Facilities</h3>
+                <p class="det-txt" id="d-campus"></p>
+
+                <!-- Placements -->
+                <h3 class="det-sec-h">Placements & Career Outcomes</h3>
+                <p class="det-txt" id="d-place"></p>
+
+                <div style="height:80px"></div>
+                </div>
+
+                <!-- Sticky Apply Bar -->
+                <div class="apply-sticky">
+                <button class="apply-btn-main">Apply Now →</button>
+                <button class="wish-btn">♡ Save</button>
+                </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Admin Panel (only for allowed emails) -->
+            <div id="adminPanel" class="admin-panel" style="display: none;">
+                <div class="admin-panel-inner">
+                    <div class="admin-panel-header">
+                        <h2>Admin Panel</h2>
+                        <button type="button" class="btn-nav btn-logout" onclick="closeAdminPanel()">← Back to site</button>
+                    </div>
+                    <div class="admin-tabs">
+                        <button type="button" class="admin-tab active" data-tab="users" onclick="switchAdminTab('users')">Users</button>
+                        <button type="button" class="admin-tab" data-tab="colleges" onclick="switchAdminTab('colleges')">Colleges</button>
+                    </div>
+
+                    <div id="adminUsersSection" class="admin-section">
+                        <div id="adminPanelMessage" class="admin-message"></div>
+                        <div class="admin-table-wrap">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Phone</th>
+                                        <th>User Type</th>
+                                        <th>District</th>
+                                        <th>Place</th>
+                                        <th>Joined</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminTableBody"></tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div id="adminCollegesSection" class="admin-section" style="display: none;">
+                        <div class="admin-panel-header" style="margin-bottom: 1rem;">
+                            <span id="adminCollegesMessage" class="admin-message"></span>
+                            <button type="button" class="btn-nav btn-signup" onclick="seedDefaultColleges()">Seed default colleges</button>
+                        </div>
+                        <div class="admin-table-wrap">
+                            <table class="admin-table">
+                                <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Location</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="adminCollegesBody"></tbody>
+                            </table>
+                        </div>
+                        <div id="adminCollegeEditForm" class="admin-edit-form" style="display: none;">
+                            <h3>Edit College</h3>
+                            <input type="hidden" id="editCollegeId" />
+                            <label>Name</label>
+                            <input type="text" id="editName" />
+                            <label>Location</label>
+                            <input type="text" id="editLoc" />
+                            <label>Icon (emoji)</label>
+                            <input type="text" id="editIcon" placeholder="🏛️" />
+                            <label>Background (CSS gradient)</label>
+                            <input type="text" id="editBg" placeholder="linear-gradient(135deg,#EEF2FF,#C7D2FE)" />
+                            <label>About</label>
+                            <textarea id="editAbout" rows="3"></textarea>
+                            <label>Campus</label>
+                            <textarea id="editCampus" rows="2"></textarea>
+                            <label>Placements</label>
+                            <textarea id="editPlace" rows="2"></textarea>
+                            <label>Courses (JSON array: [{"n":"Course name","d":"Duration"}])</label>
+                            <textarea id="editCourses" rows="4"></textarea>
+                            <label>Info (JSON array: [{"l":"Label","v":"Value"}])</label>
+                            <textarea id="editInfo" rows="4"></textarea>
+                            <div class="admin-form-actions">
+                                <button type="button" class="btn-nav btn-signup" onclick="saveCollegeEdit()">Save</button>
+                                <button type="button" class="btn-nav btn-logout" onclick="cancelCollegeEdit()">Cancel</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <script type="module" src="script.js"></script>
     </body>
 </html>
