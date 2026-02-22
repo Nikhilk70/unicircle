@@ -87,6 +87,8 @@ function updateAuthUI(loggedIn) {
 }
 
 function logout() {
+  document.getElementById("mainPage").style.display = "none";
+  document.getElementById("login-div").style.display = "";
   signOut(auth).then(() => {
     clearUserFromStorage();
     updateAuthUI(false);
@@ -134,6 +136,7 @@ window.addEventListener("DOMContentLoaded", () => {
       const userSnap = await getDoc(userRef);
 
       if (!userSnap.exists()) {
+        alert("Please Sign Up")
         openSignUp();
       } else {
         saveUserToStorage(user);
@@ -262,12 +265,19 @@ function applyFilters() {
   renderCollegesSection();
 }
 
+
 function showAllCollegesView() {
   showAllColleges = true;
   const filterBar = document.getElementById("collegesFilterBar");
   const viewAllBtn = document.getElementById("viewAllCollegesBtn");
   if (filterBar) filterBar.style.display = "flex";
   if (viewAllBtn) viewAllBtn.style.display = "none";
+  document.getElementById("heroSection").style.display = "none";
+  document.getElementById("ticker-wrap").style.display = "none";
+  document.getElementById("aboutSection").style.display = "none";
+  document.getElementById("processSection").style.display = "none";
+  document.getElementById("collageDetailsText").style.display = "none";
+  document.getElementById("collageTopDetailsText").style.display = "none";
   renderCollegesSection();
   goto("colleges");
 }
@@ -573,22 +583,26 @@ function cancelCollegeEdit() {
 
 async function saveCollegeEdit() {
   const id = document.getElementById("editCollegeId").value;
-  if (!id) return;
+
   let courses = [];
   let info = [];
+
   try {
     courses = JSON.parse(document.getElementById("editCourses").value || "[]");
   } catch (_) {
     alert("Invalid Courses JSON.");
     return;
   }
+
   try {
     info = JSON.parse(document.getElementById("editInfo").value || "[]");
   } catch (_) {
     alert("Invalid Info JSON.");
     return;
   }
+
   const priorityVal = document.getElementById("editPriority").value.trim();
+
   const data = {
     priority: priorityVal === "" ? null : parseInt(priorityVal, 10),
     name: document.getElementById("editName").value.trim(),
@@ -602,17 +616,46 @@ async function saveCollegeEdit() {
     courses,
     info
   };
+
   try {
-    await updateDoc(doc(db, "colleges", id), data);
+    if (id) {
+      // UPDATE EXISTING
+      await updateDoc(doc(db, "colleges", id), data);
+    } else {
+      // ADD NEW
+      await addDoc(collection(db, "colleges"), data);
+    }
+
     document.getElementById("adminCollegeEditForm").style.display = "none";
+
     await loadAdminColleges();
     await loadColleges();
+
     const msgEl = document.getElementById("adminCollegesMessage");
-    if (msgEl) msgEl.textContent = "Saved. Main site updated.";
+    if (msgEl) msgEl.textContent = id ? "College updated." : "New college added.";
+
   } catch (err) {
     console.error(err);
     alert("Error saving: " + (err.message || err));
   }
+}
+
+function openAddCollege() {
+  document.getElementById("editCollegeId").value = "";
+
+  document.getElementById("editPriority").value = "";
+  document.getElementById("editName").value = "";
+  document.getElementById("editLoc").value = "";
+  document.getElementById("editImage").value = "";
+  document.getElementById("editIcon").value = "";
+  document.getElementById("editBg").value = "";
+  document.getElementById("editAbout").value = "";
+  document.getElementById("editCampus").value = "";
+  document.getElementById("editPlace").value = "";
+  document.getElementById("editCourses").value = "[]";
+  document.getElementById("editInfo").value = "[]";
+
+  document.getElementById("adminCollegeEditForm").style.display = "block";
 }
 
 window.openAdminPanel = openAdminPanel;
@@ -622,6 +665,7 @@ window.seedDefaultColleges = seedDefaultColleges;
 window.openCollegeEdit = openCollegeEdit;
 window.cancelCollegeEdit = cancelCollegeEdit;
 window.saveCollegeEdit = saveCollegeEdit;
+window.openAddCollege = openAddCollege;
 
 window.openLogin = openLogin;
 window.openSignUp = openSignUp;

@@ -9,15 +9,88 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="login-div" id="login-div" style="display: none;">
-            <div class="form-box">
+        <div class="login-div" id="login-div">
+            <div class="login-left">
+                <div class="brand">
+                <div class="brand-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round">
+                    <circle cx="12" cy="12" r="9"/>
+                    <circle cx="12" cy="12" r="3"/>
+                    <line x1="12" y1="3" x2="12" y2="6"/>
+                    <line x1="12" y1="18" x2="12" y2="21"/>
+                    <line x1="3" y1="12" x2="6" y2="12"/>
+                    <line x1="18" y1="12" x2="21" y2="12"/>
+                    </svg>
+                </div>
+                <span class="brand-name">Uni<span>Circle</span></span>
+                </div>
+
+                <div class="left-hero">
+                <div class="hero-badge"><span class="badge-dot"></span>Choice is Power</div>
+
+                <h1 class="hero-headline">
+                    UniCircle Makes<br/>
+                    <em>It Possible.</em>
+                </h1>
+
+                <p class="hero-body">
+                    Helping India discover and apply to the right college with verified, transparent, and bias-free data.
+                </p>
+
+                <div class="feature-list">
+                    <div class="feature-item">
+                    <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                    </div>
+                    Verified college data across India
+                    </div>
+                    <div class="feature-item">
+                    <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                    </div>
+                    Transparent, bias-free rankings
+                    </div>
+                    <div class="feature-item">
+                    <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                    </div>
+                    Personalised admission guidance
+                    </div>
+                    <div class="feature-item">
+                    <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                    </div>
+                    Pan-India coverage, 5000+ colleges
+                    </div>
+                </div>
+
+                <div class="stats-row">
+                    <div>
+                    <div class="stat-val">5000<span>+</span></div>
+                    <div class="stat-label">Colleges Listed</div>
+                    </div>
+                    <div>
+                    <div class="stat-val">2M<span>+</span></div>
+                    <div class="stat-label">Students Helped</div>
+                    </div>
+                    <div>
+                    <div class="stat-val">100<span>%</span></div>
+                    <div class="stat-label">Verified Data</div>
+                    </div>
+                </div>
+                </div>
+
+                <div class="left-footer">© 2025 UniCircle. All rights reserved.</div>
+            </div>
+            <div class="login-right">
+                <div class="form-box">
                 <div class="form-box-header">
-                    <button type="button" class="btn-home" onclick="openHome()">← Home</button>
+                    <button style="display: none;" type="button" class="btn-home" onclick="openHome()">← Home</button>
                     <h2>Login</h2>
                 </div>
                 <button class="btn-google" id="googleLogin">
-                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-                Continue with Google
+                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
+                    Continue with Google
                 </button>
                 <div class="divider">or</div>
                 <p class="continue-email-label">Continue with email</p>
@@ -27,12 +100,14 @@
                 <input type="password" placeholder="Enter your password" />
                 <button class="btn-submit">Login</button>
                 <div class="switch-text">Don't have an account? <a onclick="openSignUp()">Sign Up</a></div>
+                </div>
             </div>
-        </div>
+
+            </div>
         <div class="signup-div" id="signup-div" style="display: none;">
             <div class="form-box" style="max-width: 480px;">
                 <div class="form-box-header">
-                    <button type="button" class="btn-home" onclick="openHome()">← Home</button>
+                    <button type="button" style="display: none;" class="btn-home" onclick="openHome()">← Home</button>
                     <h2>Sign Up</h2>
                 </div>
                 <button class="btn-google" id="googleLoginSignup">
@@ -78,7 +153,7 @@
                 <div class="switch-text">Already have an account? <a onclick="openLogin()">Login</a></div>
             </div>
         </div>
-        <main id="mainPage">
+        <main id="mainPage" style="display: none;">
             <div id="mainContent">
             <div id="home-page">
             <div class="nav-wrap" id="nav">
@@ -88,8 +163,8 @@
                 <span class="logo-text">Uni<span>Circle</span></span>
                 </a>
                 <nav class="nav-desktop">
-                <a href="#" class="active">Home</a>
-                <a href="#">Colleges</a>
+                <a href="#" onclick="showHome()" class="active">Home</a>
+                <a href="#" onclick="showAllCollegesView()">Colleges</a>
                 <a href="#">Courses</a>
                 <a href="#">About</a>
                 <a href="#">Blogs</a>
@@ -111,9 +186,9 @@
                 </button>
             </div>
             <div class="mob-menu" id="mobMenu">
-                <a href="#" class="active">Home</a>
+                <a onclick="showHome()" class="active">Home</a>
                 <a href="#">Courses</a>
-                <a href="#">Colleges</a>
+                <a href="#" onclick="showAllCollegesView()">Colleges</a>
                 <a href="#">Find by City</a>
                 <a href="#">About</a>
                 <a href="#">Blogs</a>
@@ -127,12 +202,12 @@
                     <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); toggleMenu(); return false;">Admin Panel</a>
                     <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
                 </div>
-                <button class="mob-cta" onclick="goto('colleges')">Explore Colleges →</button>
+                <button style="display: none;" class="mob-cta" onclick="goto('colleges')">Explore Colleges →</button>
             </div>
             </div>
 
             <!-- HERO -->
-            <div class="hero" style="padding-top:5.5rem">
+            <div class="hero" id="heroSection" style="padding-top:5.5rem">
                 <!-- <video autoplay muted loop playsinline class="hero-video">
                     <source src="https://res.cloudinary.com/dxjdraawa/video/upload/v1753268236/videoplayback_kdxk91.mp4" type="video/mp4">
                 </video>
@@ -190,7 +265,7 @@
             </div>
 
             <!-- TICKER -->
-            <div class="ticker-wrap">
+            <div class="ticker-wrap" id="ticker-wrap">
             <p class="ticker-label">Trusted by students of India's top institutions</p>
             <div class="mq-wrap" style="margin-bottom:.7rem">
                 <div class="mq-track">
@@ -285,7 +360,7 @@
             </div>
 
             <!-- FEATURES -->
-            <section class="section">
+            <section class="section" id="aboutSection">
             <div class="sec-eyebrow rev">✦ Why UniCircle</div>
             <h2 class="sec-h rev">Everything to Choose<br>the <span class="pink-word">Right College</span></h2>
             <p class="sec-p rev rd1">We don't just list colleges — we arm you with the data, tools, and guidance to make the most important decision of your life.</p>
@@ -300,7 +375,7 @@
             </section>
 
             <!-- HOW IT WORKS -->
-            <section class="section" style="background:var(--pink-light);border-radius:28px;">
+            <section class="section" id="processSection" style="background:var(--pink-light);border-radius:28px;">
             <div class="sec-eyebrow rev">✦ Simple Process</div>
             <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
             <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — UniCircle has you every step of the way.</p>
@@ -326,9 +401,9 @@
 
             <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
             <section class="section" id="colleges">
-            <div class="sec-eyebrow rev">✦ Top Colleges</div>
+            <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
             <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
-            <p class="sec-p rev rd1">Verified data, real student reviews, transparent admission info — all in one place.</p>
+            <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
             <div id="collegesFilterBar" class="colleges-filter-bar" style="display: none;">
                 <label>Name</label>
                 <input type="text" id="filterCollegeName" placeholder="College name" oninput="applyFilters()" />
@@ -529,7 +604,10 @@
                     <div id="adminCollegesSection" class="admin-section" style="display: none;">
                         <div class="admin-panel-header" style="margin-bottom: 1rem;">
                             <span id="adminCollegesMessage" class="admin-message"></span>
-                            <button type="button" class="btn-nav btn-signup" onclick="seedDefaultColleges()">Seed default colleges</button>
+                            <div style="display:flex; gap:0.5rem;">
+                                <button type="button" class="btn-nav btn-login" onclick="openAddCollege()">+ Add New College</button>
+                                <button type="button" class="btn-nav btn-signup" onclick="seedDefaultColleges()">Seed default colleges</button>
+                            </div>
                         </div>
                         <div class="admin-table-wrap">
                             <table class="admin-table">
@@ -578,5 +656,6 @@
             </div>
         </main>
         <script type="module" src="script.js"></script>
+        <script src="script2.js"></script>
     </body>
 </html>
