@@ -167,9 +167,9 @@
                     <span>👨‍🎓</span><span>👩‍🎓</span><span>Students</span>
                 </div>
                 <div style="margin-top:.5rem;display:flex;flex-direction:column;gap:.35rem;">
-                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                    <span style="color:var(--pink);font-weight:700;">✓</span> 500+ Colleges
-                    </div>
+                    <button type="button" onclick="showAllCollegesView()" style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:inherit;">
+                    <span style="color:var(--pink);font-weight:700;">✓</span> <span id="collegesCountText">500+</span> Colleges
+                    </button>
                     <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
                     <span style="color:var(--pink);font-weight:700;">✓</span> Zero Bias Data
                     </div>
@@ -324,16 +324,24 @@
             </div>
             </section>
 
-            <!-- COLLEGES (loaded from Firebase) -->
+            <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
             <section class="section" id="colleges">
             <div class="sec-eyebrow rev">✦ Top Colleges</div>
             <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
             <p class="sec-p rev rd1">Verified data, real student reviews, transparent admission info — all in one place.</p>
+            <div id="collegesFilterBar" class="colleges-filter-bar" style="display: none;">
+                <label>Name</label>
+                <input type="text" id="filterCollegeName" placeholder="College name" oninput="applyFilters()" />
+                <label>Location</label>
+                <input type="text" id="filterLocation" placeholder="City / State" oninput="applyFilters()" />
+                <label>Course</label>
+                <input type="text" id="filterCourse" placeholder="Course name" oninput="applyFilters()" />
+            </div>
             <div class="col-grid" id="collegesGrid">
                 <p class="colleges-empty">Loading colleges…</p>
             </div>
-            <div style="text-align:center;margin-top:1.8rem">
-                <button class="btn-secondary" style="width:100%;max-width:320px">View All 500+ Colleges →</button>
+            <div style="text-align:center;margin-top:1.8rem" id="viewAllCollegesBtn">
+                <button type="button" class="btn-secondary" style="width:100%;max-width:320px" onclick="showAllCollegesView()">View All Colleges →</button>
             </div>
             </section>
 
@@ -445,6 +453,7 @@
                 </div>
 
                 <div class="det-hero">
+                <img id="d-college-image" class="det-hero-img" src="" alt="" style="display: none;" />
                 <div class="det-bg-emoji" id="d-bg"></div>
                 <div class="det-overlay"></div>
                 <div class="det-hc">
@@ -537,11 +546,15 @@
                         <div id="adminCollegeEditForm" class="admin-edit-form" style="display: none;">
                             <h3>Edit College</h3>
                             <input type="hidden" id="editCollegeId" />
+                            <label>Priority (lower = shown first on home; 1–9 for top 9)</label>
+                            <input type="number" id="editPriority" min="1" placeholder="1" />
                             <label>Name</label>
                             <input type="text" id="editName" />
                             <label>Location</label>
                             <input type="text" id="editLoc" />
-                            <label>Icon (emoji)</label>
+                            <label>Image URL (college photo)</label>
+                            <input type="url" id="editImage" placeholder="https://example.com/college-photo.jpg" />
+                            <label>Icon (emoji, fallback if no image)</label>
                             <input type="text" id="editIcon" placeholder="🏛️" />
                             <label>Background (CSS gradient)</label>
                             <input type="text" id="editBg" placeholder="linear-gradient(135deg,#EEF2FF,#C7D2FE)" />

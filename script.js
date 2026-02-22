@@ -204,29 +204,72 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 // Default colleges used only for seeding Firebase (Admin panel → Seed default colleges)
+// image: college photo URL (you can update links in Admin → Colleges → Edit)
 const DEFAULT_COLLEGES = [
-  { name: "IIT Delhi", loc: "New Delhi, Delhi", icon: "🏛️", bg: "linear-gradient(135deg,#EEF2FF,#C7D2FE)", about: "The Indian Institute of Technology Delhi is one of India's most prestigious engineering and research institutions, founded in 1961. Ranked consistently among the top 5 universities in India by QS and NIRF, IIT Delhi is a global hub for scientific research, innovation, and entrepreneurship. With 500+ faculty members and 8,000+ students across 13 departments, it boasts one of Asia's strongest alumni networks.", campus: "Spread over 325 acres in New Delhi, IIT Delhi offers world-class infrastructure including 14 hostels, state-of-the-art research labs, a 24/7 library with 4 lakh+ volumes, a sports complex with a swimming pool, and a vibrant cultural center hosting 80+ student clubs — from robotics and AI to music and theatre.", place: "The 2024 season saw the highest domestic CTC of ₹1.7 crore per annum. Top recruiters: Google, Microsoft, Goldman Sachs, McKinsey, Apple, Meta. Over 95% of eligible students receive offers, with average domestic CTC of ₹28 LPA.", courses: [{ n: "B.Tech Computer Science", d: "4 Yrs · ₹8.5L/yr" }, { n: "B.Tech Electrical Engg.", d: "4 Yrs · ₹8.5L/yr" }, { n: "M.Tech AI & ML", d: "2 Yrs · ₹9L/yr" }, { n: "MBA (DMS)", d: "2 Yrs · ₹10L/yr" }, { n: "Ph.D Research Programs", d: "3–5 Yrs · Funded" }, { n: "B.Des Industrial Design", d: "4 Yrs · ₹8.5L/yr" }], info: [{ l: "Established", v: "1961" }, { l: "NIRF Ranking", v: "#2 Engineering" }, { l: "Annual Fees", v: "₹8.5 Lakhs" }, { l: "Admission", v: "JEE Advanced" }, { l: "Avg. CTC", v: "₹28 LPA" }, { l: "Students", v: "8,200+" }] },
-  { name: "IIM Ahmedabad", loc: "Ahmedabad, Gujarat", icon: "💼", bg: "linear-gradient(135deg,#FDF4FF,#E9D5FF)", about: "IIM Ahmedabad is Asia's most prestigious business school, globally ranked among the top 50 MBA programs. Founded in 1961 with collaboration from Harvard Business School, IIM-A has shaped India's corporate leadership for six decades. Its unique case study methodology and rigorous culture have produced Fortune 500 CEOs and leading policy makers.", campus: "IIM-A's campus, designed by architect Louis Kahn, is an architectural masterpiece spanning 102 acres. It features iconic brick buildings, modern research centers, a 400-seat amphitheater, executive residences, and one of India's finest business libraries with 3 lakh+ resources.", place: "The class of 2024 achieved an average CTC of ₹34.1 LPA with the highest international offer crossing ₹1.4 crore per annum. Top recruiters: McKinsey, BCG, Bain, Goldman Sachs, J.P. Morgan. 100% placement achieved consistently every year.", courses: [{ n: "Post Graduate Programme (MBA)", d: "2 Yrs · ₹32L total" }, { n: "PGPX – Executive MBA", d: "1 Yr · ₹36L total" }, { n: "PhD in Management", d: "4–6 Yrs · Stipend" }, { n: "Food & Agribusiness Mgmt.", d: "1 Yr · ₹20L total" }, { n: "ePost Graduate Programme", d: "2 Yrs · Online" }, { n: "Mgmt. Development Prog.", d: "Short · Varies" }], info: [{ l: "Established", v: "1961" }, { l: "FT Global Ranking", v: "Top 50 World" }, { l: "Program Fees", v: "₹32 Lakhs" }, { l: "CAT Cutoff", v: "99.7+ %ile" }, { l: "Avg. CTC", v: "₹34.1 LPA" }, { l: "Alumni", v: "42,000+" }] },
-  { name: "BITS Pilani", loc: "Pilani, Rajasthan", icon: "🔬", bg: "linear-gradient(135deg,#EFF6FF,#BFDBFE)", about: "BITS Pilani is India's top-ranked private engineering university, founded in 1964. BITS pioneered India's practice school model, giving students real-world industry experience from Year 3. With campuses in Pilani, Goa, Hyderabad, and Dubai, it serves 15,000+ students globally and has one of India's highest alumni-to-unicorn-founder ratios.", campus: "The 300-acre Pilani campus features cutting-edge labs, an astronomical observatory, a wind energy facility, and one of India's largest student sports complexes. Famous for OASIS (cultural), APOGEE (technical), and BOSM (sports) — among India's largest college festivals.", place: "BITS achieves 95%+ placement rates. The 2024 season averaged ₹22 LPA CTC with highest offers exceeding ₹1.5 crore. Unique Practice School internships at Siemens, TCS, and BARC from third year give students a major career head-start.", courses: [{ n: "B.E. Computer Science", d: "4 Yrs · ₹5.8L/yr" }, { n: "B.E. Electronics & Elec.", d: "4 Yrs · ₹5.8L/yr" }, { n: "B.Pharm + MBA (Dual)", d: "5 Yrs · ₹6L/yr" }, { n: "M.Sc. Mathematics", d: "5 Yrs Integrated" }, { n: "M.Tech Software Systems", d: "2 Yrs · ₹6.5L/yr" }, { n: "PhD Research Programs", d: "3–5 Yrs" }], info: [{ l: "Established", v: "1964" }, { l: "NIRF Ranking", v: "#23 Overall" }, { l: "Annual Fees", v: "₹5.8 Lakhs" }, { l: "Admission", v: "BITSAT Exam" }, { l: "Avg. CTC", v: "₹22 LPA" }, { l: "Campuses", v: "4 (India + Dubai)" }] },
-  { name: "AIIMS New Delhi", loc: "New Delhi, Delhi", icon: "⚗️", bg: "linear-gradient(135deg,#ECFDF5,#A7F3D0)", about: "AIIMS New Delhi is India's most revered medical institution and Asia's leading teaching hospital. Established in 1956 by an Act of Parliament, AIIMS is consistently ranked #1 in India's NIRF Medical Rankings. It is where India's most complex surgeries are performed, breakthrough medical research originates, and the finest doctors are trained.", campus: "The campus covers 80+ acres in Ansari Nagar, New Delhi, housing one of Asia's largest hospitals with 2,500+ beds, 42 clinical departments, and over 100 research labs. Includes modern hostels, a sports complex, and a dedicated trauma center — the first of its kind in India.", place: "AIIMS graduates are sought by top hospitals worldwide. MD/MS specialists command ₹15–30 LPA starting salaries in private hospitals. Senior positions range ₹50 lakh–₹2 crore annually. Many lead pioneering research institutes or establish nationally recognized practices.", courses: [{ n: "MBBS", d: "5.5 Yrs · Govt. Funded" }, { n: "B.Sc Nursing", d: "4 Yrs · ₹1.2L/yr" }, { n: "MD/MS Specializations", d: "3 Yrs · PG" }, { n: "DM/M.Ch Super-Specialty", d: "3 Yrs · Fellowship" }, { n: "Ph.D Biomedical Sciences", d: "3–5 Yrs · Stipend" }, { n: "B.Sc Medical Technology", d: "4 Yrs · ₹1L/yr" }], info: [{ l: "Established", v: "1956" }, { l: "NIRF Ranking", v: "#1 Medical" }, { l: "MBBS Fees", v: "Govt. Funded" }, { l: "Admission", v: "NEET-UG Top 50" }, { l: "Hospital Beds", v: "2,500+" }, { l: "Annual Patients", v: "35 Lakh+" }] },
-  { name: "Ashoka University", loc: "Sonipat, Haryana", icon: "🌐", bg: "linear-gradient(135deg,#FFFBEB,#FDE68A)", about: "Ashoka University, founded in 2014, is India's fastest-growing liberal arts institution. Modeled on Ivy League education and South Asian intellectual tradition, Ashoka offers a unique multidisciplinary experience. With faculty from Oxford, Princeton, MIT, and Columbia, it brings world-class scholarship to India and offers need-blind admissions.", campus: "Ashoka's 25-acre fully residential campus in Sonipat features neo-modernist architecture, open-air amphitheaters, research centers, a maker's lab, recording studio, and a library with 1 lakh+ volumes. All students live on campus, creating a vibrant intellectual community.", place: "Graduates recruited by McKinsey, BCG, Goldman Sachs, Teach For India, and international grad schools (Oxford, Harvard). Average starting salary is ₹14 LPA, with many pursuing prestigious international programs.", courses: [{ n: "B.Sc Computer Science", d: "4 Yrs · ₹7.5L/yr" }, { n: "B.A. Economics", d: "4 Yrs · ₹7.5L/yr" }, { n: "B.A. PPE", d: "4 Yrs" }, { n: "Young India Fellowship", d: "1 Yr · PG" }, { n: "M.Sc Environmental Studies", d: "2 Yrs" }, { n: "Ph.D Programs", d: "4–5 Yrs · Stipend" }], info: [{ l: "Established", v: "2014" }, { l: "QS Asia Rank", v: "Top 200" }, { l: "Annual Fees", v: "₹7.5 Lakhs" }, { l: "Admission", v: "App + Interview" }, { l: "Int'l Faculty", v: "40%+" }, { l: "Need-Based Aid", v: "100% of need" }] },
-  { name: "NID Ahmedabad", loc: "Ahmedabad, Gujarat", icon: "🎨", bg: "linear-gradient(135deg,#FFF0F8,#FBCFE8)", about: "NID Ahmedabad is India's premier design institution and one of the world's top 10 design schools. Established in 1961 following recommendations by Charles and Ray Eames, NID has shaped Indian design for six decades. Graduates lead design at Apple, Google, IDEO, Tata, and major global design studios.", campus: "NID's 15-acre campus in Ahmedabad is a living design experiment. Specialized studios for textile, product, graphic, digital, film, and animation — alongside cutting-edge fabrication labs, 3D printing, and a design museum with 50,000+ artifacts.", place: "Placement rate consistently exceeds 90%. Top recruiters: Tata Design Studio, Mahindra Advanced Design, Amazon Lab126, Philips Design, IDEO. Freelance designers typically earn ₹20–50 LPA within five years of graduation.", courses: [{ n: "B.Des Product Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "B.Des Communication Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "B.Des Textile Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "M.Des Interaction Design", d: "2.5 Yrs · ₹3L/yr" }, { n: "M.Des Transportation Design", d: "2.5 Yrs · ₹3L/yr" }, { n: "Ph.D Design Research", d: "3–5 Yrs" }], info: [{ l: "Established", v: "1961" }, { l: "Global Rank", v: "Top 10 Design" }, { l: "Annual Fees", v: "₹2.5 Lakhs" }, { l: "Admission", v: "NID DAT + Studio" }, { l: "Acceptance Rate", v: "~3%" }, { l: "Industry Partners", v: "200+" }] }
+  { priority: 1, name: "IIT Delhi", loc: "New Delhi, Delhi", icon: "🏛️", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/IIT_Delhi_entrance_gate.jpg/800px-IIT_Delhi_entrance_gate.jpg", bg: "linear-gradient(135deg,#EEF2FF,#C7D2FE)", about: "The Indian Institute of Technology Delhi is one of India's most prestigious engineering and research institutions, founded in 1961. Ranked consistently among the top 5 universities in India by QS and NIRF, IIT Delhi is a global hub for scientific research, innovation, and entrepreneurship. With 500+ faculty members and 8,000+ students across 13 departments, it boasts one of Asia's strongest alumni networks.", campus: "Spread over 325 acres in New Delhi, IIT Delhi offers world-class infrastructure including 14 hostels, state-of-the-art research labs, a 24/7 library with 4 lakh+ volumes, a sports complex with a swimming pool, and a vibrant cultural center hosting 80+ student clubs — from robotics and AI to music and theatre.", place: "The 2024 season saw the highest domestic CTC of ₹1.7 crore per annum. Top recruiters: Google, Microsoft, Goldman Sachs, McKinsey, Apple, Meta. Over 95% of eligible students receive offers, with average domestic CTC of ₹28 LPA.", courses: [{ n: "B.Tech Computer Science", d: "4 Yrs · ₹8.5L/yr" }, { n: "B.Tech Electrical Engg.", d: "4 Yrs · ₹8.5L/yr" }, { n: "M.Tech AI & ML", d: "2 Yrs · ₹9L/yr" }, { n: "MBA (DMS)", d: "2 Yrs · ₹10L/yr" }, { n: "Ph.D Research Programs", d: "3–5 Yrs · Funded" }, { n: "B.Des Industrial Design", d: "4 Yrs · ₹8.5L/yr" }], info: [{ l: "Established", v: "1961" }, { l: "NIRF Ranking", v: "#2 Engineering" }, { l: "Annual Fees", v: "₹8.5 Lakhs" }, { l: "Admission", v: "JEE Advanced" }, { l: "Avg. CTC", v: "₹28 LPA" }, { l: "Students", v: "8,200+" }] },
+  { priority: 2, name: "IIM Ahmedabad", loc: "Ahmedabad, Gujarat", icon: "💼", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5e/IIM_Ahmedabad_New_Campus.jpg/800px-IIM_Ahmedabad_New_Campus.jpg", bg: "linear-gradient(135deg,#FDF4FF,#E9D5FF)", about: "IIM Ahmedabad is Asia's most prestigious business school, globally ranked among the top 50 MBA programs. Founded in 1961 with collaboration from Harvard Business School, IIM-A has shaped India's corporate leadership for six decades. Its unique case study methodology and rigorous culture have produced Fortune 500 CEOs and leading policy makers.", campus: "IIM-A's campus, designed by architect Louis Kahn, is an architectural masterpiece spanning 102 acres. It features iconic brick buildings, modern research centers, a 400-seat amphitheater, executive residences, and one of India's finest business libraries with 3 lakh+ resources.", place: "The class of 2024 achieved an average CTC of ₹34.1 LPA with the highest international offer crossing ₹1.4 crore per annum. Top recruiters: McKinsey, BCG, Bain, Goldman Sachs, J.P. Morgan. 100% placement achieved consistently every year.", courses: [{ n: "Post Graduate Programme (MBA)", d: "2 Yrs · ₹32L total" }, { n: "PGPX – Executive MBA", d: "1 Yr · ₹36L total" }, { n: "PhD in Management", d: "4–6 Yrs · Stipend" }, { n: "Food & Agribusiness Mgmt.", d: "1 Yr · ₹20L total" }, { n: "ePost Graduate Programme", d: "2 Yrs · Online" }, { n: "Mgmt. Development Prog.", d: "Short · Varies" }], info: [{ l: "Established", v: "1961" }, { l: "FT Global Ranking", v: "Top 50 World" }, { l: "Program Fees", v: "₹32 Lakhs" }, { l: "CAT Cutoff", v: "99.7+ %ile" }, { l: "Avg. CTC", v: "₹34.1 LPA" }, { l: "Alumni", v: "42,000+" }] },
+  { priority: 3, name: "BITS Pilani", loc: "Pilani, Rajasthan", icon: "🔬", image: "https://images.unsplash.com/photo-1562774053-701939374585?w=800", bg: "linear-gradient(135deg,#EFF6FF,#BFDBFE)", about: "BITS Pilani is India's top-ranked private engineering university, founded in 1964. BITS pioneered India's practice school model, giving students real-world industry experience from Year 3. With campuses in Pilani, Goa, Hyderabad, and Dubai, it serves 15,000+ students globally and has one of India's highest alumni-to-unicorn-founder ratios.", campus: "The 300-acre Pilani campus features cutting-edge labs, an astronomical observatory, a wind energy facility, and one of India's largest student sports complexes. Famous for OASIS (cultural), APOGEE (technical), and BOSM (sports) — among India's largest college festivals.", place: "BITS achieves 95%+ placement rates. The 2024 season averaged ₹22 LPA CTC with highest offers exceeding ₹1.5 crore. Unique Practice School internships at Siemens, TCS, and BARC from third year give students a major career head-start.", courses: [{ n: "B.E. Computer Science", d: "4 Yrs · ₹5.8L/yr" }, { n: "B.E. Electronics & Elec.", d: "4 Yrs · ₹5.8L/yr" }, { n: "B.Pharm + MBA (Dual)", d: "5 Yrs · ₹6L/yr" }, { n: "M.Sc. Mathematics", d: "5 Yrs Integrated" }, { n: "M.Tech Software Systems", d: "2 Yrs · ₹6.5L/yr" }, { n: "PhD Research Programs", d: "3–5 Yrs" }], info: [{ l: "Established", v: "1964" }, { l: "NIRF Ranking", v: "#23 Overall" }, { l: "Annual Fees", v: "₹5.8 Lakhs" }, { l: "Admission", v: "BITSAT Exam" }, { l: "Avg. CTC", v: "₹22 LPA" }, { l: "Campuses", v: "4 (India + Dubai)" }] },
+  { priority: 4, name: "AIIMS New Delhi", loc: "New Delhi, Delhi", icon: "⚗️", image: "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/AIIMS_New_Delhi_Overview.jpg/800px-AIIMS_New_Delhi_Overview.jpg", bg: "linear-gradient(135deg,#ECFDF5,#A7F3D0)", about: "AIIMS New Delhi is India's most revered medical institution and Asia's leading teaching hospital. Established in 1956 by an Act of Parliament, AIIMS is consistently ranked #1 in India's NIRF Medical Rankings. It is where India's most complex surgeries are performed, breakthrough medical research originates, and the finest doctors are trained.", campus: "The campus covers 80+ acres in Ansari Nagar, New Delhi, housing one of Asia's largest hospitals with 2,500+ beds, 42 clinical departments, and over 100 research labs. Includes modern hostels, a sports complex, and a dedicated trauma center — the first of its kind in India.", place: "AIIMS graduates are sought by top hospitals worldwide. MD/MS specialists command ₹15–30 LPA starting salaries in private hospitals. Senior positions range ₹50 lakh–₹2 crore annually. Many lead pioneering research institutes or establish nationally recognized practices.", courses: [{ n: "MBBS", d: "5.5 Yrs · Govt. Funded" }, { n: "B.Sc Nursing", d: "4 Yrs · ₹1.2L/yr" }, { n: "MD/MS Specializations", d: "3 Yrs · PG" }, { n: "DM/M.Ch Super-Specialty", d: "3 Yrs · Fellowship" }, { n: "Ph.D Biomedical Sciences", d: "3–5 Yrs · Stipend" }, { n: "B.Sc Medical Technology", d: "4 Yrs · ₹1L/yr" }], info: [{ l: "Established", v: "1956" }, { l: "NIRF Ranking", v: "#1 Medical" }, { l: "MBBS Fees", v: "Govt. Funded" }, { l: "Admission", v: "NEET-UG Top 50" }, { l: "Hospital Beds", v: "2,500+" }, { l: "Annual Patients", v: "35 Lakh+" }] },
+  { priority: 5, name: "Ashoka University", loc: "Sonipat, Haryana", icon: "🌐", image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800", bg: "linear-gradient(135deg,#FFFBEB,#FDE68A)", about: "Ashoka University, founded in 2014, is India's fastest-growing liberal arts institution. Modeled on Ivy League education and South Asian intellectual tradition, Ashoka offers a unique multidisciplinary experience. With faculty from Oxford, Princeton, MIT, and Columbia, it brings world-class scholarship to India and offers need-blind admissions.", campus: "Ashoka's 25-acre fully residential campus in Sonipat features neo-modernist architecture, open-air amphitheaters, research centers, a maker's lab, recording studio, and a library with 1 lakh+ volumes. All students live on campus, creating a vibrant intellectual community.", place: "Graduates recruited by McKinsey, BCG, Goldman Sachs, Teach For India, and international grad schools (Oxford, Harvard). Average starting salary is ₹14 LPA, with many pursuing prestigious international programs.", courses: [{ n: "B.Sc Computer Science", d: "4 Yrs · ₹7.5L/yr" }, { n: "B.A. Economics", d: "4 Yrs · ₹7.5L/yr" }, { n: "B.A. PPE", d: "4 Yrs" }, { n: "Young India Fellowship", d: "1 Yr · PG" }, { n: "M.Sc Environmental Studies", d: "2 Yrs" }, { n: "Ph.D Programs", d: "4–5 Yrs · Stipend" }], info: [{ l: "Established", v: "2014" }, { l: "QS Asia Rank", v: "Top 200" }, { l: "Annual Fees", v: "₹7.5 Lakhs" }, { l: "Admission", v: "App + Interview" }, { l: "Int'l Faculty", v: "40%+" }, { l: "Need-Based Aid", v: "100% of need" }] },
+  { priority: 6, name: "NID Ahmedabad", loc: "Ahmedabad, Gujarat", icon: "🎨", image: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=800", bg: "linear-gradient(135deg,#FFF0F8,#FBCFE8)", about: "NID Ahmedabad is India's premier design institution and one of the world's top 10 design schools. Established in 1961 following recommendations by Charles and Ray Eames, NID has shaped Indian design for six decades. Graduates lead design at Apple, Google, IDEO, Tata, and major global design studios.", campus: "NID's 15-acre campus in Ahmedabad is a living design experiment. Specialized studios for textile, product, graphic, digital, film, and animation — alongside cutting-edge fabrication labs, 3D printing, and a design museum with 50,000+ artifacts.", place: "Placement rate consistently exceeds 90%. Top recruiters: Tata Design Studio, Mahindra Advanced Design, Amazon Lab126, Philips Design, IDEO. Freelance designers typically earn ₹20–50 LPA within five years of graduation.", courses: [{ n: "B.Des Product Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "B.Des Communication Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "B.Des Textile Design", d: "4 Yrs · ₹2.5L/yr" }, { n: "M.Des Interaction Design", d: "2.5 Yrs · ₹3L/yr" }, { n: "M.Des Transportation Design", d: "2.5 Yrs · ₹3L/yr" }, { n: "Ph.D Design Research", d: "3–5 Yrs" }], info: [{ l: "Established", v: "1961" }, { l: "Global Rank", v: "Top 10 Design" }, { l: "Annual Fees", v: "₹2.5 Lakhs" }, { l: "Admission", v: "NID DAT + Studio" }, { l: "Acceptance Rate", v: "~3%" }, { l: "Industry Partners", v: "200+" }] }
 ];
 
 let collegesData = [];
+let currentDisplayList = [];
+let showAllColleges = false;
+
+function getSortedColleges() {
+  return [...collegesData].sort((a, b) => (a.priority ?? 999) - (b.priority ?? 999));
+}
+
+function getFilteredColleges() {
+  const sorted = getSortedColleges();
+  const nameQ = (document.getElementById("filterCollegeName")?.value || "").trim().toLowerCase();
+  const locQ = (document.getElementById("filterLocation")?.value || "").trim().toLowerCase();
+  const courseQ = (document.getElementById("filterCourse")?.value || "").trim().toLowerCase();
+  if (!nameQ && !locQ && !courseQ) return sorted;
+  return sorted.filter((c) => {
+    if (nameQ && !(c.name || "").toLowerCase().includes(nameQ)) return false;
+    if (locQ && !(c.loc || "").toLowerCase().includes(locQ)) return false;
+    if (courseQ) {
+      const courses = Array.isArray(c.courses) ? c.courses : [];
+      const match = courses.some((cr) => (cr.n || "").toLowerCase().includes(courseQ));
+      if (!match) return false;
+    }
+    return true;
+  });
+}
 
 async function loadColleges() {
   try {
     const snapshot = await getDocs(collection(db, "colleges"));
     collegesData = snapshot.docs.map((d) => ({ id: d.id, ...d.data() }));
+    const countEl = document.getElementById("collegesCountText");
+    if (countEl) countEl.textContent = collegesData.length > 0 ? collegesData.length + "+" : "0";
     renderCollegesSection();
     return collegesData;
   } catch (err) {
     console.error("Load colleges error:", err);
     collegesData = [];
+    currentDisplayList = [];
     renderCollegesSection();
     return [];
   }
+}
+
+function applyFilters() {
+  if (!showAllColleges) return;
+  renderCollegesSection();
+}
+
+function showAllCollegesView() {
+  showAllColleges = true;
+  const filterBar = document.getElementById("collegesFilterBar");
+  const viewAllBtn = document.getElementById("viewAllCollegesBtn");
+  if (filterBar) filterBar.style.display = "flex";
+  if (viewAllBtn) viewAllBtn.style.display = "none";
+  renderCollegesSection();
+  goto("colleges");
 }
 
 function renderCollegesSection() {
@@ -234,20 +277,30 @@ function renderCollegesSection() {
   if (!grid) return;
   if (!collegesData.length) {
     grid.innerHTML = '<p class="colleges-empty">No colleges yet. Add some from Admin panel or seed default.</p>';
+    currentDisplayList = [];
     return;
   }
-  const delays = ["", " rd1", " rd2"];
-  grid.innerHTML = collegesData.map((c, idx) => {
-    const rd = delays[idx % 3];
-    return `<div class="col-card rev${rd}" onclick="openCollege(${idx})">
-      <div class="col-img" style="background:${c.bg || '#f0f0f0'}"><span style="font-size:3rem">${c.icon || "🏫"}</span></div>
-      <div class="col-body">
-        <div class="col-name">${escapeHtml(c.name || "")}</div>
-        <div class="col-loc">📍 ${escapeHtml(c.loc || "")}</div>
-        <div class="col-foot"><button class="cbtn">View →</button></div>
-      </div>
-    </div>`;
-  }).join("");
+  const list = showAllColleges ? getFilteredColleges() : getSortedColleges().slice(0, 9);
+  currentDisplayList = list;
+  if (list.length === 0) {
+    grid.innerHTML = '<p class="colleges-empty">No colleges match the filters.</p>';
+  } else {
+    const delays = ["", " rd1", " rd2"];
+    grid.innerHTML = list.map((c, idx) => {
+      const rd = delays[idx % 3];
+      const imgHtml = c.image
+        ? `<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name || "")}" class="col-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span class="col-card-fallback" style="display:none;font-size:3rem">${c.icon || "🏫"}</span>`
+        : `<span style="font-size:3rem">${c.icon || "🏫"}</span>`;
+      return `<div class="col-card rev${rd}" onclick="openCollege(${idx})">
+        <div class="col-img" style="background:${c.bg || '#f0f0f0'}">${imgHtml}</div>
+        <div class="col-body">
+          <div class="col-name">${escapeHtml(c.name || "")}</div>
+          <div class="col-loc">📍 ${escapeHtml(c.loc || "")}</div>
+          <div class="col-foot"><button class="cbtn">View →</button></div>
+        </div>
+      </div>`;
+    }).join("");
+  }
   document.querySelectorAll(".col-grid .rev").forEach((el) => {
     if (typeof rObs !== "undefined" && rObs) rObs.observe(el);
   });
@@ -255,12 +308,23 @@ function renderCollegesSection() {
 
 // ===== SPA ROUTING =====
 function openCollege(idx) {
-  const c = collegesData[idx];
+  const c = currentDisplayList[idx];
   if (!c) return;
   document.getElementById('d-nav-name').textContent = c.name;
-  document.getElementById('d-bg').style.background = c.bg || '#f0f0f0';
-  document.getElementById('d-bg').textContent = c.icon || '🏫';
-  document.getElementById('d-bg').style.fontSize = '6rem';
+  const dBg = document.getElementById('d-bg');
+  const dImg = document.getElementById('d-college-image');
+  dBg.style.background = c.bg || '#f0f0f0';
+  if (c.image && dImg) {
+    dImg.src = c.image;
+    dImg.alt = c.name || '';
+    dImg.style.display = '';
+    dBg.style.display = 'none';
+  } else {
+    if (dImg) dImg.style.display = 'none';
+    dBg.style.display = '';
+    dBg.textContent = c.icon || '🏫';
+    dBg.style.fontSize = '6rem';
+  }
   document.getElementById('d-name').textContent = c.name;
   document.getElementById('d-loc').textContent = '📍 ' + (c.loc || '');
   document.getElementById('d-about').textContent = c.about || '';
@@ -489,8 +553,10 @@ function openCollegeEdit(id) {
   const c = adminCollegesList.find((x) => x.id === id);
   if (!c) return;
   document.getElementById("editCollegeId").value = id;
+  document.getElementById("editPriority").value = c.priority != null ? c.priority : "";
   document.getElementById("editName").value = c.name || "";
   document.getElementById("editLoc").value = c.loc || "";
+  document.getElementById("editImage").value = c.image || "";
   document.getElementById("editIcon").value = c.icon || "";
   document.getElementById("editBg").value = c.bg || "";
   document.getElementById("editAbout").value = c.about || "";
@@ -522,9 +588,12 @@ async function saveCollegeEdit() {
     alert("Invalid Info JSON.");
     return;
   }
+  const priorityVal = document.getElementById("editPriority").value.trim();
   const data = {
+    priority: priorityVal === "" ? null : parseInt(priorityVal, 10),
     name: document.getElementById("editName").value.trim(),
     loc: document.getElementById("editLoc").value.trim(),
+    image: document.getElementById("editImage").value.trim(),
     icon: document.getElementById("editIcon").value.trim(),
     bg: document.getElementById("editBg").value.trim(),
     about: document.getElementById("editAbout").value.trim(),
@@ -558,6 +627,8 @@ window.openLogin = openLogin;
 window.openSignUp = openSignUp;
 window.openHome = openHome;
 window.openCollege = openCollege;
+window.showAllCollegesView = showAllCollegesView;
+window.applyFilters = applyFilters;
 window.closeDetail = closeDetail;
 window.goto = goto;
 window.toggleMenu = toggleMenu;
