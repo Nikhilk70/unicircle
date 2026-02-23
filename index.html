@@ -10,100 +10,163 @@
     </head>
     <body>
         <div class="login-div" id="login-div">
-            <div class="login-left">
+
+            <!-- Background slideshow (Indian college campuses) -->
+            <div class="bg-wrap">
+                <div class="bg-slide s1 active"></div>
+                <div class="bg-slide s2"></div>
+                <div class="bg-slide s3"></div>
+                <div class="bg-slide s4"></div>
+                <div class="bg-slide s5"></div>
+            </div>
+            <!-- Light overlay keeps it bright and white-themed -->
+            <div class="bg-overlay"></div>
+
+            <!-- Slide indicator dots -->
+            <div class="slide-dots" id="slideDots">
+                <div class="dot active" onclick="goSlide(0)"></div>
+                <div class="dot" onclick="goSlide(1)"></div>
+                <div class="dot" onclick="goSlide(2)"></div>
+                <div class="dot" onclick="goSlide(3)"></div>
+                <div class="dot" onclick="goSlide(4)"></div>
+            </div>
+
+            <!-- Main content -->
+            <div class="login-content">
+
+                <!-- ═══ LEFT INFO BOX ═══ -->
+                <div class="login-left">
+
                 <div class="brand">
-                <div class="brand-icon">
+                    <div class="brand-icon">
                     <svg viewBox="0 0 24 24" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round">
-                    <circle cx="12" cy="12" r="9"/>
-                    <circle cx="12" cy="12" r="3"/>
-                    <line x1="12" y1="3" x2="12" y2="6"/>
-                    <line x1="12" y1="18" x2="12" y2="21"/>
-                    <line x1="3" y1="12" x2="6" y2="12"/>
-                    <line x1="18" y1="12" x2="21" y2="12"/>
+                        <circle cx="12" cy="12" r="9"/>
+                        <circle cx="12" cy="12" r="3"/>
+                        <line x1="12" y1="3" x2="12" y2="6"/>
+                        <line x1="12" y1="18" x2="12" y2="21"/>
+                        <line x1="3" y1="12" x2="6" y2="12"/>
+                        <line x1="18" y1="12" x2="21" y2="12"/>
                     </svg>
-                </div>
-                <span class="brand-name">Uni<span>Circle</span></span>
+                    </div>
+                    <span class="brand-name">Uni<span>Circle</span></span>
                 </div>
 
                 <div class="left-hero">
-                <div class="hero-badge"><span class="badge-dot"></span>Choice is Power</div>
 
-                <h1 class="hero-headline">
+                    <div class="hero-badge"><span class="badge-dot"></span>Choice is Power</div>
+
+                    <h1 class="hero-headline">
                     UniCircle Makes<br/>
                     <em>It Possible.</em>
-                </h1>
+                    </h1>
 
-                <p class="hero-body">
-                    Helping India discover and apply to the right college with verified, transparent, and bias-free data.
-                </p>
+                    <p class="hero-body">
+                    Helping India discover and apply to the right college with verified, transparent, and bias-free data — from IITs to state colleges, all in one place.
+                    </p>
 
-                <div class="feature-list">
+                    <div class="feature-list">
                     <div class="feature-item">
-                    <div class="feature-check">
-                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
-                    </div>
-                    Verified college data across India
-                    </div>
-                    <div class="feature-item">
-                    <div class="feature-check">
-                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
-                    </div>
-                    Transparent, bias-free rankings
+                        <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                        </div>
+                        Verified college data across India
                     </div>
                     <div class="feature-item">
-                    <div class="feature-check">
-                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
-                    </div>
-                    Personalised admission guidance
+                        <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                        </div>
+                        Transparent, bias-free rankings
                     </div>
                     <div class="feature-item">
-                    <div class="feature-check">
-                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                        <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                        </div>
+                        Personalised admission guidance
                     </div>
-                    Pan-India coverage, 5000+ colleges
+                    <div class="feature-item">
+                        <div class="feature-check">
+                        <svg viewBox="0 0 12 12" fill="none" stroke="#e91e8c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2 6 5 9 10 3"/></svg>
+                        </div>
+                        Pan-India coverage, 5000+ colleges
+                    </div>
+                    </div>
+
+                    <div class="stats-row">
+                    <div class="stat-item">
+                        <div class="stat-val">5000<span>+</span></div>
+                        <div class="stat-label">Colleges Listed</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">2M<span>+</span></div>
+                        <div class="stat-label">Students Helped</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-val">100<span>%</span></div>
+                        <div class="stat-label">Verified Data</div>
                     </div>
                 </div>
 
-                <div class="stats-row">
-                    <div>
-                    <div class="stat-val">5000<span>+</span></div>
-                    <div class="stat-label">Colleges Listed</div>
-                    </div>
-                    <div>
-                    <div class="stat-val">2M<span>+</span></div>
-                    <div class="stat-label">Students Helped</div>
-                    </div>
-                    <div>
-                    <div class="stat-val">100<span>%</span></div>
-                    <div class="stat-label">Verified Data</div>
-                    </div>
-                </div>
-                </div>
-
-                <div class="left-footer">© 2025 UniCircle. All rights reserved.</div>
             </div>
+
+            <div class="left-footer">© 2025 UniCircle. All rights reserved.</div>
+            </div>
+
+            <!-- ═══ RIGHT LOGIN BOX ═══ -->
             <div class="login-right">
-                <div class="form-box">
+            <div class="form-box">
+
                 <div class="form-box-header">
-                    <button style="display: none;" type="button" class="btn-home" onclick="openHome()">← Home</button>
-                    <h2>Login</h2>
+                <button style="display:none" type="button" class="btn-home" onclick="openHome()">← Home</button>
+                <h2>Welcome <span>Back</span></h2>
                 </div>
+                <p class="login-tagline">Sign in to continue your college journey</p>
+
                 <button class="btn-google" id="googleLogin">
-                    <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
-                    Continue with Google
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google"/>
+                Continue with Google
                 </button>
+
                 <div class="divider">or</div>
-                <p class="continue-email-label">Continue with email</p>
-                <label>Email</label>
-                <input type="email" placeholder="Enter your email" />
-                <label>Password</label>
-                <input type="password" placeholder="Enter your password" />
-                <button class="btn-submit">Login</button>
-                <div class="switch-text">Don't have an account? <a onclick="openSignUp()">Sign Up</a></div>
+                <p class="section-label">Sign in with email</p>
+
+                <div class="input-group">
+                <label>Email Address</label>
+                <input type="email" placeholder="you@example.com"/>
                 </div>
-            </div>
+
+                <div class="input-group">
+                <label>Password</label>
+                <input type="password" placeholder="••••••••"/>
+                </div>
+
+                <div class="forgot-row"><a>Forgot password?</a></div>
+
+                <button class="btn-submit">Login to UniCircle →</button>
+
+                <div class="switch-text">
+                Don't have an account? <a onclick="openSignUp()">Create one free</a>
+                </div>
+
+                <div class="trust-row">
+                <div class="trust-item">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="#ccc" stroke-width="1.6"><path d="M8 1.5L2 4v4c0 3.3 2.6 6 6 6.5 3.4-.5 6-3.2 6-6.5V4L8 1.5z"/></svg>
+                    SSL Secured
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="#ccc" stroke-width="1.6"><circle cx="8" cy="8" r="6.5"/><path d="M5.5 8l2 2 3-3"/></svg>
+                    Verified Data
+                </div>
+                <div class="trust-item">
+                    <svg viewBox="0 0 16 16" fill="none" stroke="#ccc" stroke-width="1.6"><rect x="2" y="4.5" width="12" height="9" rx="1.5"/><path d="M5 4.5V3.5a3 3 0 016 0v1"/></svg>
+                    Privacy Safe
+                </div>
+                </div>
 
             </div>
+            </div>
+
+        </div>
+        </div>
         <div class="signup-div" id="signup-div" style="display: none;">
             <div class="form-box" style="max-width: 480px;">
                 <div class="form-box-header">
