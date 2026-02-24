@@ -188,7 +188,7 @@
             <div id="home-page">
             <div class="nav-wrap" id="nav">
             <div class="nav-inner">
-                <a class="logo" href="#">
+                <a class="brand" href="#">
                 <div class="logo-box">U</div>
                 <span class="logo-text">Uni<span>Circle</span></span>
                 </a>
@@ -199,24 +199,23 @@
                 <a href="#">About</a>
                 <a href="#">Blogs</a>
                 <a href="#">Contact</a>
-                </nav>
-                    <span style="color:var(--pink);font-weight:700;">✓</span> 500+ Colleges
+                <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
+                    <div class="nav-cta-row">
+                    <div class="nav-auth-buttons" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <button type="button" class="btn-nav btn-login" onclick="openLogin()">Log In</button>
+                        <button type="button" class="btn-nav btn-signup" onclick="openSignUp()">Sign Up</button>
                     </div>
-                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                <div class="nav-cta-row">
-                <div class="nav-auth-buttons" style="display: flex; align-items: center; gap: 0.5rem;">
-                    <button type="button" class="btn-nav btn-login" onclick="openLogin()">Log In</button>
-                    <button type="button" class="btn-nav btn-signup" onclick="openSignUp()">Sign Up</button>
+                    <div class="nav-logout-wrap" style="display: none; align-items: center; gap: 0.5rem;">
+                        <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
+                        <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); return false;">Admin</a>
+                        <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
+                    </div>
+                    </div>
+                    <button class="hamburger" id="ham" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                    </button>
                 </div>
-                <div class="nav-logout-wrap" style="display: none; align-items: center; gap: 0.5rem;">
-                    <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
-                    <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); return false;">Admin</a>
-                    <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
-                </div>
-                </div>
-                <button class="hamburger" id="ham" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-                </button>
+                </nav>
             </div>
             <div class="mob-menu" id="mobMenu">
                 <a onclick="showHome()" class="active">Home</a>
