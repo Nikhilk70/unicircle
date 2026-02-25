@@ -273,6 +273,7 @@ function showAllCollegesView() {
   if (filterBar) filterBar.style.display = "flex";
   if (viewAllBtn) viewAllBtn.style.display = "none";
   document.getElementById("heroSection").style.display = "none";
+  document.getElementById("colleges").style.display = "";
   document.getElementById("ticker-wrap").style.display = "none";
   document.getElementById("aboutSection").style.display = "none";
   document.getElementById("processSection").style.display = "none";

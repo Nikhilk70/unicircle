@@ -6,6 +6,7 @@ function showHome() {
   document.getElementById("processSection").style.display = "";
   document.getElementById("collageDetailsText").style.display = "";
   document.getElementById("collageTopDetailsText").style.display = "";
+  document.getElementById("colleges").style.display = "none";
 }
 
 const slides = document.querySelectorAll('.bg-slide');

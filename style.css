@@ -237,9 +237,14 @@ cursor:pointer;background:#fff;
 .hamburger.open span:nth-child(1){transform:translateY(5.5px) rotate(45deg);}
 .hamburger.open span:nth-child(2){opacity:0;}
 .hamburger.open span:nth-child(3){transform:translateY(-5.5px) rotate(-45deg);}
-.nav-desktop{display:none;align-items:center;gap:2rem;}
+/* .nav-desktop{display:none;align-items:center;gap:2rem;} */
 .nav-desktop a{font-size:.88rem;font-weight:600;color:var(--gray);text-decoration:none;transition:color .2s;}
-.nav-desktop .active{color:var(--pink);}
+.nav-desktop .active {
+    background: #292929;
+    color: var(--pink);
+    padding: 5px 10px;
+    border-radius: 7px;
+}
 .nav-desktop a:hover{color:var(--pink);}
 .nav-cta-row{display:none;align-items:center;gap:.8rem;}
 .app-btn{

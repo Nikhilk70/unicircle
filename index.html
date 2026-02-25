@@ -122,16 +122,13 @@
             <div class="nav-wrap" id="nav">
             <div class="nav-inner">
                 <a class="brand" href="#">
-                <div class="logo-box">U</div>
+                <div class="logo-box" style="display: none;">U</div>
                 <span class="logo-text">Uni<span>Circle</span></span>
                 </a>
                 <nav class="nav-desktop">
                 <a href="#" onclick="showHome()" class="active">Home</a>
                 <a href="#" onclick="showAllCollegesView()">Colleges</a>
                 <a href="#">Courses</a>
-                <a href="#">About</a>
-                <a href="#">Blogs</a>
-                <a href="#">Contact</a>
                 <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
                     <div class="nav-cta-row">
                     <div class="nav-auth-buttons" style="display: flex; align-items: center; gap: 0.5rem;">
@@ -146,7 +143,7 @@
                     </div>
                 </div>
             </nav>
-            <button class="hamburger" id="ham" onclick="toggleMenu()">
+            <button style="display: none;" class="hamburger" id="ham" onclick="toggleMenu()">
                 <span></span><span></span><span></span>
             </button>
             </div>
@@ -242,6 +239,26 @@
                 </div>
             </div>
             </div>
+            <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
+            <section class="section" id="colleges" style="display: none;">
+            <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
+            <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
+            <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
+            <div id="collegesFilterBar" class="colleges-filter-bar" style="display: none; flex-direction: column;">
+                <label>Name</label>
+                <input type="text" id="filterCollegeName" placeholder="College name" oninput="applyFilters()" />
+                <label>Location</label>
+                <input type="text" id="filterLocation" placeholder="City / State" oninput="applyFilters()" />
+                <label>Course</label>
+                <input type="text" id="filterCourse" placeholder="Course name" oninput="applyFilters()" />
+            </div>
+            <div class="col-grid" id="collegesGrid">
+                <p class="colleges-empty">Loading colleges…</p>
+            </div>
+            <div style="text-align:center;margin-top:1.8rem" id="viewAllCollegesBtn">
+                <button type="button" class="btn-secondary" style="width:100%;max-width:320px" onclick="showAllCollegesView()">View All Colleges →</button>
+            </div>
+            </section>
             <!-- HOW IT WORKS -->
             <section class="section" id="processSection" style="background:var(--pink-light);border-radius:28px;">
             <div class="sec-eyebrow rev">✦ Simple Process</div>
@@ -266,28 +283,6 @@
                 </div>
             </div>
             </section>
-
-            <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
-            <section class="section" id="colleges">
-            <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
-            <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
-            <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
-            <div id="collegesFilterBar" class="colleges-filter-bar" style="display: none;">
-                <label>Name</label>
-                <input type="text" id="filterCollegeName" placeholder="College name" oninput="applyFilters()" />
-                <label>Location</label>
-                <input type="text" id="filterLocation" placeholder="City / State" oninput="applyFilters()" />
-                <label>Course</label>
-                <input type="text" id="filterCourse" placeholder="Course name" oninput="applyFilters()" />
-            </div>
-            <div class="col-grid" id="collegesGrid">
-                <p class="colleges-empty">Loading colleges…</p>
-            </div>
-            <div style="text-align:center;margin-top:1.8rem" id="viewAllCollegesBtn">
-                <button type="button" class="btn-secondary" style="width:100%;max-width:320px" onclick="showAllCollegesView()">View All Colleges →</button>
-            </div>
-            </section>
-
             <!-- TESTIMONIALS -->
             <section class="section" style="padding-left:0;padding-right:0;max-width:100%">
             <div style="padding:0 1.25rem">
