@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kerala Vidya Portal · pure JS (logo only, no box)</title>
+    <style>
+        /* Minimal reset – the rest will be injected via JS */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: linear-gradient(145deg, #fdeff2 0%, #fff5f7 100%); font-family: 'Segoe UI', Roboto, sans-serif; }
+    </style>
+</head>
+<body>
+    <script>
+        (function() {
+            // -------------------- CREATE ALL ELEMENTS PURELY WITH JS --------------------
+            // main card
+            const card = document.createElement('div');
+            card.className = 'login-card';
+
+            // header container
+            const header = document.createElement('div');
+            header.className = 'header';
+
+            // tagline
+            const tagline = document.createElement('div');
+            tagline.className = 'tagline';
+            tagline.textContent = 'ADMISSIONS MADE SIMPLE, HONEST, AND UNITED';
+
+            // stacked logo (no surrounding box)
+            const logoStack = document.createElement('div');
+            logoStack.className = 'logo-stacked';
+
+            const line1 = document.createElement('span');
+            line1.className = 'logo-line1';
+            line1.textContent = 'KERALA';
+
+            const line2 = document.createElement('span');
+            line2.className = 'logo-line2';
+            line2.textContent = 'VIDYA PORTAL';
+
+            logoStack.appendChild(line1);
+            logoStack.appendChild(line2);
+
+            header.appendChild(tagline);
+            header.appendChild(logoStack);
+            card.appendChild(header);
+
+            // form
+            const form = document.createElement('form');
+            form.id = 'loginForm';
+            form.onsubmit = (e) => { e.preventDefault(); demoLogin(); };
+
+            // email group
+            const emailGroup = document.createElement('div');
+            emailGroup.className = 'input-group';
+            const emailLabel = document.createElement('label');
+            emailLabel.setAttribute('for', 'email');
+            emailLabel.textContent = 'Email Address';
+            const emailInput = document.createElement('input');
+            emailInput.type = 'email';
+            emailInput.id = 'email';
+            emailInput.placeholder = 'Enter your email';
+            emailInput.value = 'student@example.com';
+            emailInput.required = true;
+            emailGroup.appendChild(emailLabel);
+            emailGroup.appendChild(emailInput);
+
+            // password group
+            const passGroup = document.createElement('div');
+            passGroup.className = 'input-group';
+            const passLabel = document.createElement('label');
+            passLabel.setAttribute('for', 'password');
+            passLabel.textContent = 'Password';
+            const passInput = document.createElement('input');
+            passInput.type = 'password';
+            passInput.id = 'password';
+            passInput.placeholder = 'Enter your password';
+            passInput.value = '••••••••';
+            passInput.required = true;
+            passGroup.appendChild(passLabel);
+            passGroup.appendChild(passInput);
+
+            // remember & forget row
+            const rowFlex = document.createElement('div');
+            rowFlex.className = 'row-flex';
+
+            const rememberLabel = document.createElement('label');
+            rememberLabel.className = 'remember';
+            const check = document.createElement('input');
+            check.type = 'checkbox';
+            check.checked = true;
+            rememberLabel.appendChild(check);
+            rememberLabel.appendChild(document.createTextNode(' Remember me'));
+
+            const forgetLink = document.createElement('a');
+            forgetLink.href = '#';
+            forgetLink.className = 'forget-link';
+            forgetLink.textContent = 'Forget password?';
+            forgetLink.onclick = (e) => { e.preventDefault(); demoAlert('password recovery'); };
+
+            rowFlex.appendChild(rememberLabel);
+            rowFlex.appendChild(forgetLink);
+
+            // sign in button
+            const signInBtn = document.createElement('button');
+            signInBtn.type = 'submit';
+            signInBtn.className = 'signin-btn';
+            signInBtn.textContent = 'Sign In';
+
+            form.appendChild(emailGroup);
+            form.appendChild(passGroup);
+            form.appendChild(rowFlex);
+            form.appendChild(signInBtn);
+            card.appendChild(form);
+
+            // OR divider
+            const divider = document.createElement('div');
+            divider.className = 'divider';
+            const lineLeft = document.createElement('span');
+            lineLeft.className = 'divider-line';
+            const orText = document.createElement('span');
+            orText.textContent = 'OR';
+            const lineRight = document.createElement('span');
+            lineRight.className = 'divider-line';
+            divider.appendChild(lineLeft);
+            divider.appendChild(orText);
+            divider.appendChild(lineRight);
+            card.appendChild(divider);
+
+            // google button
+            const googleBtn = document.createElement('button');
+            googleBtn.className = 'google-btn';
+            googleBtn.id = 'googleBtn';
+            const googleIcon = document.createElement('span');
+            googleIcon.className = 'google-icon';
+            googleIcon.textContent = 'G';
+            const googleText = document.createElement('span');
+            googleText.textContent = 'Continue with Google';
+            googleBtn.appendChild(googleIcon);
+            googleBtn.appendChild(googleText);
+            googleBtn.onclick = (e) => { e.preventDefault(); demoAlert('Google Sign-In'); };
+            card.appendChild(googleBtn);
+
+            // sign up text
+            const signupDiv = document.createElement('div');
+            signupDiv.className = 'signup-text';
+            signupDiv.appendChild(document.createTextNode("Don't have an account? "));
+            const signupLink = document.createElement('a');
+            signupLink.href = '#';
+            signupLink.className = 'signup-link';
+            signupLink.textContent = 'Sign up';
+            signupLink.onclick = (e) => { e.preventDefault(); demoAlert('sign up'); };
+            signupDiv.appendChild(signupLink);
+            card.appendChild(signupDiv);
+
+            // demo note
+            const demoNote = document.createElement('div');
+            demoNote.className = 'demo-note';
+            demoNote.textContent = '✨ stacked logo only (box removed) · pure JS';
+            card.appendChild(demoNote);
+
+            // -------------------- INJECT STYLES --------------------
+            const style = document.createElement('style');
+            style.textContent = `
+                .login-card {
+                    background-color: #ffffff;
+                    width: 100%;
+                    max-width: 460px;
+                    padding: 2.5rem 2rem 2.8rem;
+                    border-radius: 0;
+                    border: 2px solid #ffb6c1;
+                    box-shadow: 0 20px 30px -10px rgba(220,100,120,0.2);
+                    transition: transform 0.2s ease;
+                }
+                .login-card:hover { transform: scale(1.01); }
+                .header { text-align: center; margin-bottom: 2rem; }
+                .tagline {
+                    font-size: 0.9rem; letter-spacing: 1.2px; word-spacing: 2px;
+                    color: #a04c5e; font-weight: 500; text-transform: uppercase;
+                    margin-bottom: 1.5rem; background: #fff0f3; display: inline-block;
+                    padding: 0.4rem 1.2rem; border-radius: 40px; border: 1px dashed #f9a8b8;
+                }
+                /* logo stacked – no box, just plain text */
+                .logo-stacked {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    line-height: 1.1;
+                    margin: 0 auto 0.8rem;  /* spacing similar to before but without box */
+                }
+                .logo-line1 {
+                    font-size: 2.6rem; font-weight: 900; color: #c2185b;
+                    letter-spacing: 2px; text-shadow: 0 2px 4px #ffd9e2;
+                }
+                .logo-line2 {
+                    font-size: 1.9rem; font-weight: 800; color: #c2185b;
+                    letter-spacing: 1.5px; text-shadow: 0 2px 4px #ffd9e2;
+                    margin-top: -0.2rem;
+                }
+                .input-group { margin-bottom: 1.5rem; text-align: left; }
+                label {
+                    display: block; font-weight: 600; font-size: 0.9rem;
+                    color: #831d48; margin-bottom: 0.3rem; letter-spacing: 0.3px;
+                }
+                input {
+                    width: 100%; padding: 0.9rem 1.2rem; border: 2px solid #ffe2e9;
+                    border-radius: 40px; font-size: 1rem; background-color: #fffafb;
+                    transition: all 0.2s; outline: none; color: #2d1c21;
+                }
+                input:focus {
+                    border-color: #ff99b4; background-color: white;
+                    box-shadow: 0 0 0 4px #ffe0eb;
+                }
+                input::placeholder { color: #bb8f9a; font-weight: 300; font-size: 0.95rem; }
+                .row-flex {
+                    display: flex; align-items: center; justify-content: space-between;
+                    margin: 0.5rem 0 2rem 0; font-size: 0.95rem;
+                }
+                .remember {
+                    display: flex; align-items: center; gap: 0.5rem;
+                    color: #a14560; font-weight: 500; cursor: pointer;
+                }
+                .remember input[type="checkbox"] {
+                    width: 18px; height: 18px; accent-color: #ff80a5;
+                    border-radius: 4px; cursor: pointer;
+                }
+                .forget-link {
+                    color: #c63b6e; text-decoration: none; font-weight: 600;
+                    border-bottom: 2px solid #ffb3c6; padding-bottom: 2px;
+                    transition: border-color 0.2s;
+                }
+                .forget-link:hover { border-bottom-color: #c63b6e; }
+                .signin-btn {
+                    background: #ff80a5; color: white; border: none; width: 100%;
+                    padding: 1rem; font-size: 1.3rem; font-weight: 700;
+                    letter-spacing: 1px; border-radius: 60px; cursor: pointer;
+                    box-shadow: 0 8px 0 #b45f7a, 0 10px 20px -5px #fbaac3;
+                    transition: all 0.1s ease; margin-bottom: 2rem;
+                    border: 2px solid #ffb8cf;
+                }
+                .signin-btn:active { transform: translateY(6px); box-shadow: 0 2px 0 #b45f7a, 0 10px 20px -5px #fbaac3; }
+                .divider {
+                    display: flex; align-items: center; gap: 0.8rem;
+                    color: #b86b82; font-weight: 600; margin-bottom: 1.8rem;
+                }
+                .divider-line {
+                    flex: 1; height: 2px;
+                    background: linear-gradient(90deg, transparent, #ffb6c1, #ffb6c1, transparent);
+                }
+                .google-btn {
+                    display: flex; align-items: center; justify-content: center; gap: 0.7rem;
+                    width: 100%; background: white; border: 2px solid #ffc1cf;
+                    padding: 0.9rem; border-radius: 60px; font-weight: 600;
+                    font-size: 1.1rem; color: #a13e5c; cursor: pointer;
+                    transition: background 0.2s, border-color 0.2s; margin-bottom: 2rem;
+                    box-shadow: 0 4px 8px #ffe2ec;
+                }
+                .google-btn:hover { background: #fff2f6; border-color: #ff99b4; }
+                .google-icon {
+                    background: #ff80a5; color: white; border-radius: 50%;
+                    width: 28px; height: 28px; display: inline-flex; align-items: center;
+                    justify-content: center; font-weight: 800; font-size: 1.1rem;
+                }
+                .signup-text {
+                    text-align: center; font-size: 1rem; font-weight: 500; color: #95485f;
+                }
+                .signup-link {
+                    color: #c2185b; font-weight: 700; text-decoration: none;
+                    border-bottom: 3px solid #ffb0c3; margin-left: 0.5rem; padding-bottom: 2px;
+                }
+                .signup-link:hover { border-bottom-color: #c2185b; }
+                .demo-note { margin-top: 2rem; font-size: 0.75rem; color: #cc99aa; text-align: center; }
+            `;
+
+            // attach everything
+            document.head.appendChild(style);
+            document.body.appendChild(card);
+
+            // -------------------- HELPER FUNCTIONS --------------------
+            window.demoAlert = function(action) {
+                alert(`✨ ${action} — this is a demo clone.\n(Logo now stands alone, no box.)`);
+            };
+
+            window.demoLogin = function() {
+                const email = document.getElementById('email').value.trim();
+                const pwd = document.getElementById('password').value;
+                if (!email || !pwd) {
+                    alert('⚠️ Please fill in both fields (demo).');
+                } else {
+                    alert(`✅ Welcome back, ${email.split('@')[0] || 'student'}!\n(Login simulation – no actual authentication.)`);
+                }
+            };
+        })();
+    </script>
+</body>
+</html>
