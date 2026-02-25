@@ -144,11 +144,11 @@
                         <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
                     </div>
                     </div>
-                    <button class="hamburger" id="ham" onclick="toggleMenu()">
-                    <span></span><span></span><span></span>
-                    </button>
                 </div>
-                </nav>
+            </nav>
+            <button class="hamburger" id="ham" onclick="toggleMenu()">
+                <span></span><span></span><span></span>
+            </button>
             </div>
             <div class="mob-menu" id="mobMenu">
                 <a onclick="showHome()" class="active">Home</a>
@@ -187,39 +187,6 @@
                         <button class="btn-main" onclick="goto('colleges')">Explore Colleges →</button>
                     </div>
                 </div>
-
-            <!-- Hero Cards -->
-            <div class="hero-cards">
-                <!-- Student visual card -->
-                <div class="hcard" style="background:linear-gradient(135deg,#FFF5FB,#FFF0F8);border:1.5px solid rgba(233,30,140,0.12);border-radius:20px;padding:0;overflow:hidden;min-height:240px;display:flex;flex-direction:column;justify-content:flex-end;">
-                <div style="flex:1;display:flex;align-items:center;justify-content:center;font-size:5rem;padding:1.5rem;">🎓</div>
-                <div style="padding:1.2rem 1.4rem;background:rgba(255,255,255,0.9);backdrop-filter:blur(8px);border-top:1px solid rgba(233,30,140,0.1);">
-                    <div style="font-size:.78rem;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;">India's Smartest</div>
-                    <div style="font-size:1.15rem;font-weight:800;color:var(--dark);">College Discovery</div>
-                    <div style="font-size:.82rem;color:var(--gray);margin-top:.3rem;">Verified · Transparent · Bias-free</div>
-                </div>
-                </div>
-                <!-- Stats card -->
-                <div style="background:linear-gradient(135deg,#FFF0F8,#fff);border-radius:20px;padding:1.5rem;border:1.5px solid rgba(233,30,140,0.12);display:flex;flex-direction:column;justify-content:center;gap:.5rem;">
-                <div style="font-size:.85rem;font-weight:600;color:var(--gray);">Loved by</div>
-                <div style="font-size:3rem;font-weight:800;color:var(--orange);line-height:1;">120k+</div>
-                <div class="loved-pill">
-                    <span>👨‍🎓</span><span>👩‍🎓</span><span>Students</span>
-                </div>
-                <div style="margin-top:.5rem;display:flex;flex-direction:column;gap:.35rem;">
-                    <button type="button" onclick="showAllCollegesView()" style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);background:none;border:none;cursor:pointer;text-align:left;padding:0;font-family:inherit;">
-                    <span style="color:var(--pink);font-weight:700;">✓</span> <span id="collegesCountText">500+</span> Colleges
-                    </button>
-                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                    <span style="color:var(--pink);font-weight:700;">✓</span> Zero Bias Data
-                    </div>
-                    <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                    <span style="color:var(--pink);font-weight:700;">✓</span> Free to Apply
-                    </div>
-                </div>
-                </div>
-            </div>
-
             <!-- Stats Row -->
             <div class="stats-row">
                 <div class="stat-card"><span class="stat-num" data-target="500" data-suf="+">0</span><div class="stat-label">Partner Colleges</div></div>
@@ -230,8 +197,8 @@
             </div>
 
             <!-- TICKER -->
-            <div class="ticker-wrap" id="ticker-wrap">
             <p class="ticker-label">Trusted by students of India's top institutions</p>
+            <div class="ticker-wrap" id="ticker-wrap">
             <div class="mq-wrap" style="margin-bottom:.7rem">
                 <div class="mq-track">
                 <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
@@ -274,71 +241,7 @@
                 <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
                 </div>
             </div>
-            <div class="mq-wrap">
-                <div class="mq-track mq-track2">
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/YQrYctxJFaGjLS8NOeftyD8Q.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/T5iVqwwP6OylhdDLsFFH8HnoMO8.png?scale-down-to=512&width=1295&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/3Au1svtrNNnWgQeuMgwcORTCGQA.png?scale-down-to=512&width=1235&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/QES14S9olVfTDMtnb4f4VEfrZPQ.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/l1858ceAQZQwkf6PnFOGjmms.png?scale-down-to=512&width=1105&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/tqGkUEWkdq1W4mXxnB9w9SX1K8.png?scale-down-to=512&width=630&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/wYneHdPplT37ZFuUliy79UbmEs.png?scale-down-to=512&width=1395&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/NaDudHCquvrc6Z5o4slW7QZWNRo.png?scale-down-to=512&width=972&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LLnY1d1BrsTYvCgg3s69QeIw5A.png?scale-down-to=512&width=1230&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/LaHEWMZN9KQ9Ii0shiGwkjDBGiU.png?scale-down-to=512&width=600&height=600" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://framerusercontent.com/images/7GONKPqzIXEu4NvPR2lZxA7s.png?scale-down-to=512&width=684&height=600" alt=""></div></div>
-                </div>
             </div>
-            </div>
-
-            <!-- FEATURES -->
-            <section class="section" id="aboutSection">
-            <div class="sec-eyebrow rev">✦ Why UniCircle</div>
-            <h2 class="sec-h rev">Everything to Choose<br>the <span class="pink-word">Right College</span></h2>
-            <p class="sec-p rev rd1">We don't just list colleges — we arm you with the data, tools, and guidance to make the most important decision of your life.</p>
-            <div class="feat-grid">
-                <div class="feat-card rev"><div class="feat-ico" style="background:#FFF0F8">🔍</div><div class="feat-body"><h3>Verified College Data</h3><p>Every stat — placements, fees, faculty — verified by our on-ground research team. No paid rankings, no fake reviews.</p></div></div>
-                <div class="feat-card rev rd1"><div class="feat-ico" style="background:#EFF6FF">🤖</div><div class="feat-body"><h3>AI-Powered Matching</h3><p>Our smart algorithm analyzes your profile, interests, budget, and scores to find colleges where you'll truly thrive.</p></div></div>
-                <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFF7ED">📋</div><div class="feat-body"><h3>One-Click Applications</h3><p>Apply to multiple colleges with a single profile. Track your applications in real-time from one beautiful dashboard.</p></div></div>
-                <div class="feat-card rev"><div class="feat-ico" style="background:#ECFDF5">📊</div><div class="feat-body"><h3>Transparent Rankings</h3><p>Our methodology is 100% open and bias-free. See exactly how colleges score on 40+ real parameters.</p></div></div>
-                <div class="feat-card rev rd1"><div class="feat-ico" style="background:#FDF4FF">💬</div><div class="feat-body"><h3>Peer Reviews</h3><p>Real opinions from verified students only. Our system prevents fake ratings through student authentication.</p></div></div>
-                <div class="feat-card rev rd2"><div class="feat-ico" style="background:#FFFBEB">🎯</div><div class="feat-body"><h3>Scholarship Discovery</h3><p>Unlock hidden scholarships you qualify for. Auto-matched against 10,000+ scholarship databases instantly.</p></div></div>
-            </div>
-            </section>
-
             <!-- HOW IT WORKS -->
             <section class="section" id="processSection" style="background:var(--pink-light);border-radius:28px;">
             <div class="sec-eyebrow rev">✦ Simple Process</div>
