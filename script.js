@@ -276,7 +276,7 @@ function showAllCollegesView() {
   document.getElementById("colleges").style.display = "";
   document.getElementById("ticker-wrap").style.display = "none";
   document.getElementById("aboutSection").style.display = "none";
-  document.getElementById("processSection").style.display = "none";
+  document.getElementById("processSection1").style.display = "none";
   document.getElementById("collageDetailsText").style.display = "none";
   document.getElementById("collageTopDetailsText").style.display = "none";
   renderCollegesSection();

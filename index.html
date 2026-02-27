@@ -17,8 +17,7 @@
                 </div>
 
                 <div class="logo-stacked">
-                    <span class="logo-line1">KERALA</span>
-                    <span class="logo-line2">VIDYA PORTAL</span>
+                    <img src="portal-logo.jpeg" alt="">
                 </div>
             </div>
 
@@ -60,11 +59,6 @@
                 Don't have an account?
                 <a href="#" onclick="openSignUp()" class="signup-link">Sign up</a>
             </div>
-
-            <div class="demo-note">
-                ✨ stacked logo only (box removed)
-            </div>
-
         </div>
 
         <div class="signup-div" id="signup-div" style="display: none;">
@@ -244,13 +238,21 @@
             <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
             <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
             <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
-            <div id="collegesFilterBar" class="colleges-filter-bar" style="display: none; flex-direction: column;">
-                <label>Name</label>
-                <input type="text" id="filterCollegeName" placeholder="College name" oninput="applyFilters()" />
-                <label>Location</label>
-                <input type="text" id="filterLocation" placeholder="City / State" oninput="applyFilters()" />
-                <label>Course</label>
-                <input type="text" id="filterCourse" placeholder="Course name" oninput="applyFilters()" />
+            <div id="collegesFilterBar" class="colleges-filter-bar">
+                <div class="filter-group">
+                    <label for="filterCollegeName">College Name</label>
+                    <input type="text" id="filterCollegeName" placeholder="Enter college name" oninput="applyFilters()" />
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterLocation">Location</label>
+                    <input type="text" id="filterLocation" placeholder="City or State" oninput="applyFilters()" />
+                </div>
+
+                <div class="filter-group">
+                    <label for="filterCourse">Course</label>
+                    <input type="text" id="filterCourse" placeholder="Enter course name" oninput="applyFilters()" />
+                </div>
             </div>
             <div class="col-grid" id="collegesGrid">
                 <p class="colleges-empty">Loading colleges…</p>
@@ -260,7 +262,7 @@
             </div>
             </section>
             <!-- HOW IT WORKS -->
-            <section class="section" id="processSection" style="background:var(--pink-light);border-radius:28px;">
+            <section class="section" id="processSection1" style="background:var(--pink-light);border-radius:28px;">
             <div class="sec-eyebrow rev">✦ Simple Process</div>
             <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
             <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — UniCircle has you every step of the way.</p>
@@ -306,8 +308,8 @@
             </section>
 
             <!-- CTA -->
-            <div class="cta-section">
-            <div class="cta-inner hidden">
+            <div class="cta-section hidden">
+            <div class="cta-inner">
                 <div class="sec-eyebrow rev" style="margin:0 auto .9rem">✦ Start Your Journey</div>
                 <h2 class="cta-h rev">Ready to Find Your<br><span class="pink-word">Dream College?</span></h2>
                 <p class="cta-p rev rd1">Join 1.2 lakh+ students who discovered and applied through UniCircle — completely free, always.</p>
@@ -394,10 +396,10 @@
                 <img id="d-college-image" class="det-hero-img" src="" alt="" style="display: none;" />
                 <div class="det-bg-emoji" id="d-bg"></div>
                 <div class="det-overlay"></div>
+                </div>
                 <div class="det-hc">
                     <h1 class="det-name" id="d-name"></h1>
                     <div class="det-loc" id="d-loc"></div>
-                </div>
                 </div>
 
                 <div class="det-cont">
