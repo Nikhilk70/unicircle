@@ -24,3 +24,20 @@ function goSlide(n){
 }
 function nextSlide(){ goSlide((cur + 1) % slides.length) }
 timer = setInterval(nextSlide, 4800);
+
+function toggleFilter(){
+    const filter = document.getElementById("collegesFilterBar");
+    const overlay = document.getElementById("filterOverlay");
+
+    filter.classList.toggle("active");
+    overlay.style.display = "block";
+}
+
+function closeFilter(){
+    const filter = document.getElementById("collegesFilterBar");
+    const overlay = document.getElementById("filterOverlay");
+
+    filter.classList.remove("active");
+    overlay.style.display = "none";
+}
+

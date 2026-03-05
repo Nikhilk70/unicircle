@@ -143,6 +143,7 @@ window.addEventListener("DOMContentLoaded", () => {
         updateAuthUI(true);
         alert("Welcome back " + user.displayName);
         openHome();
+        populateCollegeDropdown();
       }
 
     } catch (err) {
@@ -268,9 +269,9 @@ function applyFilters() {
 
 function showAllCollegesView() {
   showAllColleges = true;
-  const filterBar = document.getElementById("collegesFilterBar");
+  // const filterBar = document.getElementById("collegesFilterBar");
   const viewAllBtn = document.getElementById("viewAllCollegesBtn");
-  if (filterBar) filterBar.style.display = "flex";
+  // if (filterBar) filterBar.style.display = "flex";
   if (viewAllBtn) viewAllBtn.style.display = "none";
   document.getElementById("heroSection").style.display = "none";
   document.getElementById("colleges").style.display = "";
@@ -286,35 +287,30 @@ function showAllCollegesView() {
 function renderCollegesSection() {
   const grid = document.getElementById("collegesGrid");
   if (!grid) return;
+
   if (!collegesData.length) {
-    grid.innerHTML = '<p class="colleges-empty">No colleges yet. Add some from Admin panel or seed default.</p>';
-    currentDisplayList = [];
+    grid.innerHTML = '<p class="colleges-empty">No colleges yet.</p>';
     return;
   }
-  const list = showAllColleges ? getFilteredColleges() : getSortedColleges().slice(0, 9);
+  const list = getFilteredColleges();
   currentDisplayList = list;
-  if (list.length === 0) {
-    grid.innerHTML = '<p class="colleges-empty">No colleges match the filters.</p>';
-  } else {
-    const delays = ["", " rd1", " rd2"];
-    grid.innerHTML = list.map((c, idx) => {
-      const rd = delays[idx % 3];
-      const imgHtml = c.image
-        ? `<img src="${escapeHtml(c.image)}" alt="${escapeHtml(c.name || "")}" class="col-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='block';" /><span class="col-card-fallback" style="display:none;font-size:3rem">${c.icon || "🏫"}</span>`
-        : `<span style="font-size:3rem">${c.icon || "🏫"}</span>`;
-      return `<div class="col-card rev${rd}" onclick="openCollege(${idx})">
-        <div class="col-img" style="background:${c.bg || '#f0f0f0'}">${imgHtml}</div>
-        <div class="col-body">
-          <div class="col-name">${escapeHtml(c.name || "")}</div>
-          <div class="col-loc">📍 ${escapeHtml(c.loc || "")}</div>
-          <div class="col-foot"><button class="cbtn">View →</button></div>
-        </div>
-      </div>`;
-    }).join("");
+  if (!list.length) {
+    grid.innerHTML = '<p class="colleges-empty">No matching colleges found.</p>';
+    return;
   }
-  document.querySelectorAll(".col-grid .rev").forEach((el) => {
-    if (typeof rObs !== "undefined" && rObs) rObs.observe(el);
-  });
+  grid.innerHTML = list.map((c, idx) => {
+    return `
+      <div class="col-card" onclick="openCollege(${idx})">
+        <div class="col-img">
+          <img src="${c.image}" />
+        </div>
+        <div class="col-body">
+          <div class="col-name">${c.name}</div>
+          <div class="col-loc">${c.loc}</div>
+        </div>
+      </div>
+    `;
+  }).join("");
 }
 
 // ===== SPA ROUTING =====
@@ -677,3 +673,30 @@ window.applyFilters = applyFilters;
 window.closeDetail = closeDetail;
 window.goto = goto;
 window.toggleMenu = toggleMenu;
+
+function populateCollegeDropdown() {
+  const dropdown = document.getElementById("collegeSuggestions");
+
+  dropdown.innerHTML = collegesData.map((c, idx) => {
+    return `
+      <div class="suggestion-item" onclick="selectCollege(${idx})">
+        <div class="suggestion-name">${c.name}</div>
+        <div class="suggestion-loc">${c.loc || ""}</div>
+      </div>
+    `;
+  }).join("");
+}
+
+function showCollegeDropdown(){
+  const dropdown = document.getElementById("collegeSuggestions");
+  dropdown.style.display = "block";
+}
+
+function selectCollege(idx){
+  const college = collegesData[idx];
+
+  document.getElementById("filterCollegeName").value = college.name;
+  document.getElementById("collegeSuggestions").style.display = "none";
+
+  applyFilters();
+}

@@ -7,9 +7,10 @@
         <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
         <script src="https://cdn.tailwindcss.com"></script>
         <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     </head>
     <body>
-        <div class="login-card" id="login-div">
+        <div class="login-card" id="login-div" style="display: none;">
 
             <div class="header">
                 <div class="tagline">
@@ -110,7 +111,7 @@
                 <div class="switch-text">Already have an account? <a onclick="openLogin()">Login</a></div>
             </div>
         </div>
-        <main id="mainPage" style="display: none;">
+        <main id="mainPage">
             <div id="mainContent">
             <div id="home-page">
             <div class="nav-wrap" id="nav">
@@ -238,10 +239,30 @@
             <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
             <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
             <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
+            <div class="filterBtn">
+                <button onclick="toggleFilter()">Filter <i class="fa-solid fa-filter"></i></button>
+            </div>
+
+            <!-- Overlay -->
+            <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
+
+            <!-- Filter Panel -->
             <div id="collegesFilterBar" class="colleges-filter-bar">
+
+                <div class="filter-header">
+                    <h3>Filters</h3>
+                    <button onclick="closeFilter()">✕</button>
+                </div>
                 <div class="filter-group">
                     <label for="filterCollegeName">College Name</label>
-                    <input type="text" id="filterCollegeName" placeholder="Enter college name" oninput="applyFilters()" />
+                    <input 
+                        type="text" 
+                        id="filterCollegeName" 
+                        list="collegeList"
+                        placeholder="Select college"
+                        oninput="applyFilters()"
+                    />
+                    <datalist id="collegeList"></datalist>
                 </div>
 
                 <div class="filter-group">
@@ -253,6 +274,7 @@
                     <label for="filterCourse">Course</label>
                     <input type="text" id="filterCourse" placeholder="Enter course name" oninput="applyFilters()" />
                 </div>
+
             </div>
             <div class="col-grid" id="collegesGrid">
                 <p class="colleges-empty">Loading colleges…</p>
