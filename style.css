@@ -78,21 +78,6 @@ overflow-x:hidden;
     }
 }
 
-/* mobile sidebar */
-@media(max-width:767px){
-    .colleges-filter-bar{
-        top:0;
-        right:-100%;
-        width:80%;
-        height:100%;
-        border-radius:0;
-    }
-
-    .colleges-filter-bar.active{
-        right:0;
-    }
-}
-
 .college-dropdown{
     position:absolute;
     background:#fff;
@@ -183,16 +168,22 @@ img, video {
 .login-card {
     background-color: #ffffff;
     width: 100%;
-    max-width: 460px;
     padding: 2.5rem 2rem 2.8rem;
     border: 2px solid #ffb6c1;
-    box-shadow: 0 20px 30px -10px rgba(220,100,120,0.2);
+    box-shadow: 0 20px 30px -10px rgba(220, 100, 120, 0.2);
     height: 100dvh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .login-card:hover {
     transform: scale(1.01);
     transition: 0.2s ease;
+}
+
+.loginRight {
+    width: 40%;
 }
 
 .header {
@@ -298,14 +289,14 @@ input:focus {
     font-weight: 700;
     border-radius: 60px;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 15px;
 }
 
 .divider {
     display: flex;
     align-items: center;
     gap: 0.8rem;
-    margin-bottom: 1.8rem;
+    margin-bottom: 15px;
     font-weight: 600;
 }
 
@@ -327,7 +318,7 @@ input:focus {
     border-radius: 60px;
     font-weight: 600;
     cursor: pointer;
-    margin-bottom: 2rem;
+    margin-bottom: 15px;
 }
 
 .google-icon {
@@ -379,10 +370,13 @@ border-bottom:1px solid rgba(0,0,0,0.06);
 transition:box-shadow .3s;
 }
 .nav-wrap.scrolled{box-shadow:0 2px 24px rgba(233,30,140,0.08);}
-.nav-inner{
-max-width:1200px;margin:0 auto;
-display:flex;align-items:center;justify-content:space-between;
-padding:.85rem 1.25rem;
+.nav-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 5px;
 }
 .brand{display:flex;align-items:center;gap:.5rem;text-decoration:none;}
 .logo-box{
@@ -392,7 +386,14 @@ display:flex;align-items:center;justify-content:center;
 font-size:.9rem;color:#fff;font-weight:900;
 box-shadow:0 4px 12px rgba(233,30,140,0.35);
 }
-.logo-text{font-weight:800;font-size:1.2rem;color:var(--dark);letter-spacing:-.02em;}
+
+.logo-text {
+    font-weight: 800;
+    font-size: 15px;
+    color: var(--dark);
+    letter-spacing: -.02em;
+}
+
 .logo-text span{color:var(--pink);}
 .hamburger{
 width:36px;height:36px;border-radius:9px;
@@ -1137,3 +1138,25 @@ font-family:'Plus Jakarta Sans',sans-serif;transition:all .25s;
 .admin-edit-form h3 { margin: 0 0 1rem 0; font-size: 1.1rem; }
 .admin-form-actions { display: flex; gap: 0.5rem; margin-top: 1rem; }
 .colleges-empty { text-align: center; color: #64748b; padding: 2rem; }
+
+/* mobile sidebar */
+@media(max-width:767px){
+    .colleges-filter-bar{
+        top:0;
+        right:-100%;
+        width:80%;
+        height:100%;
+        border-radius:0;
+    }
+
+    .colleges-filter-bar.active{
+        right:0;
+    }
+    .login-card {
+        display: block;
+        flex-direction: row;
+    }
+    .loginRight {
+        width: 100%;
+    }
+}

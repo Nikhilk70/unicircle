@@ -1,12 +1,21 @@
 
 function showHome() {
-  document.getElementById("heroSection").style.display = "";
-  document.getElementById("ticker-wrap").style.display = "";
-  document.getElementById("aboutSection").style.display = "";
-  document.getElementById("processSection1").style.display = "";
-  document.getElementById("collageDetailsText").style.display = "";
-  document.getElementById("collageTopDetailsText").style.display = "";
-  document.getElementById("colleges").style.display = "none";
+  const ids = [
+    "heroSection",
+    "ticker-wrap",
+    "aboutSection",
+    "processSection1",
+    "collageDetailsText",
+    "collageTopDetailsText"
+  ];
+
+  ids.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.style.display = "";
+  });
+
+  const colleges = document.getElementById("colleges");
+  if (colleges) colleges.style.display = "none";
 }
 
 const slides = document.querySelectorAll('.bg-slide');
@@ -14,6 +23,7 @@ const dots   = document.querySelectorAll('.dot');
 let cur = 0, timer;
 
 function goSlide(n){
+  if (!slides.length || !dots.length) return;  // guard added
   slides[cur].classList.remove('active');
   dots[cur].classList.remove('active');
   cur = n;
@@ -23,6 +33,9 @@ function goSlide(n){
   timer = setInterval(nextSlide, 4800);
 }
 function nextSlide(){ goSlide((cur + 1) % slides.length) }
+
+// Only start the timer if slides actually exist
+if (slides.length) timer = setInterval(nextSlide, 4800);
 timer = setInterval(nextSlide, 4800);
 
 function toggleFilter(){

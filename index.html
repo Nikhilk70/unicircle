@@ -22,43 +22,45 @@
                 </div>
             </div>
 
-            <form id="loginForm">
-                <div class="input-group">
-                    <label>Email Address</label>
-                    <input type="email" placeholder="Enter your email" required>
+            <div class="loginRight">
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label>Email Address</label>
+                        <input type="email" placeholder="Enter your email" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label>Password</label>
+                        <input type="password" placeholder="Enter your password" required>
+                    </div>
+
+                    <div class="row-flex">
+                        <label class="remember">
+                            <input type="checkbox" checked>
+                            Remember me
+                        </label>
+
+                        <a href="#" class="forget-link">Forget password?</a>
+                    </div>
+
+                    <button type="submit" class="signin-btn">Sign In</button>
+                </form>
+
+                <div class="divider">
+                    <span class="divider-line"></span>
+                    <span>OR</span>
+                    <span class="divider-line"></span>
                 </div>
 
-                <div class="input-group">
-                    <label>Password</label>
-                    <input type="password" placeholder="Enter your password" required>
+                <button class="google-btn" id="googleLogin">
+                    <span class="google-icon">G</span>
+                    <span>Continue with Google</span>
+                </button>
+
+                <div class="signup-text">
+                    Don't have an account?
+                    <a href="#" onclick="openSignUp()" class="signup-link">Sign up</a>
                 </div>
-
-                <div class="row-flex">
-                    <label class="remember">
-                        <input type="checkbox" checked>
-                        Remember me
-                    </label>
-
-                    <a href="#" class="forget-link">Forget password?</a>
-                </div>
-
-                <button type="submit" class="signin-btn">Sign In</button>
-            </form>
-
-            <div class="divider">
-                <span class="divider-line"></span>
-                <span>OR</span>
-                <span class="divider-line"></span>
-            </div>
-
-            <button class="google-btn" id="googleLogin">
-                <span class="google-icon">G</span>
-                <span>Continue with Google</span>
-            </button>
-
-            <div class="signup-text">
-                Don't have an account?
-                <a href="#" onclick="openSignUp()" class="signup-link">Sign up</a>
             </div>
         </div>
 
@@ -118,7 +120,7 @@
             <div class="nav-inner">
                 <a class="brand" href="#">
                 <div class="logo-box" style="display: none;">U</div>
-                <span class="logo-text">Uni<span>Circle</span></span>
+                <span class="logo-text">Kerala<span>Vidyaportal</span></span>
                 </a>
                 <nav class="nav-desktop">
                 <a href="#" onclick="showHome()" class="active">Home</a>

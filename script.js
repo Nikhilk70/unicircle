@@ -676,7 +676,7 @@ window.toggleMenu = toggleMenu;
 
 function populateCollegeDropdown() {
   const dropdown = document.getElementById("collegeSuggestions");
-
+  if (!dropdown) return;
   dropdown.innerHTML = collegesData.map((c, idx) => {
     return `
       <div class="suggestion-item" onclick="selectCollege(${idx})">
@@ -694,9 +694,10 @@ function showCollegeDropdown(){
 
 function selectCollege(idx){
   const college = collegesData[idx];
-
   document.getElementById("filterCollegeName").value = college.name;
-  document.getElementById("collegeSuggestions").style.display = "none";
-
+  
+  const dropdown = document.getElementById("collegeSuggestions");
+  if (dropdown) dropdown.style.display = "none"; // ← add null check
+  
   applyFilters();
 }
