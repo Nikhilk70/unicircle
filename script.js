@@ -798,7 +798,8 @@
     document.getElementById("editPlace").value = c.place || "";
     document.getElementById("editCourses").value = JSON.stringify(c.courses || [], null, 2);
     document.getElementById("editInfo").value = JSON.stringify(c.info || [], null, 2);
-    document.getElementById("adminCollegeEditForm").style.display = "block";
+    document.getElementById("adminCollegeModalTitle").innerText = "Edit College";
+    document.getElementById("adminCollegeEditForm").style.display = "flex";
   }
 
   function cancelCollegeEdit() {
@@ -879,7 +880,8 @@
     document.getElementById("editCourses").value = "[]";
     document.getElementById("editInfo").value = "[]";
 
-    document.getElementById("adminCollegeEditForm").style.display = "block";
+    document.getElementById("adminCollegeModalTitle").innerText = "Add New College";
+    document.getElementById("adminCollegeEditForm").style.display = "flex";
   }
 
   window.openAdminPanel = openAdminPanel;

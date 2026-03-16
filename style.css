@@ -1497,6 +1497,7 @@ font-family:'Plus Jakarta Sans',sans-serif;transition:all .25s;
   border: 1.5px solid #F3F4F6;
   border-radius: 20px;
   overflow: hidden;
+  height: fit-content;
   cursor: default;
   transition: all .35s;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04);
