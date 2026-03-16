@@ -16,7 +16,8 @@
     collection,
     getDocs,
     addDoc,
-    updateDoc 
+    updateDoc,
+    deleteDoc
   } from "https://www.gstatic.com/firebasejs/12.9.0/firebase-firestore.js";
 
   // Get these from Firebase Console → Project Settings (gear) → Your apps → SDK setup
@@ -153,7 +154,6 @@
         } else {
           saveUserToStorage(user);
           updateAuthUI(true);
-          alert("Welcome back!");
           openHome();
         }
       } catch (err) {
@@ -265,6 +265,7 @@
     if (userSnap.exists()) {
       saveUserToStorage(user);
       updateAuthUI(true);
+      openHome();
     } else {
       clearUserFromStorage();
       updateAuthUI(false);
@@ -275,6 +276,10 @@
 
   // Main page is shown first. Login/Sign up only when user clicks Log In or Sign Up in nav.
   window.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem(STORAGE_KEY)) {
+      updateAuthUI(true);
+      openHome();
+    }
 
     const provider = new GoogleAuthProvider();
 
@@ -293,7 +298,6 @@
         } else {
           saveUserToStorage(user);
           updateAuthUI(true);
-          alert("Welcome back " + user.displayName);
           openHome();
           populateCollegeDropdown();
         }
@@ -640,6 +644,7 @@
           <td>${escapeHtml(u.district || "—")}</td>
           <td>${escapeHtml(u.place || "—")}</td>
           <td>${date}</td>
+          <td><button type="button" class="btn-nav btn-logout" onclick="deleteUser('${u.id}')" style="padding: .2rem .5rem; font-size: .75rem;">Delete</button></td>
         `;
         tbody.appendChild(tr);
       });
@@ -649,6 +654,18 @@
       msgEl.className = "admin-message admin-message-err";
     }
   }
+
+  window.deleteUser = async function(userId) {
+    if (!confirm("Are you sure you want to delete this user?")) return;
+    try {
+      await deleteDoc(doc(db, "users", userId));
+      await loadAdminUsers();
+      alert("User deleted successfully.");
+    } catch (err) {
+      console.error("Error deleting user:", err);
+      alert("Error deleting user. See console for details.");
+    }
+  };
 
   function escapeHtml(str) {
     if (str == null || str === "") return "—";
@@ -742,6 +759,7 @@
           <td>${escapeHtml(a.district || "—")}</td>
           <td><span style="background:${statusColor}22;color:${statusColor};font-size:.72rem;font-weight:700;padding:.2rem .6rem;border-radius:50px;">${a.status || "pending"}</span></td>
           <td>${date}</td>
+          <td><button type="button" class="btn-nav btn-logout" onclick="deleteApplication('${a.id}')" style="padding: .2rem .5rem; font-size: .75rem;">Delete</button></td>
         `;
         tbody.appendChild(tr);
       });
@@ -752,6 +770,18 @@
     }
   }
   window.loadAdminApplications = loadAdminApplications;
+
+  window.deleteApplication = async function(appId) {
+    if (!confirm("Are you sure you want to delete this application?")) return;
+    try {
+      await deleteDoc(doc(db, "applications", appId));
+      await loadAdminApplications();
+      alert("Application deleted successfully.");
+    } catch (err) {
+      console.error("Error deleting application:", err);
+      alert("Error deleting application. See console for details.");
+    }
+  };
 
   function openCollegeEdit(id) {
     const c = adminCollegesList.find((x) => x.id === id);

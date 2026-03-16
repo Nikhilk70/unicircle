@@ -1,86 +1,90 @@
 <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-        <title>Vidyaportal – Choice is Power</title>
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-        <script src="https://cdn.tailwindcss.com"></script>
-        <link rel="stylesheet" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-    </head>
-    <body>
-        <div class="login-card" id="login-div">
+<html lang="en">
 
-            <div class="header">
-                <div class="tagline">
-                    ADMISSIONS MADE SIMPLE, HONEST, AND UNITED
-                </div>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Vidyaportal – Choice is Power</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 
-                <div class="logo-stacked">
-                    <img src="portal-logo.jpeg" alt="">
-                </div>
+<body>
+    <div class="login-card" id="login-div">
+
+        <div class="header">
+            <div class="tagline">
+                ADMISSIONS MADE SIMPLE, HONEST, AND UNITED
             </div>
 
-            <div class="loginRight">
-                <form id="loginForm">
-                    <div class="input-group">
-                        <label>Email Address</label>
-                        <input type="email" placeholder="Enter your email" required>
-                    </div>
-
-                    <div class="input-group">
-                        <label>Password</label>
-                        <input type="password" placeholder="Enter your password" required>
-                    </div>
-
-                    <div class="row-flex">
-                        <label class="remember">
-                            <input type="checkbox" checked>
-                            Remember me
-                        </label>
-
-                        <a href="#" class="forget-link">Forget password?</a>
-                    </div>
-
-                    <button type="submit" class="signin-btn">Sign In</button>
-                </form>
-
-                <div class="divider">
-                    <span class="divider-line"></span>
-                    <span>OR</span>
-                    <span class="divider-line"></span>
-                </div>
-                <button class="google-btn" id="phoneLoginBtn" type="button">
-                    <span class="google-icon">📱</span>
-                    <span>Continue with Phone</span>
-                </button>
-
-                <button class="google-btn" id="googleLogin">
-                    <span class="google-icon">G</span>
-                    <span>Continue with Google</span>
-                </button>
-
-                <div class="signup-text">
-                    Don't have an account?
-                    <a href="#" onclick="openSignUp()" class="signup-link">Sign up</a>
-                </div>
+            <div class="logo-stacked">
+                <img src="portal-logo.jpeg" alt="">
             </div>
         </div>
 
-        <div class="signup-div" id="signup-div" style="display: none;">
-            <div class="signup-left">
-                <div class="signup-left-logo">
+        <div class="loginRight">
+            <form id="loginForm">
+                <div class="input-group">
+                    <label>Email Address</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="input-group">
+                    <label>Password</label>
+                    <input type="password" placeholder="Enter your password" required>
+                </div>
+
+                <div class="row-flex">
+                    <label class="remember">
+                        <input type="checkbox" checked>
+                        Remember me
+                    </label>
+
+                    <a href="#" class="forget-link">Forget password?</a>
+                </div>
+
+                <button type="submit" class="signin-btn">Sign In</button>
+            </form>
+
+            <div class="divider">
+                <span class="divider-line"></span>
+                <span>OR</span>
+                <span class="divider-line"></span>
+            </div>
+            <button class="google-btn" id="phoneLoginBtn" type="button">
+                <span class="google-icon">📱</span>
+                <span>Continue with Phone</span>
+            </button>
+
+            <button class="google-btn" id="googleLogin">
+                <span class="google-icon">G</span>
+                <span>Continue with Google</span>
+            </button>
+
+            <div class="signup-text">
+                Don't have an account?
+                <a href="#" onclick="openSignUp()" class="signup-link">Sign up</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="signup-div" id="signup-div" style="display: none;">
+        <div class="signup-left">
+            <div class="signup-left-logo">
                 <img src="portal-logo.jpeg" alt="Vidyaportal" />
                 <span class="signup-left-tagline">Kerala Vidyaportal</span>
-                </div>
-            
-                <div style="position:relative;z-index:1;">
+            </div>
+
+            <div style="position:relative;z-index:1;">
                 <p class="signup-left-headline">Your <em>perfect</em> college<br>is one step away</p>
-                <p class="signup-left-sub">Join thousands of students who found their ideal college using verified, transparent data.</p>
-                </div>
-            
-                <div class="signup-left-pills">
+                <p class="signup-left-sub">Join thousands of students who found their ideal college using verified,
+                    transparent data.</p>
+            </div>
+
+            <div class="signup-left-pills">
                 <div class="signup-pill">
                     <div class="signup-pill-dot"></div>
                     <span>500+ partner colleges across India</span>
@@ -93,54 +97,54 @@
                     <div class="signup-pill-dot"></div>
                     <span>100% free — no hidden fees ever</span>
                 </div>
-                </div>
             </div>
-            
-            <!-- RIGHT: Form Panel -->
-            <div class="signup-right">
-            
-                <p class="signup-form-title">Create your account</p>
-                <p class="signup-form-sub">Fill in the details below to get started</p>
-            
-                <button class="btn-google" id="googleLoginSignup">
+        </div>
+
+        <!-- RIGHT: Form Panel -->
+        <div class="signup-right">
+
+            <p class="signup-form-title">Create your account</p>
+            <p class="signup-form-sub">Fill in the details below to get started</p>
+
+            <button class="btn-google" id="googleLoginSignup">
                 <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" />
                 Continue with Google
-                </button>
-            
-                <div class="divider">
+            </button>
+
+            <div class="divider">
                 <span class="divider-line"></span>
                 <span>or</span>
                 <span class="divider-line"></span>
-                </div>
-            
-                <p class="continue-email-label">Continue with email</p>
-            
-                <!-- Row 1: Name + Phone -->
-                <div class="signup-row">
+            </div>
+
+            <p class="continue-email-label">Continue with email</p>
+
+            <!-- Row 1: Name + Phone -->
+            <div class="signup-row">
                 <div class="signup-field">
-                    <label for="signupName">Full Name</label>
+                    <label for="signupName">Student Name</label>
                     <input id="signupName" required type="text" placeholder="Arjun Kumar" />
                 </div>
                 <div class="signup-field">
                     <label for="signupPhone">Phone Number</label>
                     <input id="signupPhone" required type="tel" placeholder="+91 98765 43210" />
                 </div>
-                </div>
-            
-                <!-- Email -->
-                <div class="signup-field">
+            </div>
+
+            <!-- Email -->
+            <div class="signup-field">
                 <label for="signupEmail">Email Address</label>
                 <input id="signupEmail" required type="email" placeholder="you@example.com" />
-                </div>
-            
-                <!-- Password -->
-                <div class="signup-field">
+            </div>
+
+            <!-- Password -->
+            <div class="signup-field">
                 <label for="signupPassword">Password</label>
                 <input id="signupPassword" required type="password" placeholder="Create a strong password" />
-                </div>
-            
-                <!-- Row 2: District + Place -->
-                <div class="signup-row">
+            </div>
+
+            <!-- Row 2: District + Place -->
+            <div class="signup-row">
                 <div class="signup-field">
                     <label for="signupDistrict">District</label>
                     <input id="signupDistrict" required type="text" placeholder="Ernakulam" />
@@ -149,10 +153,10 @@
                     <label for="signupPlace">Place</label>
                     <input id="signupPlace" required type="text" placeholder="Kochi" />
                 </div>
-                </div>
-            
-                <!-- User Type -->
-                <div class="signup-field">
+            </div>
+
+            <!-- User Type -->
+            <div class="signup-field">
                 <label for="signupUserType">I am a</label>
                 <select id="signupUserType" required>
                     <option value="">-- Select user type --</option>
@@ -160,14 +164,14 @@
                     <option value="parent">Parent</option>
                     <option value="other">Other</option>
                 </select>
-                </div>
-            
-                <!-- Optional: Parent Details -->
-                <div class="signup-section-divider">
+            </div>
+
+            <!-- Optional: Parent Details -->
+            <div class="signup-section-divider">
                 Parent details <span class="optional-tag">(optional)</span>
-                </div>
-            
-                <div class="signup-row">
+            </div>
+
+            <div class="signup-row">
                 <div class="signup-field">
                     <label for="signupParentName">Parent Name</label>
                     <input id="signupParentName" type="text" placeholder="Parent / guardian" />
@@ -176,712 +180,1108 @@
                     <label for="signupParentPhone">Parent Phone</label>
                     <input id="signupParentPhone" type="tel" placeholder="+91 98765 43210" />
                 </div>
-                </div>
-            
-                <button type="button" class="btn-submit" id="signupSubmit">Create Account →</button>
-            
-                <div class="switch-text">
-                Already have an account? <a onclick="openLogin()">Sign in</a>
-                </div>
-            
-            </div>
-            </div>
-        <main id="mainPage" style="display: none;">
-            <div id="mainContent">
-            <div id="home-page">
-            <div class="nav-wrap" id="nav">
-            <div class="nav-inner">
-                <a class="brand" href="#">
-                <div class="logo-box" style="display: none;">U</div>
-                <span class="logo-text">Kerala<span>Vidyaportal</span></span>
-                </a>
-                <nav class="nav-desktop">
-                <a href="#" onclick="showHome()" class="active">Home</a>
-                <a href="#" onclick="showAllCollegesView()">Colleges</a>
-                <a href="#" onclick="showAllCoursesView()">Courses</a>
-                <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
-                    <div class="nav-cta-row">
-                    <div class="nav-auth-buttons" style="display: flex; align-items: center; gap: 0.5rem;">
-                        <button type="button" class="btn-nav btn-login" onclick="openLogin()">Log In</button>
-                        <button type="button" class="btn-nav btn-signup" onclick="openSignUp()">Sign Up</button>
-                    </div>
-                    <div class="nav-logout-wrap" style="display: none; align-items: center; gap: 0.5rem;">
-                        <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
-                        <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); return false;">Admin</a>
-                        <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
-                    </div>
-                    </div>
-                </div>
-            </nav>
-            <button style="display: none;" class="hamburger" id="ham" onclick="toggleMenu()">
-                <span></span><span></span><span></span>
-            </button>
-            </div>
-            <div class="mob-menu" id="mobMenu">
-                <a onclick="showHome()" class="active">Home</a>
-                <a href="#" onclick="showAllCoursesView()">Courses</a>
-                <a href="#" onclick="showAllCollegesView()">Colleges</a>
-                <a href="#">Find by City</a>
-                <a href="#">About</a>
-                <a href="#">Blogs</a>
-                <a href="#">Contact us</a>
-                <div class="nav-auth-buttons mob-auth" style="display: flex; flex-direction: row; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 0;">
-                    <button type="button" class="btn-nav btn-login" onclick="openLogin(); toggleMenu();">Log In</button>
-                    <button type="button" class="btn-nav btn-signup" onclick="openSignUp(); toggleMenu();">Sign Up</button>
-                </div>
-                <div class="nav-logout-wrap mob-auth" style="display: none; flex-direction: column; align-items: stretch; gap: 0.5rem;">
-                    <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
-                    <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;" onclick="openAdminPanel(); toggleMenu(); return false;">Admin Panel</a>
-                    <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
-                </div>
-                <button style="display: none;" class="mob-cta" onclick="goto('colleges')">Explore Colleges →</button>
-            </div>
             </div>
 
-            <!-- HERO -->
-            <div class="hero" id="heroSection" style="padding-top:5.5rem">
-                <!-- <video autoplay muted loop playsinline class="hero-video">
+            <button type="button" class="btn-submit" id="signupSubmit">Create Account →</button>
+
+            <div class="switch-text">
+                Already have an account? <a onclick="openLogin()">Sign in</a>
+            </div>
+
+        </div>
+    </div>
+    <main id="mainPage" style="display: none;">
+        <div id="mainContent">
+            <div id="home-page">
+                <div class="nav-wrap" id="nav">
+                    <div class="nav-inner">
+                        <a class="brand" href="#">
+                            <div class="logo-box" style="display: none;">U</div>
+                            <span class="logo-text">Kerala<span>Vidyaportal</span></span>
+                        </a>
+                        <nav class="nav-desktop">
+                            <a href="#" onclick="showHome()" class="active">Home</a>
+                            <a href="#" onclick="showAllCollegesView()">Colleges</a>
+                            <a href="#" onclick="showAllCoursesView()">Courses</a>
+                            <div style="display:flex;align-items:center;gap:.5rem;font-size:.82rem;color:var(--gray);">
+                                <div class="nav-cta-row">
+                                    <div class="nav-auth-buttons"
+                                        style="display: flex; align-items: center; gap: 0.5rem;">
+                                        <button type="button" class="btn-nav btn-login" onclick="openLogin()">Log
+                                            In</button>
+                                        <button type="button" class="btn-nav btn-signup" onclick="openSignUp()">Sign
+                                            Up</button>
+                                    </div>
+                                    <div class="nav-logout-wrap"
+                                        style="display: none; align-items: center; gap: 0.5rem;">
+                                        <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
+                                        <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;"
+                                            onclick="openAdminPanel(); return false;">Admin</a>
+                                        <button type="button" class="btn-nav btn-logout"
+                                            onclick="logout()">Logout</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </nav>
+                        <button style="display: none;" class="hamburger" id="ham" onclick="toggleMenu()">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                    <div class="mob-menu" id="mobMenu">
+                        <a onclick="showHome()" class="active">Home</a>
+                        <a href="#" onclick="showAllCoursesView()">Courses</a>
+                        <a href="#" onclick="showAllCollegesView()">Colleges</a>
+                        <a href="#">Find by City</a>
+                        <a href="#">About</a>
+                        <a href="#">Blogs</a>
+                        <a href="#">Contact us</a>
+                        <div class="nav-auth-buttons mob-auth"
+                            style="display: flex; flex-direction: row; justify-content: space-between; gap: 0.5rem; padding: 0.5rem 0;">
+                            <button type="button" class="btn-nav btn-login" onclick="openLogin(); toggleMenu();">Log
+                                In</button>
+                            <button type="button" class="btn-nav btn-signup" onclick="openSignUp(); toggleMenu();">Sign
+                                Up</button>
+                        </div>
+                        <div class="nav-logout-wrap mob-auth"
+                            style="display: none; flex-direction: column; align-items: stretch; gap: 0.5rem;">
+                            <span class="nav-user-name" style="font-size: 0.8rem; color: #6B7280;"></span>
+                            <a href="#" class="nav-admin-link" style="display: none; font-size: 0.8rem;"
+                                onclick="openAdminPanel(); toggleMenu(); return false;">Admin Panel</a>
+                            <button type="button" class="btn-nav btn-logout" onclick="logout()">Logout</button>
+                        </div>
+                        <button style="display: none;" class="mob-cta" onclick="goto('colleges')">Explore Colleges
+                            →</button>
+                    </div>
+                </div>
+
+                <!-- HERO -->
+                <div class="hero" id="heroSection" style="padding-top:5.5rem">
+                    <!-- <video autoplay muted loop playsinline class="hero-video">
                     <source src="https://res.cloudinary.com/dxjdraawa/video/upload/v1753268236/videoplayback_kdxk91.mp4" type="video/mp4">
                 </video>
 
                 <div class="hero-overlay"></div> -->
-                <div class="homeBG">
-                    <div class="hero-badge"><div class="dot"></div>Trusted by 1.2 Lakh+ Students</div>
-                    <span class="hero-tag">Choice is Power</span>
-                    <h1 class="hero-h1">Vidyaportal Makes<br>It Possible</h1>
-                    <p class="hero-sub">Helping India <span class="pk">Discover</span> and <span class="og">Apply</span> to the Right College with Verified, Transparent and Bias-free data.</p>
-                    <div class="hero-btns">
-                        <button class="btn-main" onclick="goto('colleges')">Explore Colleges →</button>
+                    <div class="homeBG">
+                        <div class="hero-badge">
+                            <div class="dot"></div>Trusted by 1.2 Lakh+ Students
+                        </div>
+                        <span class="hero-tag">Choice is Power</span>
+                        <h1 class="hero-h1">Vidyaportal Makes<br>It Possible</h1>
+                        <p class="hero-sub">Helping India <span class="pk">Discover</span> and <span
+                                class="og">Apply</span> to the Right College with Verified, Transparent and Bias-free
+                            data.</p>
+                        <div class="hero-btns">
+                            <button class="btn-main" onclick="showAllCollegesView()">Explore Colleges →</button>
+                        </div>
+                    </div>
+                    <!-- Stats Row -->
+                    <div class="stats-row">
+                        <div class="stat-card"><span class="stat-num" data-target="500" data-suf="+">0</span>
+                            <div class="stat-label">Partner Colleges</div>
+                        </div>
+                        <div class="stat-card"><span class="stat-num" data-target="120" data-suf="k+">0</span>
+                            <div class="stat-label">Happy Students</div>
+                        </div>
+                        <div class="stat-card"><span class="stat-num" data-target="98" data-suf="%">0</span>
+                            <div class="stat-label">Satisfaction Rate</div>
+                        </div>
+                        <div class="stat-card"><span class="stat-num" data-target="25" data-suf="+">0</span>
+                            <div class="stat-label">States Covered</div>
+                        </div>
                     </div>
                 </div>
-            <!-- Stats Row -->
-            <div class="stats-row">
-                <div class="stat-card"><span class="stat-num" data-target="500" data-suf="+">0</span><div class="stat-label">Partner Colleges</div></div>
-                <div class="stat-card"><span class="stat-num" data-target="120" data-suf="k+">0</span><div class="stat-label">Happy Students</div></div>
-                <div class="stat-card"><span class="stat-num" data-target="98" data-suf="%">0</span><div class="stat-label">Satisfaction Rate</div></div>
-                <div class="stat-card"><span class="stat-num" data-target="25" data-suf="+">0</span><div class="stat-label">States Covered</div></div>
-            </div>
-            </div>
 
-            <!-- TICKER -->
-            <p class="ticker-label">Trusted by students of India's top institutions</p>
-            <div class="ticker-wrap" id="ticker-wrap">
-            <div class="mq-wrap" style="margin-bottom:.7rem">
-                <div class="mq-track">
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s" alt=""></div></div>
-                <div class="chip"><div class="chip-ico"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s" alt=""></div></div>
+                <!-- TICKER -->
+                <p class="ticker-label">Trusted by students of India's top institutions</p>
+                <div class="ticker-wrap" id="ticker-wrap">
+                    <div class="mq-wrap" style="margin-bottom:.7rem">
+                        <div class="mq-track">
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1wdnp6K_gQlyvH-vMxZ6W3phEPZ0lllh30g&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://jssaherstoragenew.blob.core.windows.net/jssuudstorage/sdimages/jssnewlogo.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/logo/032023/e3e8cfdd29313247bff6b67176315735.gif"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/logo/032023/92f61ec8a681d3ad87e4c1cd3d1cb27c.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://mynursingadmission.com/uploads/college/122024/2446607cde82a6f5606a35cf18d95cfd.jpg"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvLSR2AdzuMBVuYg_0jmHu6NlBS3cMTnUDQA&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSej98UKXv8SnwKUgDVhhQU8cqUSaSi_4vmGA&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRR8nZuzNndLu7X3rykjib0kjgxwvr-bsIMg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://www.mallige.ac.in/nursing/assetes/images/nursing.png" alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgCu7oGyO7X_keaPW7E79BmKn9prtEYdAUCw&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSW6bDaYhjTc82tdIm6aaeI5OSPZt9Aq7-_DQ&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ7gth2pMutU4DmDXUppdydtUZ7W19JNHB8lw&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgImLeoAUknoNflaSfXN8Wj4QELnSAsRWDkg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://i0.wp.com/ewgi.edu.in/wp-content/uploads/2022/09/logo-1.png?resize=383%2C400&ssl=1"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img src="https://www.tjohncollege.com/assets/tjohn.jpg" alt="">
+                                </div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxvm_2z6ac5K6bIXS4kPo-bwPNIeG-VSYfAg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtkknY5KW7dHThm2aUnhyEu8902GzRNxLvtg&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-q8OxZ_ZACVyYapQMVaQTRMCsUG5vtfziQ&s"
+                                        alt=""></div>
+                            </div>
+                            <div class="chip">
+                                <div class="chip-ico"><img
+                                        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTw59d_0b5ZfgB51uZNjYrLjsBLrckxkRnX3g&s"
+                                        alt=""></div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
-            <section class="section" id="colleges" style="display: none;">
-            <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
-            <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
-            <p class="sec-p rev rd1"  id="collageDetailsText">Verified data, real student reviews, transparent admission info — all in one place.</p>
-            <div class="filterBtn">
-                <button onclick="toggleFilter()">Filter <i class="fa-solid fa-filter"></i></button>
-            </div>
+                <!-- COLLEGES (loaded from Firebase: first 9 by priority on home, then View all + filters) -->
+                <section class="section" id="colleges" style="display: none;">
+                    <div class="sec-eyebrow rev" id="collageTopDetailsText">✦ Top Colleges</div>
+                    <h2 class="sec-h rev">Explore India's <span class="pink-word">Finest Institutions</span></h2>
+                    <p class="sec-p rev rd1" id="collageDetailsText">Verified data, real student reviews, transparent
+                        admission info — all in one place.</p>
+                    <div class="filterBtn">
+                        <button onclick="toggleFilter()">Filter <i class="fa-solid fa-filter"></i></button>
+                    </div>
 
-            <!-- Overlay -->
-            <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
+                    <!-- Overlay -->
+                    <div class="filter-overlay" id="filterOverlay" onclick="closeFilter()"></div>
 
-            <!-- Filter Panel -->
-            <div id="collegesFilterBar" class="colleges-filter-bar">
+                    <!-- Filter Panel -->
+                    <div id="collegesFilterBar" class="colleges-filter-bar">
 
-                <div class="filter-header">
-                    <h3>Filters</h3>
-                    <button onclick="closeFilter()">✕</button>
-                </div>
-                <div class="filter-group">
-                    <label for="filterCollegeName">College Name</label>
-                    <input 
-                        type="text" 
-                        id="filterCollegeName" 
-                        list="collegeList"
-                        placeholder="Select college"
-                        oninput="applyFilters()"
-                    />
-                    <datalist id="collegeList"></datalist>
+                        <div class="filter-header">
+                            <h3>Filters</h3>
+                            <button onclick="closeFilter()">✕</button>
+                        </div>
+                        <div class="filter-group">
+                            <label for="filterCollegeName">College Name</label>
+                            <input type="text" id="filterCollegeName" list="collegeList" placeholder="Select college"
+                                oninput="applyFilters()" />
+                            <datalist id="collegeList"></datalist>
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterLocation">Location</label>
+                            <input type="text" id="filterLocation" placeholder="City or State"
+                                oninput="applyFilters()" />
+                        </div>
+
+                        <div class="filter-group">
+                            <label for="filterCourse">Course</label>
+                            <input type="text" id="filterCourse" placeholder="Enter course name"
+                                oninput="applyFilters()" />
+                        </div>
+
+                    </div>
+                    <div class="col-grid" id="collegesGrid">
+                        <p class="colleges-empty">Loading colleges…</p>
+                    </div>
+                    <div style="text-align:center;margin-top:1.8rem" id="viewAllCollegesBtn">
+                        <button type="button" class="btn-secondary" style="width:100%;max-width:320px"
+                            onclick="showAllCollegesView()">View All Colleges →</button>
+                    </div>
+                </section>
+                <!-- COURSES SECTION -->
+                <section class="section" id="courses-section" style="display:none;">
+                    <div class="sec-eyebrow rev" id="coursesTopText">✦ All Courses</div>
+                    <h2 class="sec-h rev">Browse by <span class="pink-word">Course</span></h2>
+                    <p class="sec-p rev rd1" id="coursesSubText">Find courses offered across our partner colleges.</p>
+
+                    <div class="filterBtn" style="margin-bottom:1rem;">
+                        <button onclick="toggleCourseFilter()">Filter <i class="fa-solid fa-filter"></i></button>
+                    </div>
+
+                    <div class="filter-overlay" id="courseFilterOverlay" onclick="closeCourseFilter()"></div>
+                    <div id="coursesFilterBar" class="colleges-filter-bar">
+                        <div class="filter-header">
+                            <h3>Filter Courses</h3>
+                            <button onclick="closeCourseFilter()">✕</button>
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Course Name</label>
+                            <input type="text" id="filterCourseName" placeholder="e.g. B.Tech, MBA, MBBS"
+                                oninput="renderCourses()" />
+                        </div>
+
+                        <div class="filter-group">
+                            <label>College</label>
+                            <input type="text" id="filterCourseCollege" placeholder="e.g. IIT Delhi, BITS"
+                                oninput="renderCourses()" />
+                        </div>
+
+                        <div class="filter-group">
+                            <label>Location</label>
+                            <input type="text" id="filterCourseLocation" placeholder="e.g. Delhi, Kerala"
+                                oninput="renderCourses()" />
+                        </div>
+
+                        <button class="course-filter-clear" onclick="clearCourseFilters()">Clear Filters</button>
+                        <button class="course-filter-apply" onclick="closeCourseFilter()">Apply & Close ✓</button>
+                    </div>
+
+                    <div class="crs-grid" id="coursesGrid">
+                        <p class="colleges-empty">Loading courses…</p>
+                    </div>
+                </section>
+                <!-- HOW IT WORKS -->
+                <section class="section" id="processSection1" style="background:var(--pink-light);border-radius:28px;">
+                    <div class="sec-eyebrow rev">✦ Simple Process</div>
+                    <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
+                    <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — Vidyaportal
+                        has you every step of the way.</p>
+                    <div class="steps">
+                        <div class="step-row rev">
+                            <div class="step-left">
+                                <div class="step-num">1</div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-body">
+                                <h3>Create Your Free Profile</h3>
+                                <p>Tell us your academics, interests, location preference, budget, and career goals.
+                                    Takes 3 minutes, completely free.</p>
+                            </div>
+                        </div>
+                        <div class="step-row rev rd1">
+                            <div class="step-left">
+                                <div class="step-num">2</div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-body">
+                                <h3>Discover Your Best Matches</h3>
+                                <p>Our AI crunches 40+ data points to surface colleges genuinely right for you — not
+                                    just the most popular ones.</p>
+                            </div>
+                        </div>
+                        <div class="step-row rev rd2">
+                            <div class="step-left">
+                                <div class="step-num">3</div>
+                                <div class="step-line"></div>
+                            </div>
+                            <div class="step-body">
+                                <h3>Apply with One Click</h3>
+                                <p>Submit to multiple colleges using your saved profile. Auto-filled forms, eligibility
+                                    checks, and deadline alerts — handled.</p>
+                            </div>
+                        </div>
+                        <div class="step-row rev rd3">
+                            <div class="step-left">
+                                <div class="step-num">4</div>
+                            </div>
+                            <div class="step-body">
+                                <h3>Get Admitted & Succeed</h3>
+                                <p>Receive offers, compare financial aid, and choose your dream college. Our
+                                    post-admission support sets you up from day one.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                <!-- TESTIMONIALS -->
+                <section class="section" style="padding-left:0;padding-right:0;max-width:100%">
+                    <div style="padding:0 1.25rem">
+                        <div class="sec-eyebrow rev">✦ Student Stories</div>
+                        <h2 class="sec-h rev">What Students Are <span class="pink-word">Saying</span></h2>
+                        <p class="sec-p rev rd1" style="margin-bottom:1.8rem">Real stories from students who found their
+                            college with Vidyaportal.</p>
+                    </div>
+                    <div class="test-outer">
+                        <div class="test-track">
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">Vidyaportal's data-driven approach helped me find BITS Pilani's Goa
+                                    campus — a perfect fit that no counselor had ever suggested.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div>
+                                    <div>
+                                        <div class="tname">Arjun Mehta</div>
+                                        <div class="tcoll">B.Tech CSE · BITS Pilani</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice —
+                                    IIM Calcutta — thanks to Vidyaportal!</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div>
+                                    <div>
+                                        <div class="tname">Priya Sharma</div>
+                                        <div class="tcoll">MBA · IIM Calcutta</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know
+                                    existed. This feature alone is worth it.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div>
+                                    <div>
+                                        <div class="tname">Rohan Kumar</div>
+                                        <div class="tcoll">B.Des · NID Ahmedabad</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">As a first-gen student from a small town, transparent data and honest
+                                    reviews made me confident applying to AIIMS.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#ECFDF5,#A7F3D0)">👧</div>
+                                    <div>
+                                        <div class="tname">Ananya Patel</div>
+                                        <div class="tcoll">MBBS · AIIMS New Delhi</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">The side-by-side comparison of 12 engineering colleges — placement
+                                    stats, infrastructure, faculty — is miles ahead of anything else.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#FDF4FF,#E9D5FF)">👦</div>
+                                    <div>
+                                        <div class="tname">Karan Verma</div>
+                                        <div class="tcoll">B.Tech EE · IIT Bombay</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- duplicates for infinite loop -->
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">Vidyaportal's data-driven approach helped me find BITS Pilani's Goa
+                                    campus — a perfect fit that no counselor had ever suggested.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div>
+                                    <div>
+                                        <div class="tname">Arjun Mehta</div>
+                                        <div class="tcoll">B.Tech CSE · BITS Pilani</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice —
+                                    IIM Calcutta — thanks to Vidyaportal!</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div>
+                                    <div>
+                                        <div class="tname">Priya Sharma</div>
+                                        <div class="tcoll">MBA · IIM Calcutta</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tc">
+                                <div class="tq">"</div>
+                                <div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know
+                                    existed. This feature alone is worth it.</div>
+                                <div class="ta">
+                                    <div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div>
+                                    <div>
+                                        <div class="tname">Rohan Kumar</div>
+                                        <div class="tcoll">B.Des · NID Ahmedabad</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA -->
+                <div class="cta-section hidden">
+                    <div class="cta-inner">
+                        <div class="sec-eyebrow rev" style="margin:0 auto .9rem">✦ Start Your Journey</div>
+                        <h2 class="cta-h rev">Ready to Find Your<br><span class="pink-word">Dream College?</span></h2>
+                        <p class="cta-p rev rd1">Join 1.2 lakh+ students who discovered and applied through Vidyaportal
+                            — completely free, always.</p>
+                        <div class="cta-form rev rd2">
+                            <input class="cta-inp" type="email" placeholder="Enter your email address">
+                            <button class="cta-btn">Get Started Free →</button>
+                        </div>
+                        <p style="font-size:.75rem;color:#9CA3AF;margin-top:.9rem">No credit card · No hidden fees ·
+                            Cancel anytime</p>
+                    </div>
                 </div>
 
-                <div class="filter-group">
-                    <label for="filterLocation">Location</label>
-                    <input type="text" id="filterLocation" placeholder="City or State" oninput="applyFilters()" />
-                </div>
-
-                <div class="filter-group">
-                    <label for="filterCourse">Course</label>
-                    <input type="text" id="filterCourse" placeholder="Enter course name" oninput="applyFilters()" />
-                </div>
-
-            </div>
-            <div class="col-grid" id="collegesGrid">
-                <p class="colleges-empty">Loading colleges…</p>
-            </div>
-            <div style="text-align:center;margin-top:1.8rem" id="viewAllCollegesBtn">
-                <button type="button" class="btn-secondary" style="width:100%;max-width:320px" onclick="showAllCollegesView()">View All Colleges →</button>
-            </div>
-            </section>
-            <!-- COURSES SECTION -->
-            <section class="section" id="courses-section" style="display:none;">
-            <div class="sec-eyebrow rev" id="coursesTopText">✦ All Courses</div>
-            <h2 class="sec-h rev">Browse by <span class="pink-word">Course</span></h2>
-            <p class="sec-p rev rd1" id="coursesSubText">Find courses offered across our partner colleges.</p>
-
-            <div class="filterBtn" style="margin-bottom:1rem;">
-                <button onclick="toggleCourseFilter()">Filter <i class="fa-solid fa-filter"></i></button>
-            </div>
-
-            <div class="filter-overlay" id="courseFilterOverlay" onclick="closeCourseFilter()"></div>
-                <div id="coursesFilterBar" class="colleges-filter-bar">
-                <div class="filter-header">
-                    <h3>Filter Courses</h3>
-                    <button onclick="closeCourseFilter()">✕</button>
-                </div>
-
-                <div class="filter-group">
-                    <label>Course Name</label>
-                    <input type="text" id="filterCourseName" placeholder="e.g. B.Tech, MBA, MBBS" oninput="renderCourses()" />
-                </div>
-
-                <div class="filter-group">
-                    <label>College</label>
-                    <input type="text" id="filterCourseCollege" placeholder="e.g. IIT Delhi, BITS" oninput="renderCourses()" />
-                </div>
-
-                <div class="filter-group">
-                    <label>Location</label>
-                    <input type="text" id="filterCourseLocation" placeholder="e.g. Delhi, Kerala" oninput="renderCourses()" />
-                </div>
-
-                <button class="course-filter-clear" onclick="clearCourseFilters()">Clear Filters</button>
-                <button class="course-filter-apply" onclick="closeCourseFilter()">Apply & Close ✓</button>
-            </div>
-
-            <div class="crs-grid" id="coursesGrid">
-                <p class="colleges-empty">Loading courses…</p>
-            </div>
-            </section>
-            <!-- HOW IT WORKS -->
-            <section class="section" id="processSection1" style="background:var(--pink-light);border-radius:28px;">
-            <div class="sec-eyebrow rev">✦ Simple Process</div>
-            <h2 class="sec-h rev">Your Journey in <span class="pink-word">4 Steps</span></h2>
-            <p class="sec-p rev rd1" style="margin-bottom:0">From discovery to admission letter — Vidyaportal has you every step of the way.</p>
-            <div class="steps">
-                <div class="step-row rev">
-                <div class="step-left"><div class="step-num">1</div><div class="step-line"></div></div>
-                <div class="step-body"><h3>Create Your Free Profile</h3><p>Tell us your academics, interests, location preference, budget, and career goals. Takes 3 minutes, completely free.</p></div>
-                </div>
-                <div class="step-row rev rd1">
-                <div class="step-left"><div class="step-num">2</div><div class="step-line"></div></div>
-                <div class="step-body"><h3>Discover Your Best Matches</h3><p>Our AI crunches 40+ data points to surface colleges genuinely right for you — not just the most popular ones.</p></div>
-                </div>
-                <div class="step-row rev rd2">
-                <div class="step-left"><div class="step-num">3</div><div class="step-line"></div></div>
-                <div class="step-body"><h3>Apply with One Click</h3><p>Submit to multiple colleges using your saved profile. Auto-filled forms, eligibility checks, and deadline alerts — handled.</p></div>
-                </div>
-                <div class="step-row rev rd3">
-                <div class="step-left"><div class="step-num">4</div></div>
-                <div class="step-body"><h3>Get Admitted & Succeed</h3><p>Receive offers, compare financial aid, and choose your dream college. Our post-admission support sets you up from day one.</p></div>
-                </div>
-            </div>
-            </section>
-            <!-- TESTIMONIALS -->
-            <section class="section" style="padding-left:0;padding-right:0;max-width:100%">
-            <div style="padding:0 1.25rem">
-                <div class="sec-eyebrow rev">✦ Student Stories</div>
-                <h2 class="sec-h rev">What Students Are <span class="pink-word">Saying</span></h2>
-                <p class="sec-p rev rd1" style="margin-bottom:1.8rem">Real stories from students who found their college with Vidyaportal.</p>
-            </div>
-            <div class="test-outer">
-                <div class="test-track">
-                <div class="tc"><div class="tq">"</div><div class="tt">Vidyaportal's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to Vidyaportal!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">As a first-gen student from a small town, transparent data and honest reviews made me confident applying to AIIMS.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#ECFDF5,#A7F3D0)">👧</div><div><div class="tname">Ananya Patel</div><div class="tcoll">MBBS · AIIMS New Delhi</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">The side-by-side comparison of 12 engineering colleges — placement stats, infrastructure, faculty — is miles ahead of anything else.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FDF4FF,#E9D5FF)">👦</div><div><div class="tname">Karan Verma</div><div class="tcoll">B.Tech EE · IIT Bombay</div></div></div></div>
-                <!-- duplicates for infinite loop -->
-                <div class="tc"><div class="tq">"</div><div class="tt">Vidyaportal's data-driven approach helped me find BITS Pilani's Goa campus — a perfect fit that no counselor had ever suggested.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFF0F8,#FBCFE8)">👦</div><div><div class="tname">Arjun Mehta</div><div class="tcoll">B.Tech CSE · BITS Pilani</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">The AI narrowed 200+ options to 5 perfect fits. Got into my top choice — IIM Calcutta — thanks to Vidyaportal!</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#EFF6FF,#BFDBFE)">👩</div><div><div class="tname">Priya Sharma</div><div class="tcoll">MBA · IIM Calcutta</div></div></div></div>
-                <div class="tc"><div class="tq">"</div><div class="tt">Scholarship discovery found me a ₹4 lakh merit grant I didn't even know existed. This feature alone is worth it.</div><div class="ta"><div class="tav" style="background:linear-gradient(135deg,#FFFBEB,#FDE68A)">🧑</div><div><div class="tname">Rohan Kumar</div><div class="tcoll">B.Des · NID Ahmedabad</div></div></div></div>
-                </div>
-            </div>
-            </section>
-
-            <!-- CTA -->
-            <div class="cta-section hidden">
-            <div class="cta-inner">
-                <div class="sec-eyebrow rev" style="margin:0 auto .9rem">✦ Start Your Journey</div>
-                <h2 class="cta-h rev">Ready to Find Your<br><span class="pink-word">Dream College?</span></h2>
-                <p class="cta-p rev rd1">Join 1.2 lakh+ students who discovered and applied through Vidyaportal — completely free, always.</p>
-                <div class="cta-form rev rd2">
-                <input class="cta-inp" type="email" placeholder="Enter your email address">
-                <button class="cta-btn">Get Started Free →</button>
-                </div>
-                <p style="font-size:.75rem;color:#9CA3AF;margin-top:.9rem">No credit card · No hidden fees · Cancel anytime</p>
-            </div>
-            </div>
-
-            <!-- FOOTER -->
-            <footer>
-            <div style="max-width:1200px;margin:0 auto">
-                <div class="foot-brand">
-                <div class="logo" style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:.1rem">
-                    <div class="logo-box">U</div>
-                    <span class="logo-text">Uni<span>Circle</span></span>
-                </div>
-                <p>Empowering every Indian student to make informed, confident college decisions with transparent data and zero bias. Your future, your choice.</p>
-                <div class="soc-row">
-                    <div class="soc">🐦</div><div class="soc">📸</div><div class="soc">💼</div><div class="soc">▶️</div>
-                </div>
-                </div>
-                <div class="foot-cols">
-                <div class="foot-col">
-                    <h4>Students</h4>
-                    <ul class="foot-links">
-                    <li><a href="#">Search Colleges</a></li>
-                    <li><a href="#">Compare Colleges</a></li>
-                    <li><a href="#">Find Scholarships</a></li>
-                    <li><a href="#">Entrance Exams</a></li>
-                    <li><a href="#">Career Guidance</a></li>
-                    </ul>
-                </div>
-                <div class="foot-col">
-                    <h4>Company</h4>
-                    <ul class="foot-links">
-                    <li><a href="#">About Vidyaportal</a></li>
-                    <li><a href="#">Our Mission</a></li>
-                    <li><a href="#">Team</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Careers</a></li>
-                    </ul>
-                </div>
-                <div class="foot-col">
-                    <h4>Courses</h4>
-                    <ul class="foot-links">
-                    <li><a href="#">Engineering</a></li>
-                    <li><a href="#">Management</a></li>
-                    <li><a href="#">Medical</a></li>
-                    <li><a href="#">Design</a></li>
-                    <li><a href="#">Liberal Arts</a></li>
-                    </ul>
-                </div>
-                <div class="foot-col">
-                    <h4>Support</h4>
-                    <ul class="foot-links">
-                    <li><a href="#">Help Center</a></li>
-                    <li><a href="#">Contact Us</a></li>
-                    <li><a href="#">Privacy Policy</a></li>
-                    <li><a href="#">Terms of Service</a></li>
-                    <li><a href="#">Report Issue</a></li>
-                    </ul>
-                </div>
-                </div>
-                <div class="foot-bot">© 2025 Vidyaportal Education Pvt. Ltd. · Made with 💗 for India's Students</div>
-            </div>
-            </footer>
+                <!-- FOOTER -->
+                <footer>
+                    <div style="max-width:1200px;margin:0 auto">
+                        <div class="foot-brand">
+                            <div class="logo"
+                                style="display:inline-flex;gap:.5rem;align-items:center;margin-bottom:.1rem">
+                                <div class="logo-box">KV</div>
+                                <span class="logo-text">Kerala<span>Vidyaportal</span></span>
+                            </div>
+                            <p>Empowering every Indian student to make informed, confident college decisions with
+                                transparent data and zero bias. Your future, your choice.</p>
+                            <div class="soc-row">
+                                <div class="soc">🐦</div>
+                                <div class="soc">📸</div>
+                                <div class="soc">💼</div>
+                                <div class="soc">▶️</div>
+                            </div>
+                        </div>
+                        <div class="foot-cols">
+                            <div class="foot-col">
+                                <h4>Students</h4>
+                                <ul class="foot-links">
+                                    <li><a href="#">Search Colleges</a></li>
+                                    <li><a href="#">Compare Colleges</a></li>
+                                    <li><a href="#">Find Scholarships</a></li>
+                                    <li><a href="#">Entrance Exams</a></li>
+                                    <li><a href="#">Career Guidance</a></li>
+                                </ul>
+                            </div>
+                            <div class="foot-col">
+                                <h4>Company</h4>
+                                <ul class="foot-links">
+                                    <li><a href="#">About Vidyaportal</a></li>
+                                    <li><a href="#">Our Mission</a></li>
+                                    <li><a href="#">Team</a></li>
+                                    <li><a href="#">Blog</a></li>
+                                    <li><a href="#">Careers</a></li>
+                                </ul>
+                            </div>
+                            <div class="foot-col">
+                                <h4>Courses</h4>
+                                <ul class="foot-links">
+                                    <li><a href="#">Engineering</a></li>
+                                    <li><a href="#">Management</a></li>
+                                    <li><a href="#">Medical</a></li>
+                                    <li><a href="#">Design</a></li>
+                                    <li><a href="#">Liberal Arts</a></li>
+                                </ul>
+                            </div>
+                            <div class="foot-col">
+                                <h4>Support</h4>
+                                <ul class="foot-links">
+                                    <li><a href="#">Help Center</a></li>
+                                    <li><a href="#">Contact Us</a></li>
+                                    <li><a href="#">Privacy Policy</a></li>
+                                    <li><a href="#">Terms of Service</a></li>
+                                    <li><a href="#">Report Issue</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="foot-bot">© 2025 Vidyaportal Education Pvt. Ltd. · Made with 💗 for India's Students
+                        </div>
+                    </div>
+                </footer>
 
             </div><!-- /home-page -->
 
             <!-- ===== DETAIL PAGE ===== -->
             <div class="page" id="det-page">
+                <div class="det-pg">
+                    <!-- sticky back nav -->
+                    <div
+                        style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
+                        <div class="back-btn" onclick="closeDetail()">← Back</div>
+                        <span id="d-nav-name"
+                            style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
+                        <button
+                            style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;"
+                            onclick="openApplyModal(document.getElementById('d-name').textContent, '', '')">Apply
+                            →</button>
+                    </div>
+
+                    <div class="det-hero">
+                        <img id="d-college-image" class="det-hero-img" src="" alt="" style="display: none;" />
+                        <div class="det-bg-emoji" id="d-bg"></div>
+                        <div class="det-overlay"></div>
+                    </div>
+                    <div class="det-hc">
+                        <h1 class="det-name" id="d-name"></h1>
+                        <div class="det-loc" id="d-loc"></div>
+                    </div>
+
+                    <div class="det-cont">
+                        <!-- Info Strip -->
+                        <div class="det-info-strip" id="d-info"></div>
+
+                        <!-- About -->
+                        <h3 class="det-sec-h">About the Institution</h3>
+                        <p class="det-txt" id="d-about"></p>
+
+                        <!-- Programs -->
+                        <h3 class="det-sec-h">Available Programs</h3>
+                        <div class="crs-list" id="d-courses"></div>
+
+                        <!-- Campus -->
+                        <h3 class="det-sec-h">Campus Life & Facilities</h3>
+                        <p class="det-txt" id="d-campus"></p>
+
+                        <!-- Placements -->
+                        <h3 class="det-sec-h">Placements & Career Outcomes</h3>
+                        <p class="det-txt" id="d-place"></p>
+
+                        <div style="height:80px"></div>
+                    </div>
+
+                    <!-- Sticky Apply Bar -->
+                    <div class="apply-sticky">
+                        <button class="apply-btn-main"
+                            onclick="openApplyModal(document.getElementById('d-name').textContent, '', '')">Apply Now
+                            →</button>
+                        <button class="wish-btn">♡ Save</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- COURSE DETAIL PAGE -->
+        <div class="page" id="course-det-page">
             <div class="det-pg">
-                <!-- sticky back nav -->
-                <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
-                <div class="back-btn" onclick="closeDetail()">← Back</div>
-                <span id="d-nav-name" style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
-                <button style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;" 
-                    onclick="openApplyModal(document.getElementById('d-name').textContent, '', '')">Apply →</button>
-                </div>
-
-                <div class="det-hero">
-                <img id="d-college-image" class="det-hero-img" src="" alt="" style="display: none;" />
-                <div class="det-bg-emoji" id="d-bg"></div>
-                <div class="det-overlay"></div>
-                </div>
-                <div class="det-hc">
-                    <h1 class="det-name" id="d-name"></h1>
-                    <div class="det-loc" id="d-loc"></div>
-                </div>
-
-                <div class="det-cont">
-                <!-- Info Strip -->
-                <div class="det-info-strip" id="d-info"></div>
-
-                <!-- About -->
-                <h3 class="det-sec-h">About the Institution</h3>
-                <p class="det-txt" id="d-about"></p>
-
-                <!-- Programs -->
-                <h3 class="det-sec-h">Available Programs</h3>
-                <div class="crs-list" id="d-courses"></div>
-
-                <!-- Campus -->
-                <h3 class="det-sec-h">Campus Life & Facilities</h3>
-                <p class="det-txt" id="d-campus"></p>
-
-                <!-- Placements -->
-                <h3 class="det-sec-h">Placements & Career Outcomes</h3>
-                <p class="det-txt" id="d-place"></p>
-
-                <div style="height:80px"></div>
-                </div>
-
-                <!-- Sticky Apply Bar -->
-                <div class="apply-sticky">
-                    <button class="apply-btn-main" onclick="openApplyModal(document.getElementById('d-name').textContent, '', '')">Apply Now →</button>
-                    <button class="wish-btn">♡ Save</button>
-                </div>
-            </div>
-            </div>
-            </div>
-
-            <!-- COURSE DETAIL PAGE -->
-            <div class="page" id="course-det-page">
-            <div class="det-pg">
-                <div style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
-                <div class="back-btn" onclick="closeCourseDetail()">← Back</div>
-                <span id="cd-nav-name" style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
-                <button style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;" 
-                    onclick="openApplyModal(document.getElementById('cd-college').textContent.replace('🏛️ ',''), document.getElementById('cd-name').textContent, '')">Apply →</button>
+                <div
+                    style="position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdrop-filter:blur(12px);border-bottom:1px solid #F3F4F6;padding:.75rem 1.25rem;display:flex;align-items:center;gap:1rem;">
+                    <div class="back-btn" onclick="closeCourseDetail()">← Back</div>
+                    <span id="cd-nav-name"
+                        style="font-weight:700;font-size:.95rem;color:var(--dark);flex:1;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"></span>
+                    <button
+                        style="background:var(--pink);color:#fff;border:none;border-radius:50px;padding:.38rem .9rem;font-size:.78rem;font-weight:700;cursor:pointer;font-family:'Plus Jakarta Sans',sans-serif;"
+                        onclick="openApplyModal(document.getElementById('cd-college').textContent.replace('🏛️ ',''), document.getElementById('cd-name').textContent, '')">Apply
+                        →</button>
                 </div>
 
                 <div style="background:linear-gradient(135deg,#FFF0F8,#fff);padding:2.5rem 1.25rem 1.5rem;">
-                <div id="cd-badge" style="display:inline-block;background:var(--pink-light);border:1px solid rgba(233,30,140,0.2);border-radius:50px;padding:.28rem .85rem;font-size:.72rem;font-weight:700;color:var(--pink);margin-bottom:.75rem;"></div>
-                <h1 id="cd-name" style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:.4rem;"></h1>
-                <div id="cd-college" style="font-size:.9rem;color:var(--gray);margin-bottom:.2rem;font-weight:600;"></div>
-                <div id="cd-loc" style="font-size:.82rem;color:var(--gray);"></div>
+                    <div id="cd-badge"
+                        style="display:inline-block;background:var(--pink-light);border:1px solid rgba(233,30,140,0.2);border-radius:50px;padding:.28rem .85rem;font-size:.72rem;font-weight:700;color:var(--pink);margin-bottom:.75rem;">
+                    </div>
+                    <h1 id="cd-name"
+                        style="font-size:clamp(1.5rem,4vw,2.2rem);font-weight:800;color:var(--dark);line-height:1.15;margin-bottom:.4rem;">
+                    </h1>
+                    <div id="cd-college" style="font-size:.9rem;color:var(--gray);margin-bottom:.2rem;font-weight:600;">
+                    </div>
+                    <div id="cd-loc" style="font-size:.82rem;color:var(--gray);"></div>
                 </div>
 
                 <div class="det-cont">
-                <div class="det-info-strip" id="cd-info" style="margin-bottom:1.5rem;"></div>
+                    <div class="det-info-strip" id="cd-info" style="margin-bottom:1.5rem;"></div>
 
-                <h3 class="det-sec-h">About this Program</h3>
-                <p class="det-txt" id="cd-about"></p>
+                    <h3 class="det-sec-h">About this Program</h3>
+                    <p class="det-txt" id="cd-about"></p>
 
-                <h3 class="det-sec-h">About the College</h3>
-                <p class="det-txt" id="cd-college-about"></p>
+                    <h3 class="det-sec-h">About the College</h3>
+                    <p class="det-txt" id="cd-college-about"></p>
 
-                <h3 class="det-sec-h">Campus Life & Facilities</h3>
-                <p class="det-txt" id="cd-campus"></p>
+                    <h3 class="det-sec-h">Campus Life & Facilities</h3>
+                    <p class="det-txt" id="cd-campus"></p>
 
-                <h3 class="det-sec-h">Placements & Career Outcomes</h3>
-                <p class="det-txt" id="cd-place"></p>
+                    <h3 class="det-sec-h">Placements & Career Outcomes</h3>
+                    <p class="det-txt" id="cd-place"></p>
 
-                <div style="height:80px"></div>
+                    <div style="height:80px"></div>
                 </div>
 
                 <div class="apply-sticky">
-                <button class="apply-btn-main" onclick="openApplyModal(document.getElementById('cd-college').textContent.replace('🏛️ ',''), document.getElementById('cd-name').textContent, '')">Apply Now →</button>
-                <button class="wish-btn">♡ Save</button>
+                    <button class="apply-btn-main"
+                        onclick="openApplyModal(document.getElementById('cd-college').textContent.replace('🏛️ ',''), document.getElementById('cd-name').textContent, '')">Apply
+                        Now →</button>
+                    <button class="wish-btn">♡ Save</button>
                 </div>
             </div>
-            </div>
+        </div>
 
-            <!-- Admin Panel (only for allowed emails) -->
-            <div id="adminPanel" class="admin-panel" style="display: none;">
-                <div class="admin-panel-inner">
-                    <div class="admin-panel-header">
-                        <h2>Admin Panel</h2>
-                        <button type="button" class="btn-nav btn-logout" onclick="closeAdminPanel()">← Back to site</button>
-                    </div>
-                    <div class="admin-tabs">
-                        <button type="button" class="admin-tab active" data-tab="users" onclick="switchAdminTab('users')">Users</button>
-                        <button type="button" class="admin-tab" data-tab="colleges" onclick="switchAdminTab('colleges')">Colleges</button>
-                        <button type="button" class="admin-tab" data-tab="applications" onclick="switchAdminTab('applications')">Applications</button>
-                    </div>
+        <!-- Admin Panel (only for allowed emails) -->
+        <div id="adminPanel" class="admin-panel" style="display: none;">
+            <div class="admin-panel-inner">
+                <div class="admin-panel-header">
+                    <h2>Admin Panel</h2>
+                    <button type="button" class="btn-nav btn-logout" onclick="closeAdminPanel()">← Back to site</button>
+                </div>
+                <div class="admin-tabs">
+                    <button type="button" class="admin-tab active" data-tab="users"
+                        onclick="switchAdminTab('users')">Users</button>
+                    <button type="button" class="admin-tab" data-tab="colleges"
+                        onclick="switchAdminTab('colleges')">Colleges</button>
+                    <button type="button" class="admin-tab" data-tab="applications"
+                        onclick="switchAdminTab('applications')">Applications</button>
+                </div>
 
-                    <div id="adminUsersSection" class="admin-section">
-                        <div id="adminPanelMessage" class="admin-message"></div>
-                        <div class="admin-table-wrap">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Phone</th>
-                                        <th>User Type</th>
-                                        <th>District</th>
-                                        <th>Place</th>
-                                        <th>Joined</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="adminTableBody"></tbody>
-                            </table>
-                        </div>
-                    </div>
-
-                    <div id="adminCollegesSection" class="admin-section" style="display: none;">
-                        <div class="admin-panel-header" style="margin-bottom: 1rem;">
-                            <span id="adminCollegesMessage" class="admin-message"></span>
-                            <div style="display:flex; gap:0.5rem;">
-                                <button type="button" class="btn-nav btn-login" onclick="openAddCollege()">+ Add New College</button>
-                                <button type="button" class="btn-nav btn-signup" onclick="seedDefaultColleges()">Seed default colleges</button>
-                            </div>
-                        </div>
-                        <div class="admin-table-wrap">
-                            <table class="admin-table">
-                                <thead>
-                                    <tr>
-                                        <th>Name</th>
-                                        <th>Location</th>
-                                        <th>Actions</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="adminCollegesBody"></tbody>
-                            </table>
-                        </div>
-                        <div id="adminCollegeEditForm" class="admin-edit-form" style="display: none;">
-                            <h3>Edit College</h3>
-                            <input type="hidden" id="editCollegeId" />
-                            <label>Priority (lower = shown first on home; 1–9 for top 9)</label>
-                            <input type="number" id="editPriority" min="1" placeholder="1" />
-                            <label>Name</label>
-                            <input type="text" id="editName" />
-                            <label>Location</label>
-                            <input type="text" id="editLoc" />
-                            <label>Image URL (college photo)</label>
-                            <input type="url" id="editImage" placeholder="https://example.com/college-photo.jpg" />
-                            <label>Icon (emoji, fallback if no image)</label>
-                            <input type="text" id="editIcon" placeholder="🏛️" />
-                            <label>Background (CSS gradient)</label>
-                            <input type="text" id="editBg" placeholder="linear-gradient(135deg,#EEF2FF,#C7D2FE)" />
-                            <label>About</label>
-                            <textarea id="editAbout" rows="3"></textarea>
-                            <label>Campus</label>
-                            <textarea id="editCampus" rows="2"></textarea>
-                            <label>Placements</label>
-                            <textarea id="editPlace" rows="2"></textarea>
-                            <label>Courses (JSON array: [{"n":"Course name","d":"Duration"}])</label>
-                            <textarea id="editCourses" rows="4"></textarea>
-                            <label>Info (JSON array: [{"l":"Label","v":"Value"}])</label>
-                            <textarea id="editInfo" rows="4"></textarea>
-                            <div class="admin-form-actions">
-                                <button type="button" class="btn-nav btn-signup" onclick="saveCollegeEdit()">Save</button>
-                                <button type="button" class="btn-nav btn-logout" onclick="cancelCollegeEdit()">Cancel</button>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Applications Section -->
-                    <div id="adminApplicationsSection" class="admin-section" style="display:none;">
-                        <div id="adminApplicationsMessage" class="admin-message"></div>
-                        <div class="admin-table-wrap">
-                            <table class="admin-table">
+                <div id="adminUsersSection" class="admin-section">
+                    <div id="adminPanelMessage" class="admin-message"></div>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
                             <thead>
                                 <tr>
-                                <th>Name</th>
-                                <th>Phone</th>
-                                <th>Email</th>
-                                <th>College</th>
-                                <th>Course</th>
-                                <th>10th</th>
-                                <th>12th</th>
-                                <th>Entrance</th>
-                                <th>District</th>
-                                <th>Status</th>
-                                <th>Applied</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>User Type</th>
+                                    <th>District</th>
+                                    <th>Place</th>
+                                    <th>Joined</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminTableBody"></tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div id="adminCollegesSection" class="admin-section" style="display: none;">
+                    <div class="admin-panel-header" style="margin-bottom: 1rem;">
+                        <span id="adminCollegesMessage" class="admin-message"></span>
+                        <div style="display:flex; gap:0.5rem;">
+                            <button type="button" class="btn-nav btn-login" onclick="openAddCollege()">+ Add New
+                                College</button>
+                            <button type="button" class="btn-nav btn-signup" onclick="seedDefaultColleges()">Seed
+                                default colleges</button>
+                        </div>
+                    </div>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Location</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminCollegesBody"></tbody>
+                        </table>
+                    </div>
+                    <div id="adminCollegeEditForm" class="admin-edit-form" style="display: none;">
+                        <h3>Edit College</h3>
+                        <input type="hidden" id="editCollegeId" />
+                        <label>Priority (lower = shown first on home; 1–9 for top 9)</label>
+                        <input type="number" id="editPriority" min="1" placeholder="1" />
+                        <label>Name</label>
+                        <input type="text" id="editName" />
+                        <label>Location</label>
+                        <input type="text" id="editLoc" />
+                        <label>Image URL (college photo)</label>
+                        <input type="url" id="editImage" placeholder="https://example.com/college-photo.jpg" />
+                        <label>Icon (emoji, fallback if no image)</label>
+                        <input type="text" id="editIcon" placeholder="🏛️" />
+                        <label>Background (CSS gradient)</label>
+                        <input type="text" id="editBg" placeholder="linear-gradient(135deg,#EEF2FF,#C7D2FE)" />
+                        <label>About</label>
+                        <textarea id="editAbout" rows="3"></textarea>
+                        <label>Campus</label>
+                        <textarea id="editCampus" rows="2"></textarea>
+                        <label>Placements</label>
+                        <textarea id="editPlace" rows="2"></textarea>
+                        <label>Courses (JSON array: [{"n":"Course name","d":"Duration"}])</label>
+                        <textarea id="editCourses" rows="4"></textarea>
+                        <label>Info (JSON array: [{"l":"Label","v":"Value"}])</label>
+                        <textarea id="editInfo" rows="4"></textarea>
+                        <div class="admin-form-actions">
+                            <button type="button" class="btn-nav btn-signup" onclick="saveCollegeEdit()">Save</button>
+                            <button type="button" class="btn-nav btn-logout"
+                                onclick="cancelCollegeEdit()">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Applications Section -->
+                <div id="adminApplicationsSection" class="admin-section" style="display:none;">
+                    <div id="adminApplicationsMessage" class="admin-message"></div>
+                    <div class="admin-table-wrap">
+                        <table class="admin-table">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th>College</th>
+                                    <th>Course</th>
+                                    <th>10th</th>
+                                    <th>12th</th>
+                                    <th>Entrance</th>
+                                    <th>District</th>
+                                    <th>Status</th>
+                                    <th>Applied</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody id="adminApplicationsBody"></tbody>
-                            </table>
-                        </div>
+                        </table>
                     </div>
                 </div>
             </div>
-        </main>
-        <script type="module" src="script.js"></script>
-        <script src="script2.js"></script>
-        <!-- Phone OTP Modal -->
-        <div id="phoneModal" style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.45); backdrop-filter:blur(4px); display:none; align-items:center; justify-content:center;">
-        <div style="background:#fff; border-radius:20px; padding:2rem 1.75rem; width:90%; max-width:380px; box-shadow:0 20px 60px rgba(0,0,0,0.2); position:relative;">
-            
+        </div>
+    </main>
+    <script type="module" src="script.js"></script>
+    <script src="script2.js"></script>
+    <!-- Phone OTP Modal -->
+    <div id="phoneModal"
+        style="display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.45); backdrop-filter:blur(4px); display:none; align-items:center; justify-content:center;">
+        <div
+            style="background:#fff; border-radius:20px; padding:2rem 1.75rem; width:90%; max-width:380px; box-shadow:0 20px 60px rgba(0,0,0,0.2); position:relative;">
+
             <!-- Close -->
-            <button onclick="closePhoneModal()" style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#9CA3AF;">✕</button>
+            <button onclick="closePhoneModal()"
+                style="position:absolute;top:1rem;right:1rem;background:none;border:none;font-size:1.3rem;cursor:pointer;color:#9CA3AF;">✕</button>
 
             <!-- Step 1: Phone Input -->
             <div id="modalPhoneStep">
-            <div style="text-align:center; margin-bottom:1.5rem;">
-                <div style="font-size:2.5rem; margin-bottom:.5rem;">📱</div>
-                <h2 style="font-size:1.2rem; font-weight:700; color:#111827; margin:0 0 .3rem;">Enter your phone number</h2>
-                <p style="font-size:.82rem; color:#6B7280; margin:0;">We'll send a 6-digit OTP to verify</p>
-            </div>
-            <div style="display:flex; gap:.5rem; margin-bottom:1rem;">
-                <select id="countryCode" style="border:1.5px solid #E5E7EB; border-radius:10px; padding:.65rem .5rem; font-size:.9rem; font-family:inherit; outline:none; background:#F9FAFB; min-width:85px;">
-                <option value="+91">🇮🇳 +91</option>
-                <option value="+1">🇺🇸 +1</option>
-                <option value="+44">🇬🇧 +44</option>
-                <option value="+971">🇦🇪 +971</option>
-                <option value="+65">🇸🇬 +65</option>
-                <option value="+61">🇦🇺 +61</option>
-                </select>
-                <input type="tel" id="phoneInput" placeholder="9876543210" maxlength="10"
-                style="flex:1; border:1.5px solid #E5E7EB; border-radius:10px; padding:.65rem 1rem; font-size:.95rem; font-family:inherit; outline:none;"
-                onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"
-                />
-            </div>
-            <div id="recaptcha-container"></div>
-            <button id="sendOtpBtn" type="button"
-                style="width:100%; background:linear-gradient(135deg,#EC4899,#F97316); color:#fff; border:none; border-radius:12px; padding:.8rem; font-size:.95rem; font-weight:700; cursor:pointer; font-family:inherit;">
-                Send OTP →
-            </button>
-            <p id="phoneError" style="color:#EF4444; font-size:.8rem; margin-top:.6rem; text-align:center; display:none;"></p>
+                <div style="text-align:center; margin-bottom:1.5rem;">
+                    <div style="font-size:2.5rem; margin-bottom:.5rem;">📱</div>
+                    <h2 style="font-size:1.2rem; font-weight:700; color:#111827; margin:0 0 .3rem;">Enter your phone
+                        number</h2>
+                    <p style="font-size:.82rem; color:#6B7280; margin:0;">We'll send a 6-digit OTP to verify</p>
+                </div>
+                <div style="display:flex; gap:.5rem; margin-bottom:1rem;">
+                    <select id="countryCode"
+                        style="border:1.5px solid #E5E7EB; border-radius:10px; padding:.65rem .5rem; font-size:.9rem; font-family:inherit; outline:none; background:#F9FAFB; min-width:85px;">
+                        <option value="+91">🇮🇳 +91</option>
+                        <option value="+1">🇺🇸 +1</option>
+                        <option value="+44">🇬🇧 +44</option>
+                        <option value="+971">🇦🇪 +971</option>
+                        <option value="+65">🇸🇬 +65</option>
+                        <option value="+61">🇦🇺 +61</option>
+                    </select>
+                    <input type="tel" id="phoneInput" placeholder="9876543210" maxlength="10"
+                        style="flex:1; border:1.5px solid #E5E7EB; border-radius:10px; padding:.65rem 1rem; font-size:.95rem; font-family:inherit; outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                </div>
+                <div id="recaptcha-container"></div>
+                <button id="sendOtpBtn" type="button"
+                    style="width:100%; background:linear-gradient(135deg,#EC4899,#F97316); color:#fff; border:none; border-radius:12px; padding:.8rem; font-size:.95rem; font-weight:700; cursor:pointer; font-family:inherit;">
+                    Send OTP →
+                </button>
+                <p id="phoneError"
+                    style="color:#EF4444; font-size:.8rem; margin-top:.6rem; text-align:center; display:none;"></p>
             </div>
 
             <!-- Step 2: OTP Input -->
             <div id="modalOtpStep" style="display:none;">
-            <div style="text-align:center; margin-bottom:1.5rem;">
-                <div style="font-size:2.5rem; margin-bottom:.5rem;">🔐</div>
-                <h2 style="font-size:1.2rem; font-weight:700; color:#111827; margin:0 0 .3rem;">Enter OTP</h2>
-                <p id="otpSentTo" style="font-size:.82rem; color:#6B7280; margin:0;">OTP sent to your number</p>
-            </div>
+                <div style="text-align:center; margin-bottom:1.5rem;">
+                    <div style="font-size:2.5rem; margin-bottom:.5rem;">🔐</div>
+                    <h2 style="font-size:1.2rem; font-weight:700; color:#111827; margin:0 0 .3rem;">Enter OTP</h2>
+                    <p id="otpSentTo" style="font-size:.82rem; color:#6B7280; margin:0;">OTP sent to your number</p>
+                </div>
 
-            <!-- 6 box OTP input -->
-            <div style="display:flex; gap:.5rem; justify-content:center; margin-bottom:1.2rem;">
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-                <input class="otp-box" maxlength="1" type="text" inputmode="numeric" style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;" onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'"/>
-            </div>
+                <!-- 6 box OTP input -->
+                <div style="display:flex; gap:.5rem; justify-content:center; margin-bottom:1.2rem;">
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                    <input class="otp-box" maxlength="1" type="text" inputmode="numeric"
+                        style="width:42px;height:48px;text-align:center;font-size:1.3rem;font-weight:700;border:1.5px solid #E5E7EB;border-radius:10px;font-family:inherit;outline:none;"
+                        onfocus="this.style.borderColor='#EC4899'" onblur="this.style.borderColor='#E5E7EB'" />
+                </div>
 
-            <button id="verifyOtpBtn" type="button"
-                style="width:100%; background:linear-gradient(135deg,#EC4899,#F97316); color:#fff; border:none; border-radius:12px; padding:.8rem; font-size:.95rem; font-weight:700; cursor:pointer; font-family:inherit; margin-bottom:.7rem;">
-                Verify & Login →
-            </button>
-            <p id="otpError" style="color:#EF4444; font-size:.8rem; margin-bottom:.5rem; text-align:center; display:none;"></p>
-            <div style="text-align:center;">
-                <button id="resendOtpBtn" type="button" style="background:none;border:none;color:#EC4899;font-size:.82rem;cursor:pointer;font-family:inherit;">
-                Resend OTP
+                <button id="verifyOtpBtn" type="button"
+                    style="width:100%; background:linear-gradient(135deg,#EC4899,#F97316); color:#fff; border:none; border-radius:12px; padding:.8rem; font-size:.95rem; font-weight:700; cursor:pointer; font-family:inherit; margin-bottom:.7rem;">
+                    Verify & Login →
                 </button>
-                <span style="color:#9CA3AF; font-size:.82rem;"> · </span>
-                <button onclick="closePhoneModal()" type="button" style="background:none;border:none;color:#6B7280;font-size:.82rem;cursor:pointer;font-family:inherit;">
-                Change number
-                </button>
-            </div>
+                <p id="otpError"
+                    style="color:#EF4444; font-size:.8rem; margin-bottom:.5rem; text-align:center; display:none;"></p>
+                <div style="text-align:center;">
+                    <button id="resendOtpBtn" type="button"
+                        style="background:none;border:none;color:#EC4899;font-size:.82rem;cursor:pointer;font-family:inherit;">
+                        Resend OTP
+                    </button>
+                    <span style="color:#9CA3AF; font-size:.82rem;"> · </span>
+                    <button onclick="closePhoneModal()" type="button"
+                        style="background:none;border:none;color:#6B7280;font-size:.82rem;cursor:pointer;font-family:inherit;">
+                        Change number
+                    </button>
+                </div>
             </div>
 
         </div>
-        </div>
+    </div>
 
-        <!-- ===== APPLY MODAL ===== -->
-        <div id="applyModal" style="display:none; position:fixed; inset:0; z-index:9998; background:rgba(0,0,0,0.5); backdrop-filter:blur(4px); align-items:center; justify-content:center; overflow-y:auto; padding:1rem;">
-        <div style="background:#fff; border-radius:20px; width:90%; max-width:520px; margin:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.2); overflow:hidden;">
-            
+    <!-- ===== APPLY MODAL ===== -->
+    <div id="applyModal"
+        style="display:none; position:fixed; inset:0; z-index:9998; background:rgba(0,0,0,0.5); backdrop-filter:blur(4px); align-items:center; justify-content:center; overflow-y:auto; padding:1rem;">
+        <div
+            style="background:#fff; border-radius:20px; width:90%; max-width:520px; margin:auto; position:relative; box-shadow:0 20px 60px rgba(0,0,0,0.2); overflow:hidden;">
+
             <!-- Header -->
-            <div style="background:linear-gradient(135deg,var(--pink),#FF6B9D); padding:1.5rem 1.5rem 1.2rem; position:relative;">
-            <button onclick="closeApplyModal()" style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.2);border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;">✕</button>
-            <div style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:.3rem;">Apply Now</div>
-            <div id="applyModalCollegeName" style="font-size:1.2rem;font-weight:800;color:#fff;line-height:1.2;"></div>
-            <div id="applyModalCourseName" style="font-size:.85rem;color:rgba(255,255,255,0.8);margin-top:.25rem;"></div>
+            <div
+                style="background:linear-gradient(135deg,var(--pink),#FF6B9D); padding:1.5rem 1.5rem 1.2rem; position:relative;">
+                <button onclick="closeApplyModal()"
+                    style="position:absolute;top:1rem;right:1rem;background:rgba(255,255,255,0.2);border:none;border-radius:50%;width:32px;height:32px;font-size:1.1rem;cursor:pointer;color:#fff;display:flex;align-items:center;justify-content:center;">✕</button>
+                <div
+                    style="font-size:.72rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,0.7);margin-bottom:.3rem;">
+                    Apply Now</div>
+                <div id="applyModalCollegeName" style="font-size:1.2rem;font-weight:800;color:#fff;line-height:1.2;">
+                </div>
+                <div id="applyModalCourseName" style="font-size:.85rem;color:rgba(255,255,255,0.8);margin-top:.25rem;">
+                </div>
             </div>
 
             <!-- Form -->
             <div style="padding:1.5rem;">
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Full Name *</label>
-                <input id="applyName" type="text" placeholder="Your full name" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Full
+                            Name *</label>
+                        <input id="applyName" type="text" placeholder="Your full name"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Phone
+                            *</label>
+                        <input id="applyPhone" type="tel" placeholder="+91 98765 43210"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
                 </div>
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Phone *</label>
-                <input id="applyPhone" type="tel" placeholder="+91 98765 43210" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+
+                <div style="margin-bottom:.75rem;">
+                    <label
+                        style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Email
+                        Address *</label>
+                    <input id="applyEmail" type="email" placeholder="you@example.com"
+                        style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                        onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
                 </div>
-            </div>
 
-            <div style="margin-bottom:.75rem;">
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Email Address *</label>
-                <input id="applyEmail" type="email" placeholder="you@example.com" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
-            </div>
-
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">District</label>
-                <input id="applyDistrict" type="text" placeholder="Ernakulam" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">District</label>
+                        <input id="applyDistrict" type="text" placeholder="Ernakulam"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Place</label>
+                        <input id="applyPlace" type="text" placeholder="Kochi"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
                 </div>
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Place</label>
-                <input id="applyPlace" type="text" placeholder="Kochi" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+
+                <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">10th
+                            % / CGPA</label>
+                        <input id="applyTenth" type="text" placeholder="e.g. 92% or 9.2"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
+                    <div>
+                        <label
+                            style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">12th
+                            % / CGPA</label>
+                        <input id="applyTwelfth" type="text" placeholder="e.g. 88% or 8.8"
+                            style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                            onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                    </div>
                 </div>
-            </div>
 
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:.75rem;margin-bottom:.75rem;">
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">10th % / CGPA</label>
-                <input id="applyTenth" type="text" placeholder="e.g. 92% or 9.2" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+                <div style="margin-bottom:.75rem;">
+                    <label
+                        style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Entrance
+                        Exam Score <span
+                            style="font-weight:400;text-transform:none;letter-spacing:0;color:#9CA3AF;">(optional)</span></label>
+                    <input id="applyEntrance" type="text" placeholder="e.g. JEE Mains 95.4 percentile"
+                        style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;"
+                        onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
                 </div>
-                <div>
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">12th % / CGPA</label>
-                <input id="applyTwelfth" type="text" placeholder="e.g. 88% or 8.8" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
+
+                <div style="margin-bottom:1.2rem;">
+                    <label
+                        style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Message
+                        <span
+                            style="font-weight:400;text-transform:none;letter-spacing:0;color:#9CA3AF;">(optional)</span></label>
+                    <textarea id="applyMessage" rows="2" placeholder="Any additional information..."
+                        style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;resize:vertical;"
+                        onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'"></textarea>
                 </div>
-            </div>
 
-            <div style="margin-bottom:.75rem;">
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Entrance Exam Score <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#9CA3AF;">(optional)</span></label>
-                <input id="applyEntrance" type="text" placeholder="e.g. JEE Mains 95.4 percentile" style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'" />
-            </div>
+                <p id="applyError" style="color:#EF4444;font-size:.8rem;margin-bottom:.75rem;display:none;"></p>
 
-            <div style="margin-bottom:1.2rem;">
-                <label style="display:block;font-size:.7rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#374151;margin-bottom:.3rem;">Message <span style="font-weight:400;text-transform:none;letter-spacing:0;color:#9CA3AF;">(optional)</span></label>
-                <textarea id="applyMessage" rows="2" placeholder="Any additional information..." style="width:100%;padding:.7rem 1rem!important;border:1.5px solid #E5E7EB!important;border-radius:10px!important;font-size:.88rem;font-family:inherit;outline:none;background:#F9FAFB;resize:vertical;" onfocus="this.style.borderColor='#E91E8C'" onblur="this.style.borderColor='#E5E7EB'"></textarea>
-            </div>
+                <button id="applySubmitBtn" onclick="submitApplication()"
+                    style="width:100%;padding:.9rem!important;background:linear-gradient(135deg,#E91E8C,#FF6BAF);color:#fff;border:none!important;border-radius:12px!important;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(233,30,140,0.3)!important;">
+                    Submit Application →
+                </button>
 
-            <p id="applyError" style="color:#EF4444;font-size:.8rem;margin-bottom:.75rem;display:none;"></p>
-
-            <button id="applySubmitBtn" onclick="submitApplication()" style="width:100%;padding:.9rem!important;background:linear-gradient(135deg,#E91E8C,#FF6BAF);color:#fff;border:none!important;border-radius:12px!important;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;box-shadow:0 4px 16px rgba(233,30,140,0.3)!important;">
-                Submit Application →
-            </button>
-
-            <p style="text-align:center;font-size:.75rem;color:#9CA3AF;margin-top:.8rem;">Your details are safe and will only be shared with the college.</p>
+                <p style="text-align:center;font-size:.75rem;color:#9CA3AF;margin-top:.8rem;">Your details are safe and
+                    will only be shared with the college.</p>
             </div>
         </div>
-        </div>
+    </div>
 
-        <!-- Apply Success Modal -->
-        <div id="applySuccessModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
-        <div style="background:#fff;border-radius:20px;padding:2.5rem 2rem;width:90%;max-width:380px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);">
+    <!-- Apply Success Modal -->
+    <div id="applySuccessModal"
+        style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);align-items:center;justify-content:center;">
+        <div
+            style="background:#fff;border-radius:20px;padding:2.5rem 2rem;width:90%;max-width:380px;text-align:center;box-shadow:0 20px 60px rgba(0,0,0,0.2);">
             <div style="font-size:3rem;margin-bottom:1rem;">🎉</div>
-            <h3 style="font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:.5rem;">Application Submitted!</h3>
-            <p style="font-size:.88rem;color:var(--gray);line-height:1.7;margin-bottom:1.5rem;">Your application has been received. The college team will contact you within 2–3 business days.</p>
-            <button onclick="closeSuccessModal()" style="width:100%;padding:.85rem!important;background:var(--pink);color:#fff;border:none!important;border-radius:12px!important;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;">Done</button>
+            <h3 style="font-size:1.3rem;font-weight:800;color:var(--dark);margin-bottom:.5rem;">Application Submitted!
+            </h3>
+            <p style="font-size:.88rem;color:var(--gray);line-height:1.7;margin-bottom:1.5rem;">Your application has
+                been received. The college team will contact you within 2–3 business days.</p>
+            <button onclick="closeSuccessModal()"
+                style="width:100%;padding:.85rem!important;background:var(--pink);color:#fff;border:none!important;border-radius:12px!important;font-size:.95rem;font-weight:700;cursor:pointer;font-family:inherit;">Done</button>
         </div>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
